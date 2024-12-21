@@ -1,0 +1,52 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "estado": "Pendiente",
+      "personaAsignada": "Usuario A",
+      "description": "Analizar los requisitos del proyecto",
+      "dificultad": "Media",
+      "categoria": "Analizar"
+    },
+    {
+      "id": 2,
+      "estado": "En Progreso",
+      "personaAsignada": "Usuario B",
+      "description": "Desarrollar la funcionalidad de autenticación",
+      "dificultad": "Difícil",
+      "categoria": "Codear"
+    },
+    {
+      "id": 3,
+      "estado": "Terminada",
+      "personaAsignada": "Usuario C",
+      "description": "Crear documentación para el usuario final",
+      "dificultad": "Fácil",
+      "categoria": "Formación"
+    },
+    {
+      "id": 4,
+      "estado": "Pendiente",
+      "personaAsignada": "Usuario D",
+      "description": "Implementar la interfaz de usuario",
+      "dificultad": "Media",
+      "categoria": "Codear"
+    },
+    {
+      "id": 5,
+      "estado": "En Progreso",
+      "personaAsignada": "Usuario E",
+      "description": "Realizar pruebas de integración",
+      "dificultad": "Difícil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": 6,
+      "estado": "Terminada",
+      "personaAsignada": "Usuario F",
+      "description": "Capacitar al equipo en nuevas tecnologías",
+      "dificultad": "Fácil",
+      "categoria": "Formación"
+    }
+  ]
+}
