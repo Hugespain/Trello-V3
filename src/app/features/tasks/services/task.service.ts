@@ -5,7 +5,7 @@ import { Task } from '../interfaces/task.interface';
 import { environments } from '../../../../environments/environments';
 
 @Injectable({providedIn: 'root'})
-export class ServiceNameService {
+export class TasksService {
 
   private baseUrl: string = environments.baseUrl;
 
