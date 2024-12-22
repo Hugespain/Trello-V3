@@ -1,1 +1,67 @@
-<p>list-page works!</p>
+
+<!--<div class="task-columns">
+  <div class="task-column">
+    <h2>Pendientes</h2>
+    <ul>
+      <li *ngFor="let task of tasksPendientes">
+        {{ task}}
+      </li>
+    </ul>
+  </div>
+  <div class="task-column">
+    <h2>En Progreso</h2>
+    <ul>
+      <li *ngFor="let task of tasksEnProgreso">
+        {{ task}}
+      </li>
+    </ul>
+  </div>
+  <div class="task-column">
+    <h2>Terminadas</h2>
+    <ul>
+      <li *ngFor="let task of tasksTerminadas">
+        {{ task }}
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+
+<div class="task-columns">
+  <div class="task-column">
+    <h2>Pendientes</h2>
+    <ul>
+      <li *ngFor="let task of tasksPendientes">
+        <strong>Estado:</strong> {{ task.estado }}<br>
+        <strong>Descripción:</strong> {{ task.description }}<br>
+        <strong>Persona Asignada:</strong> {{ task.personaAsignada }}<br>
+        <strong>Dificultad:</strong> {{ task.dificultad }}<br>
+        <strong>Categoría:</strong> {{ task.categoria }}
+      </li>
+    </ul>
+  </div>
+  <div class="task-column">
+    <h2>En Progreso</h2>
+    <ul>
+      <li *ngFor="let task of tasksEnProgreso">
+        <strong>Estado:</strong> {{ task.estado }}<br>
+        <strong>Descripción:</strong> {{ task.description }}<br>
+        <strong>Persona Asignada:</strong> {{ task.personaAsignada }}<br>
+        <strong>Dificultad:</strong> {{ task.dificultad }}<br>
+        <strong>Categoría:</strong> {{ task.categoria }}
+      </li>
+    </ul>
+  </div>
+  <div class="task-column">
+    <h2>Terminadas</h2>
+    <ul>
+      <li *ngFor="let task of tasksTerminadas">
+        <strong>Estado:</strong> {{ task.estado }}<br>
+        <strong>Descripción:</strong> {{ task.description }}<br>
+        <strong>Persona Asignada:</strong> {{ task.personaAsignada }}<br>
+        <strong>Dificultad:</strong> {{ task.dificultad }}<br>
+        <strong>Categoría:</strong> {{ task.categoria }}
+      </li>
+    </ul>
+  </div>
+</div>
