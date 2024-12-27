@@ -1,31 +1,31 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "estado": "Pendiente",
+      "id": "1",
+      "estado": "En Progreso",
       "personaAsignada": "Usuario A",
       "description": "Analizar los requisitos del proyecto",
       "dificultad": "Media",
       "categoria": "Analizar"
     },
     {
-      "id": 2,
-      "estado": "En Progreso",
+      "id": "2",
+      "estado": "Pendiente",
       "personaAsignada": "Usuario B",
       "description": "Desarrollar la funcionalidad de autenticación",
       "dificultad": "Difícil",
       "categoria": "Codear"
     },
     {
-      "id": 3,
-      "estado": "Terminada",
+      "id": "3",
+      "estado": "En Progreso",
       "personaAsignada": "Usuario C",
       "description": "Crear documentación para el usuario final",
       "dificultad": "Fácil",
       "categoria": "Formación"
     },
     {
-      "id": 4,
+      "id": "4",
       "estado": "Pendiente",
       "personaAsignada": "Usuario D",
       "description": "Implementar la interfaz de usuario",
@@ -33,31 +33,31 @@
       "categoria": "Codear"
     },
     {
-      "id": 5,
-      "estado": "En Progreso",
+      "id": "5",
+      "estado": "Terminada",
       "personaAsignada": "Usuario E",
       "description": "Realizar pruebas de integración",
       "dificultad": "Difícil",
       "categoria": "Analizar"
     },
     {
-      "id": 6,
-      "estado": "Terminada",
+      "id": "6",
+      "estado": "En Progreso",
       "personaAsignada": "Usuario F",
       "description": "Capacitar al equipo en nuevas tecnologías",
       "dificultad": "Fácil",
       "categoria": "Formación"
     },
     {
-      "id": 7,
-      "estado": "Pendiente",
+      "id": "7",
+      "estado": "Terminada",
       "personaAsignada": "Usuario A",
       "description": "Revisar el diseño de la base de datos",
       "dificultad": "Difícil",
       "categoria": "Analizar"
     },
     {
-      "id": 8,
+      "id": "8",
       "estado": "En Progreso",
       "personaAsignada": "Usuario B",
       "description": "Implementar la lógica de negocio",
@@ -65,7 +65,7 @@
       "categoria": "Codear"
     },
     {
-      "id": 9,
+      "id": "9",
       "estado": "Terminada",
       "personaAsignada": "Usuario C",
       "description": "Actualizar la documentación técnica",
@@ -73,23 +73,23 @@
       "categoria": "Formación"
     },
     {
-      "id": 10,
-      "estado": "Pendiente",
+      "id": "10",
+      "estado": "En Progreso",
       "personaAsignada": "Usuario D",
       "description": "Crear pruebas unitarias",
       "dificultad": "Fácil",
       "categoria": "Codear"
     },
     {
-      "id": 11,
-      "estado": "En Progreso",
+      "id": "11",
+      "estado": "Pendiente",
       "personaAsignada": "Usuario E",
       "description": "Optimizar el rendimiento del sistema",
       "dificultad": "Difícil",
       "categoria": "Analizar"
     },
     {
-      "id": 12,
+      "id": "12",
       "estado": "Terminada",
       "personaAsignada": "Usuario F",
       "description": "Preparar el informe final",

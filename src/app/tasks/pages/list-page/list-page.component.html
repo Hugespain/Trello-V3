@@ -98,6 +98,68 @@
   </div>
 </div>-->
 
+<!-- <div cdkDropListGroup class="task-columns">
+  <div class="task-column" cdkDropList [cdkDropListData]="tasksPendientes" (cdkDropListDropped)="drop($event, Estado.Pendiente)" [cdkDropListConnectedTo]="['tasksEnProgreso', 'tasksTerminadas']">
+    <h2>Pendientes</h2>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let task of tasksPendientes" cdkDrag>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ task.personaAsignada }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ task.categoria }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p><strong>ID:</strong> {{ task.id }}</p>
+        <p><strong>Estado:</strong> {{ task.estado }}</p>
+        <p><strong>Descripción:</strong> {{ task.description }}</p>
+        <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="task-column" cdkDropList [cdkDropListData]="tasksEnProgreso" (cdkDropListDropped)="drop($event, Estado.Enprogreso)" [cdkDropListConnectedTo]="['tasksPendientes', 'tasksTerminadas']">
+    <h2>En Progreso</h2>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let task of tasksEnProgreso" cdkDrag>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ task.personaAsignada }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ task.categoria }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p><strong>ID:</strong> {{ task.id }}</p>
+        <p><strong>Estado:</strong> {{ task.estado }}</p>
+        <p><strong>Descripción:</strong> {{ task.description }}</p>
+        <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="task-column" cdkDropList [cdkDropListData]="tasksTerminadas" (cdkDropListDropped)="drop($event, Estado.Terminada)" [cdkDropListConnectedTo]="['tasksPendientes', 'tasksEnProgreso']">
+    <h2>Terminadas</h2>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let task of tasksTerminadas" cdkDrag>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ task.personaAsignada }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ task.categoria }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p><strong>ID:</strong> {{ task.id }}</p>
+        <p><strong>Estado:</strong> {{ task.estado }}</p>
+        <p><strong>Descripción:</strong> {{ task.description }}</p>
+        <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div> -->
+
 <div cdkDropListGroup class="task-columns">
   <div class="task-column" cdkDropList [cdkDropListData]="tasksPendientes" (cdkDropListDropped)="drop($event, Estado.Pendiente)" [cdkDropListConnectedTo]="['tasksEnProgreso', 'tasksTerminadas']">
     <h2>Pendientes</h2>
