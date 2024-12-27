@@ -1,8 +1,14 @@
 .task-columns {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .task-column {
-  width: 30%;
+  flex: 1;
+  max-width: 30%;
+}
+
+li, mat-expansion-panel {
+  margin-bottom: 15px;
 }
