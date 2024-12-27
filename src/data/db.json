@@ -47,6 +47,54 @@
       "description": "Capacitar al equipo en nuevas tecnologías",
       "dificultad": "Fácil",
       "categoria": "Formación"
+    },
+    {
+      "id": 7,
+      "estado": "Pendiente",
+      "personaAsignada": "Usuario A",
+      "description": "Revisar el diseño de la base de datos",
+      "dificultad": "Difícil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": 8,
+      "estado": "En Progreso",
+      "personaAsignada": "Usuario B",
+      "description": "Implementar la lógica de negocio",
+      "dificultad": "Media",
+      "categoria": "Codear"
+    },
+    {
+      "id": 9,
+      "estado": "Terminada",
+      "personaAsignada": "Usuario C",
+      "description": "Actualizar la documentación técnica",
+      "dificultad": "Media",
+      "categoria": "Formación"
+    },
+    {
+      "id": 10,
+      "estado": "Pendiente",
+      "personaAsignada": "Usuario D",
+      "description": "Crear pruebas unitarias",
+      "dificultad": "Fácil",
+      "categoria": "Codear"
+    },
+    {
+      "id": 11,
+      "estado": "En Progreso",
+      "personaAsignada": "Usuario E",
+      "description": "Optimizar el rendimiento del sistema",
+      "dificultad": "Difícil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": 12,
+      "estado": "Terminada",
+      "personaAsignada": "Usuario F",
+      "description": "Preparar el informe final",
+      "dificultad": "Fácil",
+      "categoria": "Formación"
     }
   ]
 }
