@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {path:'', component: ListPageComponent},
       {path:'new', component: NewPageComponent},
-      {path:'edit/:id', component: EditPageComponent},
+      {path: 'edit', component: EditPageComponent},
     ]
   }
 ];

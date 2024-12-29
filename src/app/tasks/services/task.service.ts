@@ -50,6 +50,11 @@ export class TasksService {
     return this.http.get<Task[]>(`${this.baseUrl}/tasks`);
   }
 
+  // Obtener una tarea por su ID
+  getTaskById(id: number): Observable<Task> {
+    return this.http.get<Task>(`${this.baseUrl}/tasks/${id}`);
+  }
+
   // Crear una nueva tarea
   createTask(task: Task): Observable<Task> {
     return this.http.post<Task>(`${this.baseUrl}/tasks`, task);
@@ -57,7 +62,7 @@ export class TasksService {
 
   // Actualizar una tarea existente
   updateTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.baseUrl}/tasks/${task.id}`, task);
+    return this.http.patch<Task>(`${this.baseUrl}/tasks/${task.id}`, task);
   }
 
   // Eliminar una tarea

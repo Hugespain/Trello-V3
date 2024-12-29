@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { TasksRoutingModule } from './tasks-routing.module';
@@ -22,7 +23,8 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
     CommonModule,
     TasksRoutingModule,
     MaterialModule,
-    DragDropModule
+    DragDropModule,
+    ReactiveFormsModule
 
 
   ]

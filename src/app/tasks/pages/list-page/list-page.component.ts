@@ -103,7 +103,7 @@ export class ListPageComponent implements OnInit {
       const task = event.previousContainer.data[event.previousIndex];
       task.estado = newEstado;
       transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
-      this.taskService.updateTask(task).subscribe(); // Actualiza el backend
+      this.taskService.updateTask(task).subscribe();
     }
   }
 }

@@ -1,1 +1,51 @@
-<p>new-page works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Añadir nueva tarea</mat-card-title>
+  </mat-card-header>
+  </mat-card>
+
+  <form [formGroup]="taskForm" (ngSubmit)="onSave()">
+    <div class="centered-form">
+      <mat-form-field class="large-field">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="estado">
+          <mat-option value="Pendiente">Pendiente</mat-option>
+          <mat-option value="En Progreso">En progreso</mat-option>
+          <mat-option value="Terminada">Terminada</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="large-field">
+        <mat-label>Persona asignada</mat-label>
+        <input matInput formControlName="personaAsignada">
+      </mat-form-field>
+
+      <mat-form-field class="large-field">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+
+      <mat-form-field class="large-field">
+        <mat-label>Dificultad</mat-label>
+        <mat-select formControlName="dificultad">
+          <mat-option value="Fácil">Fácil</mat-option>
+          <mat-option value="Media">Media</mat-option>
+          <mat-option value="Difícil">Difícil</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="large-field">
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="categoria">
+          <mat-option value="Analizar">Analizar</mat-option>
+          <mat-option value="Codear">Codear</mat-option>
+          <mat-option value="Formación">Formación</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-stroked-button color="primary">Guardar</button>
+      </div>
+
+    </div>
+  </form>
+

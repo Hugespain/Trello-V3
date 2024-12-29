@@ -9,7 +9,7 @@ export class LayoutPageComponent {
 
   public sidebarItems = [
     { label: 'Listado', icon: 'label', url: '' },
-    { label: 'Añadir', icon: 'add', url: './new' },
-    { label: 'Edit', icon: 'edit', link: './edit/:id' },
+    { label: 'Añadir', icon: 'add', url: 'new' },
+    { label: 'Editar', icon: 'edit', url: 'edit'  },
   ]
 }

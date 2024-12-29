@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TasksService } from '../../services/task.service';
+import { Task } from '../../interfaces/task.interface';
 
 @Component({
   selector: 'app-edit-page',
   templateUrl: './edit-page.component.html',
-  styleUrl: './edit-page.component.css'
+  styleUrls: ['./edit-page.component.css']
 })
 export class EditPageComponent implements OnInit {
-  taskId: string | null = null;
+  public task: Task | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private taskService: TasksService
+  ) {}
 
   ngOnInit(): void {
-    // Obtener el ID de la ruta
-    this.route.paramMap.subscribe(params => {
-      this.taskId = params.get('id');  // Accede al parámetro 'id'
-      console.log('ID de la tarea:', this.taskId); // Asegúrate de que el ID se obtiene correctamente
-
-      // Aquí puedes cargar los datos de la tarea a editar utilizando 'taskId'
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.taskService.getTaskById(+id).subscribe(task => {
+        this.task = task;
+      });
+    }
   }
 }

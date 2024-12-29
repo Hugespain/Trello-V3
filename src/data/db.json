@@ -10,7 +10,7 @@
     },
     {
       "id": "2",
-      "estado": "Pendiente",
+      "estado": "En Progreso",
       "personaAsignada": "Usuario B",
       "description": "Desarrollar la funcionalidad de autenticación",
       "dificultad": "Difícil",
@@ -18,7 +18,7 @@
     },
     {
       "id": "3",
-      "estado": "En Progreso",
+      "estado": "Terminada",
       "personaAsignada": "Usuario C",
       "description": "Crear documentación para el usuario final",
       "dificultad": "Fácil",
@@ -42,7 +42,7 @@
     },
     {
       "id": "6",
-      "estado": "En Progreso",
+      "estado": "Pendiente",
       "personaAsignada": "Usuario F",
       "description": "Capacitar al equipo en nuevas tecnologías",
       "dificultad": "Fácil",
@@ -50,7 +50,7 @@
     },
     {
       "id": "7",
-      "estado": "Terminada",
+      "estado": "Pendiente",
       "personaAsignada": "Usuario A",
       "description": "Revisar el diseño de la base de datos",
       "dificultad": "Difícil",
@@ -58,7 +58,7 @@
     },
     {
       "id": "8",
-      "estado": "En Progreso",
+      "estado": "Pendiente",
       "personaAsignada": "Usuario B",
       "description": "Implementar la lógica de negocio",
       "dificultad": "Media",
@@ -66,7 +66,7 @@
     },
     {
       "id": "9",
-      "estado": "Terminada",
+      "estado": "En Progreso",
       "personaAsignada": "Usuario C",
       "description": "Actualizar la documentación técnica",
       "dificultad": "Media",
@@ -74,7 +74,7 @@
     },
     {
       "id": "10",
-      "estado": "En Progreso",
+      "estado": "Terminada",
       "personaAsignada": "Usuario D",
       "description": "Crear pruebas unitarias",
       "dificultad": "Fácil",
@@ -82,7 +82,7 @@
     },
     {
       "id": "11",
-      "estado": "Pendiente",
+      "estado": "Terminada",
       "personaAsignada": "Usuario E",
       "description": "Optimizar el rendimiento del sistema",
       "dificultad": "Difícil",
@@ -90,11 +90,51 @@
     },
     {
       "id": "12",
-      "estado": "Terminada",
+      "estado": "Pendiente",
       "personaAsignada": "Usuario F",
       "description": "Preparar el informe final",
       "dificultad": "Fácil",
       "categoria": "Formación"
+    },
+    {
+      "id": "84e6",
+      "estado": "En Progreso",
+      "personaAsignada": "Diego",
+      "descripcion": "Comprobar si puedo crear tareas nuevas",
+      "dificultad": "Media",
+      "categoria": "Codear"
+    },
+    {
+      "id": "6302",
+      "estado": "En Progreso",
+      "personaAsignada": "Diego",
+      "descripcion": "Parece que no guarda descripción alguna",
+      "dificultad": "Media",
+      "categoria": "Codear"
+    },
+    {
+      "id": "8ff5",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "¿Se guarda la descripción ahora? El campo se llamaba description no descripcion",
+      "dificultad": "Media",
+      "categoria": "Codear"
+    },
+    {
+      "id": "f7c7",
+      "estado": "Pendiente",
+      "personaAsignada": "efef",
+      "description": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "fef2",
+      "estado": "Pendiente",
+      "personaAsignada": "María",
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "dificultad": "Fácil",
+      "categoria": "Codear"
     }
   ]
 }
