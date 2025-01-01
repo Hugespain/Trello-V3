@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { TasksService } from '../../services/task.service';
 import { Task } from '../../interfaces/task.interface';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-page',
@@ -9,19 +9,79 @@ import { Task } from '../../interfaces/task.interface';
   styleUrls: ['./edit-page.component.css']
 })
 export class EditPageComponent implements OnInit {
-  public task: Task | undefined;
 
-  constructor(
-    private route: ActivatedRoute,
-    private taskService: TasksService
-  ) {}
+  availableIds: number[] = [];
+
+  constructor(private fb: FormBuilder, private taskService: TasksService) {}
+
+  public taskForm: FormGroup = this.fb.group({
+    id: ['', Validators.required],
+    estado: ['', Validators.required],
+    personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
+    description: ['', [Validators.required, Validators.maxLength(20)]],
+    dificultad: ['', Validators.required],
+    categoria: ['', Validators.required]
+  });
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    this.taskService.getAvailableIds().subscribe(ids => {
+      this.availableIds = ids;
+    });
+  }
+
+  // Método para manejar la selección del ID
+  onIdSelection(id: number): void {
     if (id) {
-      this.taskService.getTaskById(+id).subscribe(task => {
-        this.task = task;
+      this.taskService.getTaskById(id).subscribe(task => {
+        if (task) {
+          this.taskForm.patchValue(task);
+        }
       });
     }
+  }
+
+
+  onUpdate(): void {
+    if (this.taskForm.invalid) {
+      return;
+    }
+
+    const task: Task = this.taskForm.value;
+    this.taskService.updateTask(task).subscribe({
+      next: response => {
+        console.log('Tarea actualizada:', response);
+        // Aquí puedes agregar lógica adicional, como redirigir al usuario o mostrar un mensaje de éxito
+      },
+      error: error => {
+        console.error('Error al actualizar la tarea:', error);
+        // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
+      },
+      complete: () => {
+        console.log('Operación completada');
+        // Aquí puedes agregar lógica adicional que se ejecutará cuando la operación se complete
+      }
+    });
+  }
+
+  onDelete(): void {
+    if (this.taskForm.invalid) {
+      return;
+    }
+
+    const id = this.taskForm.get('id')!.value;
+    this.taskService.deleteTask(id).subscribe({
+      next: () => {
+        console.log('Tarea eliminada');
+        // Aquí puedes agregar lógica adicional, como redirigir al usuario o mostrar un mensaje de éxito
+      },
+      error: error => {
+        console.error('Error al eliminar la tarea:', error);
+        // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
+      },
+      complete: () => {
+        console.log('Operación completada');
+        // Aquí puedes agregar lógica adicional que se ejecutará cuando la operación se complete
+      }
+    });
   }
 }

@@ -36,7 +36,7 @@
 import { Injectable } from '@angular/core';
 import { environments } from '../../../environments/environments';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Task } from '../interfaces/task.interface';
 
 @Injectable({ providedIn: 'root' })
@@ -68,5 +68,12 @@ export class TasksService {
   // Eliminar una tarea
   deleteTask(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/tasks/${id}`);
+  }
+
+   // Obtener todos los IDs disponibles
+   getAvailableIds(): Observable<number[]> {
+    return this.http.get<Task[]>(`${this.baseUrl}/tasks`).pipe(
+      map(tasks => tasks.map(task => task.id))
+    );
   }
 }

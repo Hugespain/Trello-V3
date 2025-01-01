@@ -1,14 +1,6 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "estado": "En Progreso",
-      "personaAsignada": "Usuario A",
-      "description": "Analizar los requisitos del proyecto",
-      "dificultad": "Media",
-      "categoria": "Analizar"
-    },
-    {
       "id": "2",
       "estado": "En Progreso",
       "personaAsignada": "Usuario B",
@@ -135,6 +127,22 @@
       "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "dificultad": "Fácil",
       "categoria": "Codear"
+    },
+    {
+      "id": "d29e",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "Comprobar si sigue todo bien ",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "1141",
+      "estado": "Pendiente",
+      "personaAsignada": "uiui",
+      "description": "No funciona",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
     }
   ]
 }

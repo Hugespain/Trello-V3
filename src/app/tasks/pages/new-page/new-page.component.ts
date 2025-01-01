@@ -9,6 +9,9 @@ import { Task } from '../../interfaces/task.interface';
   styleUrl: './new-page.component.css'
 })
 export class NewPageComponent  {
+
+  constructor(private fb: FormBuilder,  private taskService: TasksService) {}
+
   public taskForm: FormGroup = this.fb.group({
       estado: ['', Validators.required],
       personaAsignada: ['', Validators.required, Validators.maxLength(20)],
@@ -18,7 +21,7 @@ export class NewPageComponent  {
 
   });
 
-  constructor(private fb: FormBuilder,  private taskService: TasksService) {}
+
 
 
   onSave(): void {
