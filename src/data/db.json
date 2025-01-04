@@ -2,26 +2,10 @@
   "tasks": [
     {
       "id": "8ff5",
-      "estado": "Pendiente",
+      "estado": "Terminada",
       "personaAsignada": "Diego",
       "description": "¿Se guarda la descripción ahora? El campo se llamaba description no descripcion",
       "dificultad": "Media",
-      "categoria": "Codear"
-    },
-    {
-      "id": "f7c7",
-      "estado": "Pendiente",
-      "personaAsignada": "efef",
-      "description": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "fef2",
-      "estado": "Terminada",
-      "personaAsignada": "María",
-      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "dificultad": "Fácil",
       "categoria": "Codear"
     },
     {
@@ -34,7 +18,7 @@
     },
     {
       "id": "8d3b",
-      "estado": "En Progreso",
+      "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Comprobar si se resetea y se marca como untouched",
       "dificultad": "Media",
@@ -50,7 +34,7 @@
     },
     {
       "id": "4abc",
-      "estado": "Terminada",
+      "estado": "En Progreso",
       "personaAsignada": "Diego",
       "description": "Funciona ahora?",
       "dificultad": "Fácil",
