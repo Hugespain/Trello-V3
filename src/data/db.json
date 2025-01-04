@@ -1,24 +1,8 @@
 {
   "tasks": [
     {
-      "id": "10",
-      "estado": "Terminada",
-      "personaAsignada": "Usuario D",
-      "description": "Crear pruebas unitarias",
-      "dificultad": "Fácil",
-      "categoria": "Codear"
-    },
-    {
-      "id": "11",
-      "estado": "En Progreso",
-      "personaAsignada": "Usuario E",
-      "description": "Optimizar el rendimiento del sistema",
-      "dificultad": "Difícil",
-      "categoria": "Analizar"
-    },
-    {
       "id": "8ff5",
-      "estado": "En Progreso",
+      "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "¿Se guarda la descripción ahora? El campo se llamaba description no descripcion",
       "dificultad": "Media",
@@ -26,7 +10,7 @@
     },
     {
       "id": "f7c7",
-      "estado": "En Progreso",
+      "estado": "Pendiente",
       "personaAsignada": "efef",
       "description": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
       "dificultad": "Fácil",
@@ -34,35 +18,11 @@
     },
     {
       "id": "fef2",
-      "estado": "En Progreso",
+      "estado": "Terminada",
       "personaAsignada": "María",
       "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "dificultad": "Fácil",
       "categoria": "Codear"
-    },
-    {
-      "id": "d29e",
-      "estado": "Terminada",
-      "personaAsignada": "Diego",
-      "description": "Comprobar si sigue todo bien ",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "1141",
-      "estado": "Terminada",
-      "personaAsignada": "uiui",
-      "description": "No funciona",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "444b",
-      "estado": "Pendiente",
-      "personaAsignada": "María E",
-      "description": "Terminar el trabajo antes del final de las vacaciones",
-      "dificultad": "Media",
-      "categoria": "Formación"
     },
     {
       "id": "b215",
@@ -90,7 +50,7 @@
     },
     {
       "id": "4abc",
-      "estado": "En Progreso",
+      "estado": "Terminada",
       "personaAsignada": "Diego",
       "description": "Funciona ahora?",
       "dificultad": "Fácil",
@@ -109,6 +69,30 @@
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿???",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "ef6c",
+      "estado": "Pendiente",
+      "personaAsignada": "Rintintin",
+      "description": "¿Se muestra el dialogo de exito?",
+      "dificultad": "Media",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "062d",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "¿Se muestra el Id?",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "53b0",
+      "estado": "Pendiente",
+      "personaAsignada": "efefef",
+      "description": "sffefef",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     }
