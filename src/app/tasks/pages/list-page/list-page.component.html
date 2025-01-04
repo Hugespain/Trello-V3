@@ -167,14 +167,16 @@
       <mat-expansion-panel *ngFor="let task of tasksPendientes" cdkDrag>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            {{ task.personaAsignada }}
+            {{ task.id }}
           </mat-panel-title>
           <mat-panel-description>
-            {{ task.categoria }}
+            {{ task.estado }}
           </mat-panel-description>
         </mat-expansion-panel-header>
         <p><strong>ID:</strong> {{ task.id }}</p>
         <p><strong>Estado:</strong> {{ task.estado }}</p>
+        <p><strong>Persona Asignada:</strong> {{ task.personaAsignada }}</p>
+        <p><strong>Categoría:</strong> {{ task.categoria }}</p>
         <p><strong>Descripción:</strong> {{ task.description }}</p>
         <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
       </mat-expansion-panel>
@@ -187,14 +189,16 @@
       <mat-expansion-panel *ngFor="let task of tasksEnProgreso" cdkDrag>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            {{ task.personaAsignada }}
+            {{ task.id }}
           </mat-panel-title>
           <mat-panel-description>
-            {{ task.categoria }}
+            {{ task.estado }}
           </mat-panel-description>
         </mat-expansion-panel-header>
         <p><strong>ID:</strong> {{ task.id }}</p>
         <p><strong>Estado:</strong> {{ task.estado }}</p>
+        <p><strong>Persona Asignada:</strong> {{ task.personaAsignada }}</p>
+        <p><strong>Categoría:</strong> {{ task.categoria }}</p>
         <p><strong>Descripción:</strong> {{ task.description }}</p>
         <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
       </mat-expansion-panel>
@@ -207,14 +211,16 @@
       <mat-expansion-panel *ngFor="let task of tasksTerminadas" cdkDrag>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            {{ task.personaAsignada }}
+            {{ task.id }}
           </mat-panel-title>
           <mat-panel-description>
-            {{ task.categoria }}
+            {{ task.estado }}
           </mat-panel-description>
         </mat-expansion-panel-header>
         <p><strong>ID:</strong> {{ task.id }}</p>
         <p><strong>Estado:</strong> {{ task.estado }}</p>
+        <p><strong>Persona Asignada:</strong> {{ task.personaAsignada }}</p>
+        <p><strong>Categoría:</strong> {{ task.categoria }}</p>
         <p><strong>Descripción:</strong> {{ task.description }}</p>
         <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
       </mat-expansion-panel>

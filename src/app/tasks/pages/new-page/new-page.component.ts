@@ -15,7 +15,7 @@ export class NewPageComponent  {
   public taskForm: FormGroup = this.fb.group({
       estado: ['', Validators.required],
       personaAsignada: ['', Validators.required, Validators.maxLength(20)],
-      description: ['', Validators.required, Validators.maxLength(20)],
+      description: ['', Validators.required, Validators.maxLength(50)],
       dificultad: ['', Validators.required],
       categoria: ['', Validators.required]
 
@@ -44,4 +44,25 @@ export class NewPageComponent  {
         // Aquí puedes agregar lógica adicional que se ejecutará cuando la operación se complete
       }
     });
-  }}
+
+    this.resetForm();
+  }
+
+  private resetForm(): void {
+    this.taskForm.reset({
+      estado: '',
+      personaAsignada: '',
+      description: '',
+      dificultad: '',
+      categoria: ''
+    });
+
+    // Marcar todos los controles como intocados y prístinos
+    Object.keys(this.taskForm.controls).forEach(key => {
+      const control = this.taskForm.get(key);
+      control?.setErrors(null); // Eliminar errores de validación
+      control?.markAsPristine();
+      control?.markAsUntouched();
+    });
+  }
+}

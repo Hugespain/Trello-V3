@@ -18,7 +18,7 @@ export class EditPageComponent implements OnInit {
     id: ['', Validators.required],
     estado: ['', Validators.required],
     personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
-    description: ['', [Validators.required, Validators.maxLength(20)]],
+    description: ['', [Validators.required, Validators.maxLength(50)]],
     dificultad: ['', Validators.required],
     categoria: ['', Validators.required]
   });
@@ -40,7 +40,6 @@ export class EditPageComponent implements OnInit {
     }
   }
 
-
   onUpdate(): void {
     if (this.taskForm.invalid) {
       return;
@@ -61,6 +60,8 @@ export class EditPageComponent implements OnInit {
         // Aquí puedes agregar lógica adicional que se ejecutará cuando la operación se complete
       }
     });
+
+    this.resetForm();
   }
 
   onDelete(): void {
@@ -82,6 +83,27 @@ export class EditPageComponent implements OnInit {
         console.log('Operación completada');
         // Aquí puedes agregar lógica adicional que se ejecutará cuando la operación se complete
       }
+    });
+
+    this.resetForm();
+  }
+
+  private resetForm(): void {
+    this.taskForm.reset({
+      id: '',
+      estado: '',
+      personaAsignada: '',
+      description: '',
+      dificultad: '',
+      categoria: ''
+    });
+
+    // Marcar todos los controles como intocados y prístinos
+    Object.keys(this.taskForm.controls).forEach(key => {
+      const control = this.taskForm.get(key);
+      control?.setErrors(null); // Eliminar errores de validación
+      control?.markAsPristine();
+      control?.markAsUntouched();
     });
   }
 }

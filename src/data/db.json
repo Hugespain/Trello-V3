@@ -1,70 +1,6 @@
 {
   "tasks": [
     {
-      "id": "2",
-      "estado": "En Progreso",
-      "personaAsignada": "Usuario B",
-      "description": "Desarrollar la funcionalidad de autenticación",
-      "dificultad": "Difícil",
-      "categoria": "Codear"
-    },
-    {
-      "id": "3",
-      "estado": "Terminada",
-      "personaAsignada": "Usuario C",
-      "description": "Crear documentación para el usuario final",
-      "dificultad": "Fácil",
-      "categoria": "Formación"
-    },
-    {
-      "id": "4",
-      "estado": "Pendiente",
-      "personaAsignada": "Usuario D",
-      "description": "Implementar la interfaz de usuario",
-      "dificultad": "Media",
-      "categoria": "Codear"
-    },
-    {
-      "id": "5",
-      "estado": "Terminada",
-      "personaAsignada": "Usuario E",
-      "description": "Realizar pruebas de integración",
-      "dificultad": "Difícil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "6",
-      "estado": "Pendiente",
-      "personaAsignada": "Usuario F",
-      "description": "Capacitar al equipo en nuevas tecnologías",
-      "dificultad": "Fácil",
-      "categoria": "Formación"
-    },
-    {
-      "id": "7",
-      "estado": "Pendiente",
-      "personaAsignada": "Usuario A",
-      "description": "Revisar el diseño de la base de datos",
-      "dificultad": "Difícil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "8",
-      "estado": "Pendiente",
-      "personaAsignada": "Usuario B",
-      "description": "Implementar la lógica de negocio",
-      "dificultad": "Media",
-      "categoria": "Codear"
-    },
-    {
-      "id": "9",
-      "estado": "En Progreso",
-      "personaAsignada": "Usuario C",
-      "description": "Actualizar la documentación técnica",
-      "dificultad": "Media",
-      "categoria": "Formación"
-    },
-    {
       "id": "10",
       "estado": "Terminada",
       "personaAsignada": "Usuario D",
@@ -74,39 +10,15 @@
     },
     {
       "id": "11",
-      "estado": "Terminada",
+      "estado": "En Progreso",
       "personaAsignada": "Usuario E",
       "description": "Optimizar el rendimiento del sistema",
       "dificultad": "Difícil",
       "categoria": "Analizar"
     },
     {
-      "id": "12",
-      "estado": "Pendiente",
-      "personaAsignada": "Usuario F",
-      "description": "Preparar el informe final",
-      "dificultad": "Fácil",
-      "categoria": "Formación"
-    },
-    {
-      "id": "84e6",
-      "estado": "En Progreso",
-      "personaAsignada": "Diego",
-      "descripcion": "Comprobar si puedo crear tareas nuevas",
-      "dificultad": "Media",
-      "categoria": "Codear"
-    },
-    {
-      "id": "6302",
-      "estado": "En Progreso",
-      "personaAsignada": "Diego",
-      "descripcion": "Parece que no guarda descripción alguna",
-      "dificultad": "Media",
-      "categoria": "Codear"
-    },
-    {
       "id": "8ff5",
-      "estado": "Pendiente",
+      "estado": "En Progreso",
       "personaAsignada": "Diego",
       "description": "¿Se guarda la descripción ahora? El campo se llamaba description no descripcion",
       "dificultad": "Media",
@@ -114,7 +26,7 @@
     },
     {
       "id": "f7c7",
-      "estado": "Pendiente",
+      "estado": "En Progreso",
       "personaAsignada": "efef",
       "description": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
       "dificultad": "Fácil",
@@ -122,7 +34,7 @@
     },
     {
       "id": "fef2",
-      "estado": "Pendiente",
+      "estado": "En Progreso",
       "personaAsignada": "María",
       "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "dificultad": "Fácil",
@@ -130,7 +42,7 @@
     },
     {
       "id": "d29e",
-      "estado": "Pendiente",
+      "estado": "Terminada",
       "personaAsignada": "Diego",
       "description": "Comprobar si sigue todo bien ",
       "dificultad": "Fácil",
@@ -138,9 +50,65 @@
     },
     {
       "id": "1141",
-      "estado": "Pendiente",
+      "estado": "Terminada",
       "personaAsignada": "uiui",
       "description": "No funciona",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "444b",
+      "estado": "Pendiente",
+      "personaAsignada": "María E",
+      "description": "Terminar el trabajo antes del final de las vacaciones",
+      "dificultad": "Media",
+      "categoria": "Formación"
+    },
+    {
+      "id": "b215",
+      "estado": "En Progreso",
+      "personaAsignada": "Diego",
+      "description": "Comprobar si el formulario se resetea al enviar",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "8d3b",
+      "estado": "En Progreso",
+      "personaAsignada": "Diego",
+      "description": "Comprobar si se resetea y se marca como untouched",
+      "dificultad": "Media",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "6e7a",
+      "estado": "En Progreso",
+      "personaAsignada": "Maria",
+      "description": "Parece que siguen marcados como no válidos",
+      "dificultad": "Media",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "4abc",
+      "estado": "En Progreso",
+      "personaAsignada": "Diego",
+      "description": "Funciona ahora?",
+      "dificultad": "Fácil",
+      "categoria": "Codear"
+    },
+    {
+      "id": "d330",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "funcionja ahora¿???",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "e139",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "funcionja ahora¿???",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     }
