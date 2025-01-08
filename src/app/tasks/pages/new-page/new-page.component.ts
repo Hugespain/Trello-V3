@@ -36,11 +36,9 @@ export class NewPageComponent {
       },
       error: error => {
         console.error('Error al crear la tarea:', error);
-        // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
       },
       complete: () => {
         console.log('Operación completada');
-        // Aquí puedes agregar lógica adicional que se ejecutará cuando la operación se complete
       }
     });
 
@@ -67,7 +65,7 @@ export class NewPageComponent {
 
   private openSuccessDialog(message: string): void {
     this.dialog.open(SuccessDialogComponent, {
-      width: '250px',
+      width: '400px',
       data: { message }
     });
   }

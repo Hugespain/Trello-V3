@@ -10,23 +10,15 @@
     },
     {
       "id": "b215",
-      "estado": "En Progreso",
+      "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Comprobar si el formulario se resetea al enviar",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     },
     {
-      "id": "8d3b",
-      "estado": "Pendiente",
-      "personaAsignada": "Diego",
-      "description": "Comprobar si se resetea y se marca como untouched",
-      "dificultad": "Media",
-      "categoria": "Analizar"
-    },
-    {
       "id": "6e7a",
-      "estado": "En Progreso",
+      "estado": "Terminada",
       "personaAsignada": "Maria",
       "description": "Parece que siguen marcados como no válidos",
       "dificultad": "Media",
@@ -34,7 +26,7 @@
     },
     {
       "id": "4abc",
-      "estado": "En Progreso",
+      "estado": "Terminada",
       "personaAsignada": "Diego",
       "description": "Funciona ahora?",
       "dificultad": "Fácil",
@@ -73,10 +65,34 @@
       "categoria": "Analizar"
     },
     {
-      "id": "53b0",
+      "id": "9723",
+      "estado": "Terminada",
+      "personaAsignada": "Diego",
+      "description": "Parece que lo básico funciona",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "0ffa",
       "estado": "Pendiente",
-      "personaAsignada": "efefef",
-      "description": "sffefef",
+      "personaAsignada": "Diego",
+      "description": "Probando aumento ventana de dialogo",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "fe2f",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "Comprobar si los botones del dialogo se han movido a la derecha",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "7337",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "dsffefef",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     }

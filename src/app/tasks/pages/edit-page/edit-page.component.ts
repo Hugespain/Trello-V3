@@ -49,7 +49,7 @@ export class EditPageComponent implements OnInit {
     }
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      width: '250px',
+      width: '400px',
       data: { message: '¿Estás seguro de que deseas editar esta tarea?' }
     });
 
@@ -63,14 +63,14 @@ export class EditPageComponent implements OnInit {
           },
           error: error => {
             console.error('Error al actualizar la tarea:', error);
-            // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
           },
           complete: () => {
             console.log('Operación completada');
-            // Aquí puedes agregar lógica adicional que se ejecutará cuando la operación se complete
           }
         });
 
+        this.resetForm();
+      } else {
         this.resetForm();
       }
     });
@@ -82,7 +82,7 @@ export class EditPageComponent implements OnInit {
     }
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      width: '250px',
+      width: '400px',
       data: { message: '¿Estás seguro de que deseas eliminar esta tarea?' }
     });
 
@@ -96,14 +96,14 @@ export class EditPageComponent implements OnInit {
           },
           error: error => {
             console.error('Error al eliminar la tarea:', error);
-            // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
           },
           complete: () => {
             console.log('Operación completada');
-            // Aquí puedes agregar lógica adicional que se ejecutará cuando la operación se complete
           }
         });
 
+        this.resetForm();
+      } else {
         this.resetForm();
       }
     });
