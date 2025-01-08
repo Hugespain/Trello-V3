@@ -10,7 +10,7 @@
     },
     {
       "id": "b215",
-      "estado": "Pendiente",
+      "estado": "En Progreso",
       "personaAsignada": "Diego",
       "description": "Comprobar si el formulario se resetea al enviar",
       "dificultad": "Fácil",
@@ -34,7 +34,7 @@
     },
     {
       "id": "d330",
-      "estado": "Pendiente",
+      "estado": "En Progreso",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿???",
       "dificultad": "Fácil",
