@@ -18,7 +18,7 @@ export class NewPageComponent {
   public taskForm: FormGroup = this.fb.group({
     estado: ['', Validators.required],
     personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
-    description: ['', [Validators.required, Validators.maxLength(100)]],
+    description: ['', [Validators.maxLength(100)]],
     dificultad: ['', Validators.required],
     categoria: ['', Validators.required]
   });

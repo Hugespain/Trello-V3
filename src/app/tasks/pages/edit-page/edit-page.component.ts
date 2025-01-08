@@ -21,7 +21,7 @@ export class EditPageComponent implements OnInit {
     id: ['', Validators.required],
     estado: ['', Validators.required],
     personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
-    description: ['', [Validators.required, Validators.maxLength(100)]],
+    description: ['', [Validators.maxLength(100)]],
     dificultad: ['', Validators.required],
     categoria: ['', Validators.required]
   });
