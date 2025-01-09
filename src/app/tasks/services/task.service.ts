@@ -36,12 +36,18 @@
 import { Injectable } from '@angular/core';
 import { environments } from '../../../environments/environments';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Task } from '../interfaces/task.interface';
 
 @Injectable({ providedIn: 'root' })
 export class TasksService {
   private baseUrl: string = environments.baseUrl;
+  private taskUpdatedSubject = new BehaviorSubject<Task | null>(null);
+  private taskDeletedSubject = new BehaviorSubject<number | null>(null);
+
+  taskUpdated$ = this.taskUpdatedSubject.asObservable();
+  taskDeleted$ = this.taskDeletedSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -62,16 +68,20 @@ export class TasksService {
 
   // Actualizar una tarea existente
   updateTask(task: Task): Observable<Task> {
-    return this.http.patch<Task>(`${this.baseUrl}/tasks/${task.id}`, task);
+    return this.http.patch<Task>(`${this.baseUrl}/tasks/${task.id}`, task).pipe(
+      tap(updatedTask => this.taskUpdatedSubject.next(updatedTask))
+    );
   }
 
   // Eliminar una tarea
   deleteTask(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/tasks/${id}`);
+    return this.http.delete<void>(`${this.baseUrl}/tasks/${id}`).pipe(
+      tap(() => this.taskDeletedSubject.next(id))
+    );
   }
 
-   // Obtener todos los IDs disponibles
-   getAvailableIds(): Observable<number[]> {
+  // Obtener todos los IDs disponibles
+  getAvailableIds(): Observable<number[]> {
     return this.http.get<Task[]>(`${this.baseUrl}/tasks`).pipe(
       map(tasks => tasks.map(task => task.id))
     );

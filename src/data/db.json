@@ -26,7 +26,7 @@
     },
     {
       "id": "d330",
-      "estado": "En Progreso",
+      "estado": "Terminada",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿?",
       "dificultad": "Fácil",
@@ -58,7 +58,7 @@
     },
     {
       "id": "0ffa",
-      "estado": "Pendiente",
+      "estado": "Terminada",
       "personaAsignada": "Diego",
       "description": "Probando aumento ventana de dialogo",
       "dificultad": "Fácil",

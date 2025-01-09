@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TasksService } from '../../../services/task.service';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Task } from '../../../interfaces/task.interface';
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
@@ -13,21 +13,24 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 })
 export class EditDialogComponent implements OnInit {
 
+  public taskForm: FormGroup;
+
   constructor(
     private fb: FormBuilder,
     private taskService: TasksService,
     public dialog: MatDialog,
+    public dialogRef: MatDialogRef<EditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Task
-  ) {}
-
-  public taskForm: FormGroup = this.fb.group({
-    id: ['', Validators.required],
-    estado: ['', Validators.required],
-    personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
-    description: ['', [Validators.maxLength(100)]],
-    dificultad: ['', Validators.required],
-    categoria: ['', Validators.required]
-  });
+  ) {
+    this.taskForm = this.fb.group({
+      id: [{ value: '', disabled: true }, Validators.required],
+      estado: ['', Validators.required],
+      personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
+      description: ['', [Validators.maxLength(100)]],
+      dificultad: ['', Validators.required],
+      categoria: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
     this.taskForm.patchValue(this.data);
@@ -45,11 +48,12 @@ export class EditDialogComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        const task: Task = this.taskForm.value;
+        const task: Task = this.taskForm.getRawValue();
         this.taskService.updateTask(task).subscribe({
           next: response => {
             console.log('Tarea actualizada:', response);
             this.openSuccessDialog('Tarea editada correctamente con el ID: ' + response.id);
+            this.dialogRef.close(); // Cerrar el diálogo después de actualizar
           },
           error: error => {
             console.error('Error al actualizar la tarea:', error);
@@ -83,6 +87,7 @@ export class EditDialogComponent implements OnInit {
           next: () => {
             console.log('Tarea eliminada');
             this.openSuccessDialog('Tarea eliminada correctamente.');
+            this.dialogRef.close(); // Cerrar el diálogo después de eliminar
           },
           error: error => {
             console.error('Error al eliminar la tarea:', error);

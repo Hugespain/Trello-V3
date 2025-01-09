@@ -91,11 +91,53 @@ export class ListPageComponent implements OnInit {
   constructor(private taskService: TasksService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.loadTasks();
+
+    this.taskService.taskUpdated$.subscribe(updatedTask => {
+      if (updatedTask) {
+        this.updateTaskInList(updatedTask);
+      }
+    });
+
+    this.taskService.taskDeleted$.subscribe(deletedTaskId => {
+      if (deletedTaskId) {
+        this.removeTaskFromList(deletedTaskId);
+      }
+    });
+  }
+
+  loadTasks(): void {
     this.taskService.getTasks().subscribe(tasks => {
       this.tasksPendientes = tasks.filter(task => task.estado === Estado.Pendiente);
       this.tasksEnProgreso = tasks.filter(task => task.estado === Estado.Enprogreso);
       this.tasksTerminadas = tasks.filter(task => task.estado === Estado.Terminada);
     });
+  }
+
+  updateTaskInList(updatedTask: Task): void {
+    this.removeTaskFromList(updatedTask.id); // Elimina la tarea de su columna actual
+
+    // Añade la tarea a la columna correspondiente basada en su nuevo estado
+    if (updatedTask.estado === Estado.Pendiente) {
+      this.tasksPendientes.push(updatedTask);
+    } else if (updatedTask.estado === Estado.Enprogreso) {
+      this.tasksEnProgreso.push(updatedTask);
+    } else if (updatedTask.estado === Estado.Terminada) {
+      this.tasksTerminadas.push(updatedTask);
+    }
+  }
+
+  removeTaskFromList(deletedTaskId: number): void {
+    const removeTaskFromArray = (tasks: Task[]) => {
+      const index = tasks.findIndex(task => task.id === deletedTaskId);
+      if (index !== -1) {
+        tasks.splice(index, 1);
+      }
+    };
+
+    removeTaskFromArray(this.tasksPendientes);
+    removeTaskFromArray(this.tasksEnProgreso);
+    removeTaskFromArray(this.tasksTerminadas);
   }
 
   drop(event: CdkDragDrop<Task[]>, newEstado: Estado): void {
