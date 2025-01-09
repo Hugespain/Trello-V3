@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "8ff5",
-      "estado": "En Progreso",
+      "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Media",
@@ -26,7 +26,7 @@
     },
     {
       "id": "e139",
-      "estado": "Pendiente",
+      "estado": "En Progreso",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿???",
       "dificultad": "Media",

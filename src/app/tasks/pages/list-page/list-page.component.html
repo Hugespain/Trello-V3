@@ -159,6 +159,11 @@
     </mat-accordion>
   </div>
 </div> -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Lista de Tareas</mat-card-title>
+  </mat-card-header>
+  </mat-card>
 
 <div cdkDropListGroup class="task-columns">
   <div class="task-column" cdkDropList [cdkDropListData]="tasksPendientes" (cdkDropListDropped)="drop($event, Estado.Pendiente)" [cdkDropListConnectedTo]="['tasksEnProgreso', 'tasksTerminadas']">
@@ -230,7 +235,7 @@
         <p><strong>Descripción:</strong> {{ task.description }}</p>
         <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
         <div class="button-container">
-          <button mat-raised-button color="primary" (click)="Openpopup(task)">Editar</button>
+        <button mat-raised-button color="primary" (click)="Openpopup(task)">Editar</button>
         </div>
       </mat-expansion-panel>
     </mat-accordion>

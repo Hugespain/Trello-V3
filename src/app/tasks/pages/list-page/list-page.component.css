@@ -1,3 +1,8 @@
+
+mat-card {
+  margin-bottom: 20px;
+}
+
 .task-columns {
   display: flex;
   flex-wrap: wrap;
@@ -21,10 +26,7 @@ li, mat-expansion-panel {
   justify-content: flex-end; /* Mueve el botón a la derecha */
 }
 
-wrap{
-  background: linear-gradient(to right, #0079bf, #5067c5);
 
-}
 
 @media (max-width: 768px) {
   .task-column {
