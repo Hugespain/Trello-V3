@@ -4,7 +4,7 @@
       "id": "8ff5",
       "estado": "Terminada",
       "personaAsignada": "Diego",
-      "description": "¿Se guarda la descripción ahora? El campo se llamaba description no descripcion",
+      "description": "",
       "dificultad": "Media",
       "categoria": "Codear"
     },
@@ -25,18 +25,10 @@
       "categoria": "Analizar"
     },
     {
-      "id": "4abc",
-      "estado": "Terminada",
-      "personaAsignada": "Diego",
-      "description": "Funciona ahora?",
-      "dificultad": "Fácil",
-      "categoria": "Codear"
-    },
-    {
       "id": "d330",
       "estado": "En Progreso",
       "personaAsignada": "Diego",
-      "description": "funcionja ahora¿???",
+      "description": "funcionja ahora¿?",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     },
@@ -50,10 +42,10 @@
     },
     {
       "id": "ef6c",
-      "estado": "En Progreso",
+      "estado": "Pendiente",
       "personaAsignada": "Rintintin",
       "description": "¿Se muestra el dialogo de exito?",
-      "dificultad": "Media",
+      "dificultad": "Fácil",
       "categoria": "Analizar"
     },
     {
@@ -61,14 +53,6 @@
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "¿Se muestra el Id?",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "9723",
-      "estado": "Terminada",
-      "personaAsignada": "Diego",
-      "description": "Parece que lo básico funciona",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     },

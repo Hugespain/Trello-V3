@@ -72,6 +72,8 @@ import { Component, OnInit } from '@angular/core';
 import { Estado, Task } from '../../interfaces/task.interface';
 import { TasksService } from '../../services/task.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatDialog } from '@angular/material/dialog';
+import { EditDialogComponent } from '../../components/dialogs/edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-list-page',
@@ -86,7 +88,7 @@ export class ListPageComponent implements OnInit {
 
   public Estado = Estado;
 
-  constructor(private taskService: TasksService) {}
+  constructor(private taskService: TasksService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe(tasks => {
@@ -105,5 +107,14 @@ export class ListPageComponent implements OnInit {
       transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
       this.taskService.updateTask(task).subscribe();
     }
+  }
+
+  Openpopup(task: Task): void {
+    this.dialog.open(EditDialogComponent, {
+      width: '60%',
+      height: '700px',
+      enterAnimationDuration: '500ms',
+      data: task
+    });
   }
 }

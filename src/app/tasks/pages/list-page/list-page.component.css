@@ -16,6 +16,12 @@ li, mat-expansion-panel {
   margin-bottom: 15px;
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Mueve el botón a la derecha */
+}
+
+
 @media (max-width: 768px) {
   .task-column {
     max-width: 100%;

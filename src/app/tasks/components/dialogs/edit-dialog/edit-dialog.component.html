@@ -1,3 +1,4 @@
+
 <mat-card>
   <mat-card-header>
     <mat-card-title>Editar y Eliminar tareas</mat-card-title>
@@ -6,11 +7,10 @@
 
 <form [formGroup]="taskForm">
   <div class="centered-form">
+
     <mat-form-field class="large-field">
       <mat-label>ID</mat-label>
-      <mat-select formControlName="id" (selectionChange)="onIdSelection($event.value)">
-        <mat-option *ngFor="let id of availableIds" [value]="id">{{ id }}</mat-option>
-      </mat-select>
+      <input matInput formControlName="id" readonly>
     </mat-form-field>
 
     <mat-form-field class="large-field">
@@ -49,10 +49,10 @@
         <mat-option value="Formación">Formación</mat-option>
       </mat-select>
     </mat-form-field>
-
     <div class="button-container">
       <button mat-stroked-button color="primary" (click)="onUpdate()">Editar</button>
       <button mat-stroked-button color="warn" (click)="onDelete()">Borrar</button>
     </div>
+
   </div>
 </form>

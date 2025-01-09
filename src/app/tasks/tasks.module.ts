@@ -12,6 +12,7 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/confirm-dialog.component';
 import { SuccessDialogComponent } from './components/dialogs/success-dialog/success-dialog.component';
+import { EditDialogComponent } from './components/dialogs/edit-dialog/edit-dialog.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SuccessDialogComponent } from './components/dialogs/success-dialog/succ
     EditPageComponent,
     ListPageComponent,
     ConfirmDialogComponent,
-    SuccessDialogComponent
+    SuccessDialogComponent,
+    EditDialogComponent
   ],
   imports: [
     CommonModule,
