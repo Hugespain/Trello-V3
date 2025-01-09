@@ -2,31 +2,23 @@
   "tasks": [
     {
       "id": "8ff5",
-      "estado": "Terminada",
+      "estado": "En Progreso",
       "personaAsignada": "Diego",
-      "description": "",
+      "description": "Una descripcion",
       "dificultad": "Media",
       "categoria": "Codear"
     },
     {
-      "id": "b215",
-      "estado": "En Progreso",
-      "personaAsignada": "Diego",
-      "description": "Comprobar si el formulario se resetea al enviar",
+      "id": "6e7a",
+      "estado": "Pendiente",
+      "personaAsignada": "ok",
+      "description": "Parece que siguen marcados como no válidos",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     },
     {
-      "id": "6e7a",
-      "estado": "Terminada",
-      "personaAsignada": "Maria",
-      "description": "Parece que siguen marcados como no válidos",
-      "dificultad": "Media",
-      "categoria": "Analizar"
-    },
-    {
       "id": "d330",
-      "estado": "Terminada",
+      "estado": "En Progreso",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿?",
       "dificultad": "Fácil",
@@ -37,22 +29,14 @@
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿???",
-      "dificultad": "Fácil",
+      "dificultad": "Media",
       "categoria": "Analizar"
     },
     {
       "id": "ef6c",
-      "estado": "Pendiente",
-      "personaAsignada": "Rintintin",
+      "estado": "En Progreso",
+      "personaAsignada": "ok",
       "description": "¿Se muestra el dialogo de exito?",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "062d",
-      "estado": "Pendiente",
-      "personaAsignada": "Diego",
-      "description": "¿Se muestra el Id?",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     },
@@ -65,20 +49,28 @@
       "categoria": "Analizar"
     },
     {
-      "id": "fe2f",
-      "estado": "Pendiente",
-      "personaAsignada": "Diego",
-      "description": "Comprobar si los botones del dialogo se han movido a la derecha",
+      "id": "7337",
+      "estado": "Terminada",
+      "personaAsignada": "Miquel",
+      "description": "Parece que todo funciona",
       "dificultad": "Fácil",
       "categoria": "Analizar"
     },
     {
-      "id": "7337",
-      "estado": "Pendiente",
-      "personaAsignada": "Diego",
-      "description": "dsffefef",
-      "dificultad": "Fácil",
+      "id": "48f3",
+      "estado": "En Progreso",
+      "personaAsignada": "Maria",
+      "description": "Comprobar como funciona behaviour subject",
+      "dificultad": "Difícil",
       "categoria": "Analizar"
+    },
+    {
+      "id": "4f90",
+      "estado": "En Progreso",
+      "personaAsignada": "Javier",
+      "description": "Solucionar x tarea",
+      "dificultad": "Media",
+      "categoria": "Codear"
     }
   ]
 }
