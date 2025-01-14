@@ -1,5 +1,6 @@
 export interface Task {
   id: number;
+  listId: string;
   estado: Estado;
   personaAsignada: string;
   description: string;

@@ -1,37 +1,3 @@
-// import { Injectable } from '@angular/core';
-// import { environments } from '../../../environments/environments';
-// import { HttpClient } from '@angular/common/http';
-// import { Observable } from 'rxjs';
-// import { Task } from '../interfaces/task.interface';
-
-// @Injectable({providedIn: 'root'})
-// export class TasksService {
-//   private baseUrl: string = environments.baseUrl;
-
-//   constructor(private http: HttpClient) {}
-
-//   getTasks(): Observable<Task[]> {
-//   return this.http.get<Task[]>(`${this.baseUrl}/tasks`);
-//   }
-// }
-
-
-// import { Injectable } from '@angular/core';
-// import { environments } from '../../../environments/environments';
-// import { HttpClient } from '@angular/common/http';
-// import { Observable } from 'rxjs';
-// import { Task } from '../interfaces/task.interface';
-
-// @Injectable({providedIn: 'root'})
-// export class TasksService {
-//   private baseUrl: string = environments.baseUrl;
-
-//   constructor(private http: HttpClient) {}
-
-//   getTasks(): Observable<Task[]> {
-//   return this.http.get<Task[]>(`${this.baseUrl}/tasks`);
-//   }
-// }
 
 import { Injectable } from '@angular/core';
 import { environments } from '../../../environments/environments';
@@ -39,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Task } from '../interfaces/task.interface';
+import { TaskList } from '../interfaces/TaskList.interface';
 
 @Injectable({ providedIn: 'root' })
 export class TasksService {
@@ -63,6 +30,10 @@ export class TasksService {
 
   // Crear una nueva tarea
   createTask(task: Task): Observable<Task> {
+    // Asigna 1 como listId por defecto si no se proporciona uno
+    if (!task.listId) {
+      task.listId = '1';
+    }
     return this.http.post<Task>(`${this.baseUrl}/tasks`, task);
   }
 
@@ -86,4 +57,23 @@ export class TasksService {
       map(tasks => tasks.map(task => task.id))
     );
   }
+
+  //LISTA DE TAREAS
+  //Servicio para crear Listas de tareas
+  getTaskLists(): Observable<TaskList[]> {
+    return this.http.get<TaskList[]>(`${this.baseUrl}/taskLists`);
+  }
+
+  createTaskList(taskList: TaskList): Observable<TaskList> {
+    return this.http.post<TaskList>(`${this.baseUrl}/taskLists`, taskList);
+  }
+
+  updateTaskList(taskList: TaskList): Observable<TaskList> {
+    return this.http.put<TaskList>(`${this.baseUrl}/taskLists/${taskList.listId}`, taskList);
+  }
+
+  deleteTaskList(listId: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/taskLists/${listId}`);
+  }
+
 }

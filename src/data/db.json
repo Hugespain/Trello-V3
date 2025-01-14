@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "8ff5",
-      "estado": "Pendiente",
+      "listId": "1",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Media",
@@ -10,7 +10,7 @@
     },
     {
       "id": "6e7a",
-      "estado": "Pendiente",
+      "listId": "2",
       "personaAsignada": "ok",
       "description": "Parece que siguen marcados como no válidos",
       "dificultad": "Fácil",
@@ -18,7 +18,7 @@
     },
     {
       "id": "d330",
-      "estado": "En Progreso",
+      "listId": "2",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿?",
       "dificultad": "Fácil",
@@ -26,7 +26,7 @@
     },
     {
       "id": "e139",
-      "estado": "En Progreso",
+      "listId": "1",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿???",
       "dificultad": "Media",
@@ -34,7 +34,7 @@
     },
     {
       "id": "ef6c",
-      "estado": "En Progreso",
+      "listId": "1",
       "personaAsignada": "ok",
       "description": "¿Se muestra el dialogo de exito?",
       "dificultad": "Fácil",
@@ -42,7 +42,7 @@
     },
     {
       "id": "0ffa",
-      "estado": "Terminada",
+      "listId": "1",
       "personaAsignada": "Diego",
       "description": "Probando aumento ventana de dialogo",
       "dificultad": "Fácil",
@@ -50,7 +50,7 @@
     },
     {
       "id": "7337",
-      "estado": "Terminada",
+      "listId": "4",
       "personaAsignada": "Miquel",
       "description": "Parece que todo funciona",
       "dificultad": "Fácil",
@@ -58,7 +58,7 @@
     },
     {
       "id": "48f3",
-      "estado": "En Progreso",
+      "listId": "3",
       "personaAsignada": "Maria",
       "description": "Comprobar como funciona behaviour subject",
       "dificultad": "Difícil",
@@ -66,11 +66,52 @@
     },
     {
       "id": "4f90",
-      "estado": "En Progreso",
+      "listId": "2",
       "personaAsignada": "Javier",
       "description": "Solucionar x tarea",
       "dificultad": "Media",
       "categoria": "Codear"
+    },
+    {
+      "id": "04b8",
+      "listId": "1",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "Seguramente ya no funcione",
+      "dificultad": "Fácil",
+      "categoria": "Analizar"
+    },
+    {
+      "id": "2e90",
+      "estado": "Terminada",
+      "personaAsignada": "Diego",
+      "description": "Ahora he asignado el estado en Progreso pero debería estar en la columna Pendientes",
+      "dificultad": "Fácil",
+      "categoria": "Analizar",
+      "listId": "asdctqjy7"
+    }
+  ],
+  "taskLists": [
+    {
+      "listId": "1",
+      "name": "Pendientes",
+      "tasks": []
+    },
+    {
+      "listId": "2",
+      "name": "En Progreso",
+      "tasks": []
+    },
+    {
+      "listId": "3",
+      "name": "Terminadas",
+      "tasks": []
+    },
+    {
+      "id": "5b39",
+      "listId": "kvo4e82st",
+      "name": "Nueva Lista",
+      "tasks": []
     }
   ]
 }
