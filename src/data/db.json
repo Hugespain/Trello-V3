@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "8ff5",
-      "listId": "1",
+      "listId": "2",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Media",
@@ -10,7 +10,7 @@
     },
     {
       "id": "6e7a",
-      "listId": "2",
+      "listId": "1",
       "personaAsignada": "ok",
       "description": "Parece que siguen marcados como no válidos",
       "dificultad": "Fácil",
@@ -26,7 +26,7 @@
     },
     {
       "id": "e139",
-      "listId": "1",
+      "listId": "kvo4e82st",
       "personaAsignada": "Diego",
       "description": "funcionja ahora¿???",
       "dificultad": "Media",
@@ -42,7 +42,7 @@
     },
     {
       "id": "0ffa",
-      "listId": "1",
+      "listId": "3",
       "personaAsignada": "Diego",
       "description": "Probando aumento ventana de dialogo",
       "dificultad": "Fácil",
@@ -66,15 +66,16 @@
     },
     {
       "id": "4f90",
-      "listId": "2",
-      "personaAsignada": "Javier",
+      "listId": "3",
+      "personaAsignada": "Javierr",
       "description": "Solucionar x tarea",
-      "dificultad": "Media",
-      "categoria": "Codear"
+      "dificultad": "Fácil",
+      "categoria": "Codear",
+      "estado": "En Progreso"
     },
     {
       "id": "04b8",
-      "listId": "1",
+      "listId": "3",
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Seguramente ya no funcione",
@@ -95,17 +96,20 @@
     {
       "listId": "1",
       "name": "Pendientes",
-      "tasks": []
+      "tasks": [],
+      "id": "6563"
     },
     {
       "listId": "2",
       "name": "En Progreso",
-      "tasks": []
+      "tasks": [],
+      "id": "c418"
     },
     {
       "listId": "3",
       "name": "Terminadas",
-      "tasks": []
+      "tasks": [],
+      "id": "630c"
     },
     {
       "id": "5b39",

@@ -6,28 +6,40 @@
 
 <div cdkDropListGroup class="task-columns">
   <div *ngFor="let list of taskLists" class="task-column" cdkDropList [cdkDropListData]="list.tasks" (cdkDropListDropped)="drop($event, list.listId)" [cdkDropListConnectedTo]="connectedTo">
-    <h2>{{ list.name }}</h2>
-    <mat-accordion>
-      <mat-expansion-panel *ngFor="let task of list.tasks" cdkDrag>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{ task.id }}
-          </mat-panel-title>
-          <mat-panel-description>
-            {{ task.description }}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p><strong>ID:</strong> {{ task.id }}</p>
-        <p><strong>Lista:</strong> {{ list.name }}</p>
-        <p><strong>Persona Asignada:</strong> {{ task.personaAsignada }}</p>
-        <p><strong>Categoría:</strong> {{ task.categoria }}</p>
-        <p><strong>Descripción:</strong> {{ task.description }}</p>
-        <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
-        <div class="button-container">
-          <button mat-raised-button color="primary" (click)="Openpopup(task)">Editar</button>
-        </div>
-      </mat-expansion-panel>
-    </mat-accordion>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ list.name }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let task of list.tasks" cdkDrag>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ task.id }}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{ task.description }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-card-content>
+              <p><strong>ID:</strong> {{ task.id }}</p>
+              <p><strong>Lista:</strong> {{ list.name }}</p>
+              <p><strong>Persona Asignada:</strong> {{ task.personaAsignada }}</p>
+              <p><strong>Categoría:</strong> {{ task.categoria }}</p>
+              <p><strong>Descripción:</strong> {{ task.description }}</p>
+              <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" (click)="Openpopup(task)">Detalle</button>
+            </mat-card-actions>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <button mat-stroked-button color="primary">
+          <mat-icon>add</mat-icon> Añadir épica
+        </button>
+      </mat-card-content>
+    </mat-card>
   </div>
   <div class="task-column">
     <button mat-stroked-button color="primary" (click)="addTaskList()">
