@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "8ff5",
-      "listId": "kvo4e82st",
+      "listId": "2",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Difícil",
@@ -11,19 +11,24 @@
         {
           "id": 2,
           "description": "Subtarea 2",
-          "completed": false
+          "completed": true
         },
         {
           "id": null,
           "description": "Tarea añadida",
-          "completed": false
+          "completed": true
+        },
+        {
+          "id": null,
+          "description": "Subtarea 3 ¿sin id?",
+          "completed": true
         }
       ],
       "estado": "Pendiente"
     },
     {
       "id": "6e7a",
-      "listId": "1",
+      "listId": "2",
       "personaAsignada": "ok",
       "description": "Parece que siguen marcados como no válidos",
       "dificultad": "Difícil",
@@ -57,7 +62,35 @@
       "subtasks": [
         {
           "id": null,
-          "description": "Una subtarea de una tarea que no tenia subtareas",
+          "description": "Una subtarea en una tarea que no tenía subtareas",
+          "completed": false
+        },
+        {
+          "description": "Tiene id ahora?",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "5f9d",
+      "estado": "Pendiente",
+      "personaAsignada": "Diego",
+      "description": "Se guarda?",
+      "dificultad": "Media",
+      "categoria": "Analizar",
+      "listId": "3"
+    },
+    {
+      "id": "7c01",
+      "estado": "Terminada",
+      "personaAsignada": "Diego",
+      "description": "Se duplica?",
+      "dificultad": "Media",
+      "categoria": "Formación",
+      "listId": "2",
+      "subtasks": [
+        {
+          "description": "Tarea añadida",
           "completed": false
         }
       ]

@@ -29,7 +29,7 @@ export class EditDialogComponent implements OnInit {
       description: ['', [Validators.maxLength(100)]],
       dificultad: ['', Validators.required],
       categoria: ['', Validators.required],
-      subtasks: this.fb.array([]) // Añadido para manejar subtareas
+      subtasks: this.fb.array([])
     });
   }
 
@@ -53,7 +53,6 @@ export class EditDialogComponent implements OnInit {
   // Método para añadir una nueva subtarea
   addSubtask(): void {
     this.subtasks.push(this.fb.group({
-      id: [null],
       description: ['', Validators.required],
       completed: [false]
     }));

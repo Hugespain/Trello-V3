@@ -1,8 +1,7 @@
-
 import { Injectable } from '@angular/core';
 import { environments } from '../../../environments/environments';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, BehaviorSubject } from 'rxjs';
+import { map, Observable, BehaviorSubject, Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Task } from '../interfaces/task.interface';
 import { TaskList } from '../interfaces/TaskList.interface';
@@ -12,9 +11,11 @@ export class TasksService {
   private baseUrl: string = environments.baseUrl;
   private taskUpdatedSubject = new BehaviorSubject<Task | null>(null);
   private taskDeletedSubject = new BehaviorSubject<number | null>(null);
+  private taskCreatedSubject = new Subject<Task>();
 
   taskUpdated$ = this.taskUpdatedSubject.asObservable();
   taskDeleted$ = this.taskDeletedSubject.asObservable();
+  taskCreated$ = this.taskCreatedSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -34,7 +35,9 @@ export class TasksService {
     if (!task.listId) {
       task.listId = '1';
     }
-    return this.http.post<Task>(`${this.baseUrl}/tasks`, task);
+    return this.http.post<Task>(`${this.baseUrl}/tasks`, task).pipe(
+      tap(newTask => this.taskCreatedSubject.next(newTask)) // Emitir evento cuando se crea una nueva tarea
+    );
   }
 
   // Actualizar una tarea existente
@@ -70,7 +73,6 @@ export class TasksService {
     );
   }
 
-
   createTaskList(taskList: TaskList): Observable<TaskList> {
     return this.http.post<TaskList>(`${this.baseUrl}/taskLists`, taskList);
   }
@@ -82,5 +84,4 @@ export class TasksService {
   deleteTaskList(listId: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/taskLists/${listId}`);
   }
-
 }
