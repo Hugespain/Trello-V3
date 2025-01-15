@@ -1,3 +1,6 @@
+
+import { Subtask } from "./subTask.interface";
+
 export interface Task {
   id: number;
   listId: string;
@@ -6,6 +9,7 @@ export interface Task {
   description: string;
   dificultad: Dificultad;
   categoria: Categoria;
+  subtasks?: Subtask[];
 }
 
 export enum Estado {
@@ -25,3 +29,5 @@ export enum Categoria {
   Codear = "Codear",
   Formacion = "Formación",
 }
+
+export { Subtask };

@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { TasksService } from '../../../services/task.service';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Task } from '../../../interfaces/task.interface';
+import { Task, Subtask } from '../../../interfaces/task.interface';
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
@@ -28,12 +28,40 @@ export class EditDialogComponent implements OnInit {
       personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
       description: ['', [Validators.maxLength(100)]],
       dificultad: ['', Validators.required],
-      categoria: ['', Validators.required]
+      categoria: ['', Validators.required],
+      subtasks: this.fb.array([]) // Añadido para manejar subtareas
     });
   }
 
   ngOnInit(): void {
     this.taskForm.patchValue(this.data);
+    this.setSubtasks(this.data.subtasks || []);
+  }
+
+  // Método para inicializar las subtareas en el formulario
+  setSubtasks(subtasks: Subtask[]): void {
+    const subtaskFGs = subtasks.map(subtask => this.fb.group(subtask));
+    const subtaskFormArray = this.fb.array(subtaskFGs);
+    this.taskForm.setControl('subtasks', subtaskFormArray);
+  }
+
+  // Método para obtener el FormArray de subtareas
+  get subtasks(): FormArray {
+    return this.taskForm.get('subtasks') as FormArray;
+  }
+
+  // Método para añadir una nueva subtarea
+  addSubtask(): void {
+    this.subtasks.push(this.fb.group({
+      id: [null],
+      description: ['', Validators.required],
+      completed: [false]
+    }));
+  }
+
+  // Método para eliminar una subtarea
+  removeSubtask(index: number): void {
+    this.subtasks.removeAt(index);
   }
 
   onUpdate(): void {

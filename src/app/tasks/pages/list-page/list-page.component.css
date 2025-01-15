@@ -42,3 +42,25 @@ button.mat-raised-button {
     max-width: 100%;
   }
 }
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-card-title {
+  flex-grow: 1;
+}
+
+mat-icon.rotate {
+  transform: rotate(90deg);
+}
+
+.custom-dialog-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto; /* Permitir desplazamiento vertical */
+  overflow-x: inherit;
+}

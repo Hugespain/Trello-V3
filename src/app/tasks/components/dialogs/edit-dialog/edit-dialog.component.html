@@ -1,4 +1,3 @@
-
 <mat-card>
   <mat-card-header>
     <mat-card-title>Editar y Eliminar tareas</mat-card-title>
@@ -49,6 +48,22 @@
         <mat-option value="Formación">Formación</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <h3>Subtareas</h3>
+    <mat-list formArrayName="subtasks">
+      <mat-list-item *ngFor="let subtask of subtasks.controls; let i = index" [formGroupName]="i">
+        <mat-form-field>
+          <mat-label>Descripción</mat-label>
+          <input matInput formControlName="description">
+        </mat-form-field>
+        <mat-checkbox formControlName="completed">Completada</mat-checkbox>
+        <button mat-icon-button color="warn" (click)="removeSubtask(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+    <button mat-stroked-button color="primary" (click)="addSubtask()">Añadir Subtarea</button>
+
     <div class="button-container">
       <button mat-flat-button color="primary" (click)="onUpdate()">Editar</button>
       <button mat-flat-button color="warn" (click)="onDelete()">Borrar</button>

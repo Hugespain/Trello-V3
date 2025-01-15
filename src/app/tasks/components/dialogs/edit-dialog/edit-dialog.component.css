@@ -3,16 +3,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  overflow-y: auto; /* Permitir desplazamiento vertical */
 }
 
 .large-field {
-  width: 80%;
+  width: 90%;
+  margin-bottom: 15px;
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
-  width: 80%;
-  margin-top: 0px;
+  width: 90%;
+  margin-top: 20px;
 }

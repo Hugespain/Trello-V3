@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 import { TasksRoutingModule } from './tasks-routing.module';
@@ -13,6 +14,7 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/confirm-dialog.component';
 import { SuccessDialogComponent } from './components/dialogs/success-dialog/success-dialog.component';
 import { EditDialogComponent } from './components/dialogs/edit-dialog/edit-dialog.component';
+import { NewtaskDialogComponent } from './components/dialogs/newtask-dialog/newtask-dialog.component';
 
 
 @NgModule({
@@ -23,14 +25,16 @@ import { EditDialogComponent } from './components/dialogs/edit-dialog/edit-dialo
     ListPageComponent,
     ConfirmDialogComponent,
     SuccessDialogComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    NewtaskDialogComponent
   ],
   imports: [
     CommonModule,
     TasksRoutingModule,
     MaterialModule,
     DragDropModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
 
   ]

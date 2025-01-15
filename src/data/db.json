@@ -2,94 +2,65 @@
   "tasks": [
     {
       "id": "8ff5",
-      "listId": "2",
+      "listId": "kvo4e82st",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
-      "dificultad": "Media",
-      "categoria": "Codear"
+      "dificultad": "Difícil",
+      "categoria": "Codear",
+      "subtasks": [
+        {
+          "id": 2,
+          "description": "Subtarea 2",
+          "completed": false
+        },
+        {
+          "id": null,
+          "description": "Tarea añadida",
+          "completed": false
+        }
+      ],
+      "estado": "Pendiente"
     },
     {
       "id": "6e7a",
       "listId": "1",
       "personaAsignada": "ok",
       "description": "Parece que siguen marcados como no válidos",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "d330",
-      "listId": "2",
-      "personaAsignada": "Diego",
-      "description": "funcionja ahora¿?",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "e139",
-      "listId": "kvo4e82st",
-      "personaAsignada": "Diego",
-      "description": "funcionja ahora¿???",
-      "dificultad": "Media",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "ef6c",
-      "listId": "1",
-      "personaAsignada": "ok",
-      "description": "¿Se muestra el dialogo de exito?",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "0ffa",
-      "listId": "3",
-      "personaAsignada": "Diego",
-      "description": "Probando aumento ventana de dialogo",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "7337",
-      "listId": "4",
-      "personaAsignada": "Miquel",
-      "description": "Parece que todo funciona",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "48f3",
-      "listId": "3",
-      "personaAsignada": "Maria",
-      "description": "Comprobar como funciona behaviour subject",
       "dificultad": "Difícil",
-      "categoria": "Analizar"
+      "categoria": "Analizar",
+      "subtasks": [
+        {
+          "id": 1,
+          "description": "Subtarea 1",
+          "completed": false
+        }
+      ],
+      "estado": "Pendiente"
     },
     {
-      "id": "4f90",
-      "listId": "3",
-      "personaAsignada": "Javierr",
-      "description": "Solucionar x tarea",
+      "id": "56da",
+      "estado": "En Progreso",
+      "personaAsignada": "sfefsf",
+      "description": "sdfsfsf",
       "dificultad": "Fácil",
       "categoria": "Codear",
-      "estado": "En Progreso"
+      "listId": "1"
     },
     {
-      "id": "04b8",
-      "listId": "3",
+      "id": "01c0",
       "estado": "Pendiente",
-      "personaAsignada": "Diego",
-      "description": "Seguramente ya no funcione",
-      "dificultad": "Fácil",
-      "categoria": "Analizar"
-    },
-    {
-      "id": "2e90",
-      "estado": "Terminada",
-      "personaAsignada": "Diego",
-      "description": "Ahora he asignado el estado en Progreso pero debería estar en la columna Pendientes",
+      "personaAsignada": "efefef",
+      "description": "efefef",
       "dificultad": "Fácil",
       "categoria": "Analizar",
-      "listId": "asdctqjy7"
+      "listId": "kvo4e82st",
+      "subtasks": [
+        {
+          "id": null,
+          "description": "Una subtarea de una tarea que no tenia subtareas",
+          "completed": false
+        }
+      ]
     }
   ],
   "taskLists": [

@@ -64,6 +64,13 @@ export class TasksService {
     return this.http.get<TaskList[]>(`${this.baseUrl}/taskLists`);
   }
 
+  getAvailableListIds(): Observable<string[]> {
+    return this.http.get<TaskList[]>(`${this.baseUrl}/taskLists`).pipe(
+      map(taskLists => taskLists.map(taskList => taskList.listId))
+    );
+  }
+
+
   createTaskList(taskList: TaskList): Observable<TaskList> {
     return this.http.post<TaskList>(`${this.baseUrl}/taskLists`, taskList);
   }
