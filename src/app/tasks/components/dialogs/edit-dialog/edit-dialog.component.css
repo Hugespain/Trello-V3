@@ -14,6 +14,21 @@
   margin-bottom: 15px;
 }
 
+.subtask-list {
+  width: 90%; /* Ajusta este valor para hacer que el mat-list ocupe más espacio */
+}
+
+.subtask-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.subtask-field {
+  flex-grow: 1; /* Permitir que el campo crezca para ocupar el espacio disponible */
+  margin-right: 10px;
+}
+
 .button-container {
   display: flex;
   justify-content: space-between;
