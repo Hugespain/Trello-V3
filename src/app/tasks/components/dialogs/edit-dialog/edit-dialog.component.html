@@ -68,7 +68,7 @@
 
     <div class="button-container">
       <button mat-flat-button color="primary" (click)="onUpdate()">Editar</button>
-      <button mat-flat-button color="warn" (click)="onDelete()">Borrar</button>
+      <button mat-flat-button color="warn" (click)="onDelete()" [disabled]="!canDeleteTask()">Borrar</button>
     </div>
 
   </div>

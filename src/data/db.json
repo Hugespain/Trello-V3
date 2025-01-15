@@ -21,14 +21,14 @@
         {
           "id": null,
           "description": "Subtarea 3 ¿sin id?",
-          "completed": true
+          "completed": false
         }
       ],
       "estado": "Pendiente"
     },
     {
       "id": "6e7a",
-      "listId": "2",
+      "listId": "3",
       "personaAsignada": "ok",
       "description": "Parece que siguen marcados como no válidos",
       "dificultad": "Difícil",
@@ -52,37 +52,19 @@
       "listId": "1"
     },
     {
-      "id": "01c0",
-      "estado": "Pendiente",
-      "personaAsignada": "efefef",
-      "description": "efefef",
-      "dificultad": "Fácil",
-      "categoria": "Analizar",
-      "listId": "kvo4e82st",
-      "subtasks": [
-        {
-          "id": null,
-          "description": "Una subtarea en una tarea que no tenía subtareas",
-          "completed": false
-        },
-        {
-          "description": "Tiene id ahora?",
-          "completed": false
-        },
-        {
-          "description": "efefefsef",
-          "completed": false
-        }
-      ]
-    },
-    {
       "id": "5f9d",
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Se guarda?",
       "dificultad": "Media",
       "categoria": "Analizar",
-      "listId": "3"
+      "listId": "3",
+      "subtasks": [
+        {
+          "description": "Esta subtarea la he creado yo ",
+          "completed": false
+        }
+      ]
     },
     {
       "id": "7c01",

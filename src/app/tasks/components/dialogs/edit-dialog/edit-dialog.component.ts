@@ -61,6 +61,13 @@ export class EditDialogComponent implements OnInit {
   // Método para eliminar una subtarea
   removeSubtask(index: number): void {
     this.subtasks.removeAt(index);
+    this.taskForm.updateValueAndValidity(); // Actualizar el estado del formulario
+  }
+
+  // Método para verificar si se puede habilitar el botón de borrar
+  canDeleteTask(): boolean {
+    const subtasks = this.subtasks.value;
+    return subtasks.length === 0 || subtasks.every((subtask: Subtask) => subtask.completed);
   }
 
   onUpdate(): void {
