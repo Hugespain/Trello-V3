@@ -1,0 +1,17 @@
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.large-field {
+  width: 80%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+}

@@ -7,7 +7,7 @@ export interface Task {
   personaAsignada: string;
   description: string;
   dificultad: Dificultad;
-  categoria: string; // Cambiado a string para permitir categorías dinámicas
+  categoria?: string[]; // Cambiado a string para permitir categorías dinámicas
   subtasks?: Subtask[];
 }
 
