@@ -67,10 +67,30 @@ export class CategoriasPageComponent implements OnInit {
     if (this.taskForm.valid) {
       const nuevaCategoria = this.taskForm.value.crearCategoria;
       if (nuevaCategoria && !this.categorias.includes(nuevaCategoria)) {
-        this.categorias.push(nuevaCategoria);
+        this.taskService.getTasks().subscribe((tasks: Task[]) => {
+          tasks.forEach(task => {
+            if (Array.isArray(task.categoria)) {
+              task.categoria.push(nuevaCategoria);
+            } else if (task.categoria) {
+              task.categoria = [task.categoria, nuevaCategoria];
+            } else {
+              task.categoria = [nuevaCategoria];
+            }
+
+            // Actualizar la tarea en el servidor
+            this.taskService.updateTask(task).subscribe();
+          });
+
+          // Actualizar la lista de categorías en el formulario
+          this.categorias.push(nuevaCategoria);
+
+          // Mostrar el diálogo de éxito
+          this.openSuccessDialog('Categoría guardada con éxito');
+          this.resetForm();
+        });
+      } else {
+        this.openSuccessDialog('La categoría ya existe o no es válida');
       }
-      this.openSuccessDialog('Categoría guardada con éxito');
-      this.resetForm();
     }
   }
 

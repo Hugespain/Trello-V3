@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "8ff5",
-      "listId": "3",
+      "listId": "2",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Difícil",
@@ -50,7 +50,7 @@
       "categoria": [
         "Analizar"
       ],
-      "listId": "2",
+      "listId": "3",
       "subtasks": [
         {
           "description": "Esta subtarea la he creado yo ",
