@@ -27,22 +27,6 @@
       "estado": "Pendiente"
     },
     {
-      "id": "6e7a",
-      "listId": "3",
-      "personaAsignada": "ok",
-      "description": "Parece que siguen marcados como no válidos",
-      "dificultad": "Difícil",
-      "categoria": "Analizar",
-      "subtasks": [
-        {
-          "id": 1,
-          "description": "Subtarea 1",
-          "completed": false
-        }
-      ],
-      "estado": "Pendiente"
-    },
-    {
       "id": "56da",
       "estado": "En Progreso",
       "personaAsignada": "sfefsf",
@@ -62,6 +46,14 @@
       "subtasks": [
         {
           "description": "Esta subtarea la he creado yo ",
+          "completed": false
+        },
+        {
+          "description": "Subtarea2",
+          "completed": false
+        },
+        {
+          "description": "Subtarea3",
           "completed": false
         }
       ]

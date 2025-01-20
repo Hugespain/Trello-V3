@@ -84,4 +84,10 @@ export class TasksService {
   deleteTaskList(listId: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/taskLists/${listId}`);
   }
+
+  // Servicio para encontrar una lista de tareas por su id
+  getTaskListById(id: string): Observable<TaskList> {
+    return this.http.get<TaskList>(`${this.baseUrl}/taskLists/${id}`);
+  }
+
 }

@@ -9,7 +9,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>{{ list.name }}</mat-card-title>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="removeTaskList(list)">
           <mat-icon class="rotate">more_vert</mat-icon>
         </button>
       </mat-card-header>

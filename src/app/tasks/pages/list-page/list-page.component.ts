@@ -84,6 +84,18 @@ export class ListPageComponent implements OnInit {
     });
   }
 
+  removeTaskList(taskList: TaskList): void {
+    this.taskService.getTaskListById(taskList.id!).subscribe(() => {
+      this.taskService.deleteTaskList(taskList.id!).subscribe(() => {
+        const index = this.taskLists.findIndex(list => list.id === taskList.id);
+        if (index !== -1) {
+          this.taskLists.splice(index, 1);
+          this.updateConnectedTo();
+        }
+      });
+    });
+  }
+
   drop(event: CdkDragDrop<Task[]>, newListId: string): void {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -121,13 +133,7 @@ export class ListPageComponent implements OnInit {
     }
   }
 
-  removeTaskList(listId: string): void {
-    const index = this.taskLists.findIndex(list => list.listId === listId);
-    if (index !== -1) {
-      this.taskLists.splice(index, 1);
-      this.updateConnectedTo();
-    }
-  }
+
 
   private generateId(): string {
     return Math.random().toString(36).substr(2, 9);
