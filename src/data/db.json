@@ -6,7 +6,10 @@
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Difícil",
-      "categoria": "Codear",
+      "categoria": [
+        "Codear",
+        "Categoria2"
+      ],
       "subtasks": [
         {
           "id": 2,
@@ -32,8 +35,11 @@
       "personaAsignada": "sfefsf",
       "description": "sdfsfsf",
       "dificultad": "Fácil",
-      "categoria": "Codear",
-      "listId": "1"
+      "categoria": [
+        "Codear"
+      ],
+      "listId": "1",
+      "subtasks": []
     },
     {
       "id": "5f9d",
@@ -41,7 +47,9 @@
       "personaAsignada": "Diego",
       "description": "Se guarda?",
       "dificultad": "Media",
-      "categoria": "Analizar",
+      "categoria": [
+        "Analizar"
+      ],
       "listId": "2",
       "subtasks": [
         {
@@ -55,36 +63,12 @@
       ]
     },
     {
-      "id": "7c01",
-      "estado": "Terminada",
-      "personaAsignada": "Diego",
-      "description": "Se duplica?",
-      "dificultad": "Media",
-      "categoria": "Formación",
-      "listId": "2",
-      "subtasks": [
-        {
-          "description": "Tarea añadida",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "id": "cfd6",
-      "estado": "En Progreso",
-      "personaAsignada": "Persona2",
-      "description": "Una nueva tarea",
-      "dificultad": "Fácil",
-      "categoria": "Analizar",
-      "listId": "2"
-    },
-    {
       "id": "2966",
       "estado": "Pendiente",
       "personaAsignada": "Antonio",
       "description": "Comprobar como se guarda la categoria",
       "dificultad": "Media",
-      "categoria": "Nueva categoria creada",
+      "categoria": [],
       "listId": "ms6gbykwv"
     },
     {
@@ -93,7 +77,7 @@
       "personaAsignada": "efefsef",
       "description": "sefsef",
       "dificultad": "Fácil",
-      "categoria": "sefsef",
+      "categoria": [],
       "listId": "3"
     }
   ],

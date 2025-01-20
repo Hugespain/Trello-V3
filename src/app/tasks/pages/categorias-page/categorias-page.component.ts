@@ -73,4 +73,39 @@ export class CategoriasPageComponent implements OnInit {
       this.resetForm();
     }
   }
-}
+
+  public removeCategoria(categoria: string): void {
+    if (categoria) {
+      this.taskService.getTasks().subscribe((tasks: Task[]) => {
+        const tasksToUpdate = tasks.filter(task => {
+          if (task.categoria) {
+            if (Array.isArray(task.categoria)) {
+              return task.categoria.includes(categoria);
+            } else {
+              return task.categoria === categoria;
+            }
+          }
+          return false;
+        });
+
+        tasksToUpdate.forEach(task => {
+          if (Array.isArray(task.categoria)) {
+            task.categoria = task.categoria.filter(cat => cat !== categoria);
+          } else if (task.categoria === categoria) {
+            task.categoria = [];
+          }
+
+          // Actualizar la tarea en el servidor
+          this.taskService.updateTask(task).subscribe();
+        });
+
+        // Actualizar la lista de categorías en el formulario
+        this.categorias = this.categorias.filter(cat => cat !== categoria);
+
+        // Mostrar el diálogo de éxito
+        this.openSuccessDialog('Categoría eliminada con éxito');
+      });
+    } else {
+      this.openSuccessDialog('No se seleccionó ninguna categoría para eliminar');
+    }
+  }}
