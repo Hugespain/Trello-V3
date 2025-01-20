@@ -1,4 +1,3 @@
-
 import { Subtask } from "./subTask.interface";
 
 export interface Task {
@@ -8,7 +7,7 @@ export interface Task {
   personaAsignada: string;
   description: string;
   dificultad: Dificultad;
-  categoria: Categoria;
+  categoria: string; // Cambiado a string para permitir categorías dinámicas
   subtasks?: Subtask[];
 }
 
@@ -22,12 +21,6 @@ export enum Dificultad {
   Facil = "Fácil",
   Media = "Media",
   Dificil = "Difícil",
-}
-
-export enum Categoria {
-  Analizar = "Analizar",
-  Codear = "Codear",
-  Formacion = "Formación",
 }
 
 export { Subtask };

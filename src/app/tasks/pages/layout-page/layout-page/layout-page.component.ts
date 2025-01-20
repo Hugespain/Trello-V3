@@ -9,7 +9,9 @@ export class LayoutPageComponent {
 
   public sidebarItems = [
     { label: 'Listado', icon: 'label', url: '' },
-    { label: 'Añadir', icon: 'add', url: 'new' },
+    { label: 'Añadir tarea', icon: 'add', url: 'new' },
     { label: 'Editar/Eliminar', icon: 'edit', url: 'edit'  },
+    { label: 'Categorias', icon: 'add', url: 'categorias'  }
+
   ]
 }

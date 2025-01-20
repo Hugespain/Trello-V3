@@ -42,7 +42,7 @@
       "description": "Se guarda?",
       "dificultad": "Media",
       "categoria": "Analizar",
-      "listId": "3",
+      "listId": "2",
       "subtasks": [
         {
           "description": "Esta subtarea la he creado yo ",
@@ -50,10 +50,6 @@
         },
         {
           "description": "Subtarea2",
-          "completed": false
-        },
-        {
-          "description": "Subtarea3",
           "completed": false
         }
       ]
@@ -72,6 +68,33 @@
           "completed": false
         }
       ]
+    },
+    {
+      "id": "cfd6",
+      "estado": "En Progreso",
+      "personaAsignada": "Persona2",
+      "description": "Una nueva tarea",
+      "dificultad": "Fácil",
+      "categoria": "Analizar",
+      "listId": "2"
+    },
+    {
+      "id": "2966",
+      "estado": "Pendiente",
+      "personaAsignada": "Antonio",
+      "description": "Comprobar como se guarda la categoria",
+      "dificultad": "Media",
+      "categoria": "Nueva categoria creada",
+      "listId": "ms6gbykwv"
+    },
+    {
+      "id": "6237",
+      "estado": "Terminada",
+      "personaAsignada": "efefsef",
+      "description": "sefsef",
+      "dificultad": "Fácil",
+      "categoria": "sefsef",
+      "listId": "3"
     }
   ],
   "taskLists": [
@@ -94,9 +117,9 @@
       "id": "630c"
     },
     {
-      "id": "5b39",
-      "listId": "kvo4e82st",
-      "name": "Nueva Lista",
+      "id": "d8aa",
+      "listId": "ms6gbykwv",
+      "name": "Nueva lista",
       "tasks": []
     }
   ]

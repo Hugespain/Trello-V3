@@ -15,6 +15,7 @@ import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/conf
 import { SuccessDialogComponent } from './components/dialogs/success-dialog/success-dialog.component';
 import { EditDialogComponent } from './components/dialogs/edit-dialog/edit-dialog.component';
 import { NewtaskDialogComponent } from './components/dialogs/newtask-dialog/newtask-dialog.component';
+import { CategoriasPageComponent } from './pages/categorias-page/categorias-page.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NewtaskDialogComponent } from './components/dialogs/newtask-dialog/newt
     ConfirmDialogComponent,
     SuccessDialogComponent,
     EditDialogComponent,
-    NewtaskDialogComponent
+    NewtaskDialogComponent,
+    CategoriasPageComponent,
   ],
   imports: [
     CommonModule,
