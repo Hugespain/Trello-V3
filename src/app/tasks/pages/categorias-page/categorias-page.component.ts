@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TasksService } from '../../services/task.service';
 import { MatDialog } from '@angular/material/dialog';
-import { Task } from '../../interfaces/task.interface';
 import { SuccessDialogComponent } from '../../components/dialogs/success-dialog/success-dialog.component';
 
 @Component({
@@ -10,9 +9,9 @@ import { SuccessDialogComponent } from '../../components/dialogs/success-dialog/
   templateUrl: './categorias-page.component.html',
   styleUrls: ['./categorias-page.component.css']
 })
-export class CategoriasPageComponent implements OnInit {
+export class CategoriasPageComponent implements OnInit, AfterViewInit {
   public taskForm: FormGroup;
-  public categorias: string[] = [];
+  public categorias: { id: number, nombre: string }[] = [];
 
   constructor(private fb: FormBuilder, private taskService: TasksService, public dialog: MatDialog) {
     this.taskForm = this.fb.group({
@@ -25,19 +24,13 @@ export class CategoriasPageComponent implements OnInit {
     this.loadCategorias();
   }
 
+  ngAfterViewInit(): void {
+    this.addAnimation();
+  }
+
   private loadCategorias(): void {
-    this.taskService.getTasks().subscribe((tasks: Task[]) => {
-      const categoriasSet = new Set<string>();
-      tasks.forEach(task => {
-        if (task.categoria) {
-          if (Array.isArray(task.categoria)) {
-            task.categoria.forEach(categoria => categoriasSet.add(categoria));
-          } else {
-            categoriasSet.add(task.categoria);
-          }
-        }
-      });
-      this.categorias = Array.from(categoriasSet);
+    this.taskService.getCategorias().subscribe(categorias => {
+      this.categorias = categorias;
     });
   }
 
@@ -66,23 +59,9 @@ export class CategoriasPageComponent implements OnInit {
   public onSubmit(): void {
     if (this.taskForm.valid) {
       const nuevaCategoria = this.taskForm.value.crearCategoria;
-      if (nuevaCategoria && !this.categorias.includes(nuevaCategoria)) {
-        this.taskService.getTasks().subscribe((tasks: Task[]) => {
-          tasks.forEach(task => {
-            if (Array.isArray(task.categoria)) {
-              task.categoria.push(nuevaCategoria);
-            } else if (task.categoria) {
-              task.categoria = [task.categoria, nuevaCategoria];
-            } else {
-              task.categoria = [nuevaCategoria];
-            }
-
-            // Actualizar la tarea en el servidor
-            this.taskService.updateTask(task).subscribe();
-          });
-
-          // Actualizar la lista de categorías en el formulario
-          this.categorias.push(nuevaCategoria);
+      if (nuevaCategoria && !this.categorias.some(cat => cat.nombre === nuevaCategoria)) {
+        this.taskService.addCategoria(nuevaCategoria).subscribe(() => {
+          this.categorias.push({ id: Math.max(...this.categorias.map(cat => cat.id)) + 1, nombre: nuevaCategoria });
 
           // Mostrar el diálogo de éxito
           this.openSuccessDialog('Categoría guardada con éxito');
@@ -94,33 +73,10 @@ export class CategoriasPageComponent implements OnInit {
     }
   }
 
-  public removeCategoria(categoria: string): void {
-    if (categoria) {
-      this.taskService.getTasks().subscribe((tasks: Task[]) => {
-        const tasksToUpdate = tasks.filter(task => {
-          if (task.categoria) {
-            if (Array.isArray(task.categoria)) {
-              return task.categoria.includes(categoria);
-            } else {
-              return task.categoria === categoria;
-            }
-          }
-          return false;
-        });
-
-        tasksToUpdate.forEach(task => {
-          if (Array.isArray(task.categoria)) {
-            task.categoria = task.categoria.filter(cat => cat !== categoria);
-          } else if (task.categoria === categoria) {
-            task.categoria = [];
-          }
-
-          // Actualizar la tarea en el servidor
-          this.taskService.updateTask(task).subscribe();
-        });
-
-        // Actualizar la lista de categorías en el formulario
-        this.categorias = this.categorias.filter(cat => cat !== categoria);
+  public removeCategoria(categoriaId: number): void {
+    if (categoriaId) {
+      this.taskService.deleteCategoria(categoriaId).subscribe(() => {
+        this.categorias = this.categorias.filter(cat => cat.id !== categoriaId);
 
         // Mostrar el diálogo de éxito
         this.openSuccessDialog('Categoría eliminada con éxito');
@@ -128,4 +84,32 @@ export class CategoriasPageComponent implements OnInit {
     } else {
       this.openSuccessDialog('No se seleccionó ninguna categoría para eliminar');
     }
-  }}
+  }
+
+  private addAnimation(): void {
+    const scrollers = document.querySelectorAll(".scroller");
+
+    // If a user hasn't opted in for reduced motion, then we add the animation
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scrollers.forEach((scroller) => {
+        // add data-animated="true" to every `.scroller` on the page
+        scroller.setAttribute("data-animated", "true");
+
+        // Make an array from the elements within `.scroller-inner`
+        const scrollerInner = scroller.querySelector(".scroller__inner");
+        if (scrollerInner) {
+          const scrollerContent = Array.from(scrollerInner.children);
+
+          // For each item in the array, clone it
+          // add aria-hidden to it
+          // add it into the `.scroller-inner`
+          scrollerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true) as HTMLElement;
+            duplicatedItem.setAttribute("aria-hidden", "true");
+            scrollerInner.appendChild(duplicatedItem);
+          });
+        }
+      });
+    }
+  }
+}

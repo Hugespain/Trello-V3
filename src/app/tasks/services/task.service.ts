@@ -17,7 +17,12 @@ export class TasksService {
   taskDeleted$ = this.taskDeletedSubject.asObservable();
   taskCreated$ = this.taskCreatedSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  private categoriasSubject = new BehaviorSubject<{ id: number, nombre: string }[]>([]);
+  public categorias$ = this.categoriasSubject.asObservable();
+
+  constructor(private http: HttpClient) {
+    this.loadCategorias();
+  }
 
   // Obtener todas las tareas
   getTasks(): Observable<Task[]> {
@@ -90,4 +95,38 @@ export class TasksService {
     return this.http.get<TaskList>(`${this.baseUrl}/taskLists/${id}`);
   }
 
+  // CATEGORÍAS
+  private loadCategorias(): void {
+    this.http.get<{ id: number, nombre: string }[]>(`${this.baseUrl}/categorias`).subscribe(categorias => {
+      this.categoriasSubject.next(categorias);
+    });
+  }
+
+  setCategorias(categorias: { id: number, nombre: string }[]): void {
+    this.http.put<void>(`${this.baseUrl}/categorias`, categorias).subscribe(() => {
+      this.categoriasSubject.next(categorias);
+    });
+  }
+
+  getCategorias(): Observable<{ id: number, nombre: string }[]> {
+    return this.categorias$;
+  }
+
+  addCategoria(nombre: string): Observable<void> {
+    const newId = Math.max(...this.categoriasSubject.value.map(cat => cat.id)) + 1;
+    const newCategoria = { id: newId, nombre };
+    return this.http.post<void>(`${this.baseUrl}/categorias`, newCategoria).pipe(
+      tap(() => {
+        this.loadCategorias();
+      })
+    );
+  }
+
+  deleteCategoria(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/categorias/${id}`).pipe(
+      tap(() => {
+        this.loadCategorias();
+      })
+    );
+  }
 }

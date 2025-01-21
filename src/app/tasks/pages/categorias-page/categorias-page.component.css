@@ -1,9 +1,58 @@
+.categorias-container {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 1rem; /* Reducir la separación entre las tarjetas y el mat-form-field */
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 30vh; /* Ajustar la altura para centrar mejor */
+}
+
+.scroller__inner {
+  display: flex;
+  gap: 2rem; /* Aumentar la separación entre las tarjetas */
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.scroller[data-direction="right"] .scroller__inner {
+  animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] .scroller__inner {
+  animation-direction: normal;
+}
+
+.scroller[data-speed="fast"] .scroller__inner {
+  animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] .scroller__inner {
+  animation-duration: 60s;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.categoria-card {
+  min-width: 150px;
+  text-align: center;
+  margin: 0 1rem; /* Añadir márgenes laterales para separar las tarjetas */
+}
+
 .centered-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 20vh; /* Ajustar la altura para centrar mejor */
 }
 
 .large-field {

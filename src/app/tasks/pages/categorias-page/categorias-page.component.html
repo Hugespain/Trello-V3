@@ -4,9 +4,18 @@
   </mat-card-header>
 </mat-card>
 
+<div class="categorias-container scroller" data-speed="fast">
+  <div class="scroller__inner">
+    <mat-card *ngFor="let categoria of categorias" class="categoria-card">
+      <mat-card-content>
+        {{ categoria }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
 <form [formGroup]="taskForm">
   <div class="centered-form">
-
     <mat-form-field class="large-field">
       <mat-label>Categorías</mat-label>
       <div class="scroll-list__wrp">
@@ -21,6 +30,5 @@
     <div class="button-container">
       <button mat-flat-button color="warn" (click)="removeCategoria(taskForm.get('categoria')?.value || '')">Borrar</button>
     </div>
-
   </div>
 </form>

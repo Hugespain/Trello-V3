@@ -2,17 +2,12 @@
   "tasks": [
     {
       "id": "8ff5",
-      "listId": "2",
+      "listId": "3",
+      "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Difícil",
-      "categoria": [
-        "Codear",
-        "Categoria2",
-        "Nueva categoría",
-        "Categoria 20",
-        "Categoria 30"
-      ],
+      "categoria": ["Codear", "Categoria2", "Categoria 20"],
       "subtasks": [
         {
           "id": 2,
@@ -20,52 +15,43 @@
           "completed": true
         },
         {
-          "id": null,
+          "id": 3,
           "description": "Tarea añadida",
           "completed": true
         },
         {
-          "id": null,
+          "id": 4,
           "description": "Subtarea 3 ¿sin id?",
           "completed": false
         }
-      ],
-      "estado": "Pendiente"
+      ]
     },
     {
       "id": "56da",
+      "listId": "1",
       "estado": "En Progreso",
       "personaAsignada": "sfefsf",
       "description": "sdfsfsf",
       "dificultad": "Fácil",
-      "categoria": [
-        "Codear",
-        "Nueva categoría",
-        "Categoria 20",
-        "Categoria 30"
-      ],
-      "listId": "1",
+      "categoria": ["Codear", "Categoria 20"],
       "subtasks": []
     },
     {
       "id": "5f9d",
+      "listId": "1",
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Se guarda?",
       "dificultad": "Media",
-      "categoria": [
-        "Analizar",
-        "Nueva categoría",
-        "Categoria 20",
-        "Categoria 30"
-      ],
-      "listId": "3",
+      "categoria": ["Categoria 20"],
       "subtasks": [
         {
-          "description": "Esta subtarea la he creado yo ",
+          "id": 5,
+          "description": "Esta subtarea la he creado yo",
           "completed": false
         },
         {
+          "id": 6,
           "description": "Subtarea2",
           "completed": false
         }
@@ -73,30 +59,42 @@
     },
     {
       "id": "2966",
+      "listId": "3",
       "estado": "Pendiente",
       "personaAsignada": "Antonio",
       "description": "Comprobar como se guarda la categoria",
       "dificultad": "Media",
-      "categoria": [
-        "Nueva categoría",
-        "Categoria 20",
-        "Categoria 30"
-      ],
-      "listId": "3"
+      "categoria": ["Categoria 20"],
+      "subtasks": []
     },
     {
       "id": "6237",
+      "listId": "3",
       "estado": "Terminada",
       "personaAsignada": "efefsef",
       "description": "sefsef",
       "dificultad": "Fácil",
-      "categoria": [
-        "Nueva categoría",
-        "Categoria 20",
-        "Categoria 30"
-      ],
-      "listId": "3"
+      "categoria": ["Categoria 20"],
+      "subtasks": []
+    },
+    {
+      "id": "c707",
+      "listId": "2",
+      "estado": "Terminada",
+      "personaAsignada": "María",
+      "description": "Una nueva tarea",
+      "dificultad": "Media",
+      "categoria": [],
+      "subtasks": []
     }
+  ],
+  "categorias": [
+    { "id": 1, "nombre": "Trabajo" },
+    { "id": 2, "nombre": "Personal" },
+    { "id": 3, "nombre": "Urgente" },
+    { "id": 4, "nombre": "Codear" },
+    { "id": 5, "nombre": "Categoria2" },
+    { "id": 6, "nombre": "Categoria 20" }
   ],
   "taskLists": [
     {
@@ -116,12 +114,6 @@
       "name": "Terminadas",
       "tasks": [],
       "id": "630c"
-    },
-    {
-      "id": "d8aa",
-      "listId": "ms6gbykwv",
-      "name": "Nueva lista",
-      "tasks": []
     }
   ]
 }
