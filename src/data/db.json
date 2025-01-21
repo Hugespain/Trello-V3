@@ -2,12 +2,16 @@
   "tasks": [
     {
       "id": "8ff5",
-      "listId": "3",
+      "listId": "2",
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Difícil",
-      "categoria": ["Codear", "Categoria2", "Categoria 20"],
+      "categoria": [
+        "Codear",
+        "Categoria2",
+        "Categoria 20"
+      ],
       "subtasks": [
         {
           "id": 2,
@@ -33,7 +37,10 @@
       "personaAsignada": "sfefsf",
       "description": "sdfsfsf",
       "dificultad": "Fácil",
-      "categoria": ["Codear", "Categoria 20"],
+      "categoria": [
+        "Codear",
+        "Categoria 20"
+      ],
       "subtasks": []
     },
     {
@@ -43,7 +50,9 @@
       "personaAsignada": "Diego",
       "description": "Se guarda?",
       "dificultad": "Media",
-      "categoria": ["Categoria 20"],
+      "categoria": [
+        "Categoria 20"
+      ],
       "subtasks": [
         {
           "id": 5,
@@ -64,7 +73,9 @@
       "personaAsignada": "Antonio",
       "description": "Comprobar como se guarda la categoria",
       "dificultad": "Media",
-      "categoria": ["Categoria 20"],
+      "categoria": [
+        "Categoria 20"
+      ],
       "subtasks": []
     },
     {
@@ -74,12 +85,14 @@
       "personaAsignada": "efefsef",
       "description": "sefsef",
       "dificultad": "Fácil",
-      "categoria": ["Categoria 20"],
+      "categoria": [
+        "Categoria 20"
+      ],
       "subtasks": []
     },
     {
       "id": "c707",
-      "listId": "2",
+      "listId": "3",
       "estado": "Terminada",
       "personaAsignada": "María",
       "description": "Una nueva tarea",
@@ -89,12 +102,30 @@
     }
   ],
   "categorias": [
-    { "id": 1, "nombre": "Trabajo" },
-    { "id": 2, "nombre": "Personal" },
-    { "id": 3, "nombre": "Urgente" },
-    { "id": 4, "nombre": "Codear" },
-    { "id": 5, "nombre": "Categoria2" },
-    { "id": 6, "nombre": "Categoria 20" }
+    {
+      "id": 1,
+      "nombre": "Trabajo"
+    },
+    {
+      "id": 2,
+      "nombre": "Personal"
+    },
+    {
+      "id": 3,
+      "nombre": "Urgente"
+    },
+    {
+      "id": 4,
+      "nombre": "Codear"
+    },
+    {
+      "id": 5,
+      "nombre": "Categoria2"
+    },
+    {
+      "id": 6,
+      "nombre": "Categoria 20"
+    }
   ],
   "taskLists": [
     {
