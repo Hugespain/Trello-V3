@@ -14,11 +14,7 @@ import { NewtaskDialogComponent } from '../../components/dialogs/newtask-dialog/
 })
 export class ListPageComponent implements OnInit {
 
-  public taskLists: TaskList[] = [
-    { listId: '1', name: 'Pendientes', tasks: [] },
-    { listId: '2', name: 'En Progreso', tasks: [] },
-    { listId: '3', name: 'Terminadas', tasks: [] }
-  ];
+  public taskLists: TaskList[] = [];
 
   public connectedTo: string[] = [];
 
@@ -132,6 +128,8 @@ export class ListPageComponent implements OnInit {
       });
     }
   }
+
+
 
 
 

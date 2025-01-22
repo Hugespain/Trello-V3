@@ -8,9 +8,7 @@
       "description": "Una descripcion",
       "dificultad": "Difícil",
       "categoria": [
-        "Codear",
-        "Categoria2",
-        "Categoria 20"
+        "Codear"
       ],
       "subtasks": [
         {
@@ -27,7 +25,14 @@
           "id": 4,
           "description": "Subtarea 3 ¿sin id?",
           "completed": false
+        },
+        {
+          "description": "sgsfsfd",
+          "completed": false
         }
+      ],
+      "categorias": [
+        "Codear"
       ]
     },
     {
@@ -130,6 +135,10 @@
     {
       "id": "6df3",
       "nombre": "Nueva categoria"
+    },
+    {
+      "id": "2a88",
+      "nombre": "No prioritario"
     }
   ],
   "taskLists": [

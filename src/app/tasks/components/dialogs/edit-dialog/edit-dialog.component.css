@@ -35,3 +35,8 @@
   width: 90%;
   margin-top: 20px;
 }
+
+.mat-chip-listbox {
+  width: 90%; /* Ajustar el ancho del mat-chip-listbox */
+  margin-bottom: 15px; /* Añadir margen inferior para separación */
+}

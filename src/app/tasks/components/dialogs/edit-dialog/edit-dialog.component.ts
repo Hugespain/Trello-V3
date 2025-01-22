@@ -14,6 +14,7 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 export class EditDialogComponent implements OnInit {
 
   public taskForm: FormGroup;
+  public availableCategorias: { id: string, nombre: string }[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -28,7 +29,7 @@ export class EditDialogComponent implements OnInit {
       personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
       description: ['', [Validators.maxLength(100)]],
       dificultad: ['', Validators.required],
-      categoria: ['', Validators.required],
+      categorias: this.fb.array([]),
       subtasks: this.fb.array([])
     });
   }
@@ -36,21 +37,36 @@ export class EditDialogComponent implements OnInit {
   ngOnInit(): void {
     this.taskForm.patchValue(this.data);
     this.setSubtasks(this.data.subtasks || []);
+    this.setCategorias(this.data.categoria || []);
+    this.loadAvailableCategorias();
   }
 
-  // Método para inicializar las subtareas en el formulario
+  loadAvailableCategorias(): void {
+    this.taskService.getCategorias().subscribe(categorias => {
+      this.availableCategorias = categorias;
+    });
+  }
+
+  setCategorias(categorias: string[]): void {
+    const categoriaFGs = categorias.map(categoria => this.fb.control(categoria));
+    const categoriaFormArray = this.fb.array(categoriaFGs);
+    this.taskForm.setControl('categorias', categoriaFormArray);
+  }
+
+  get categorias(): FormArray {
+    return this.taskForm.get('categorias') as FormArray;
+  }
+
   setSubtasks(subtasks: Subtask[]): void {
     const subtaskFGs = subtasks.map(subtask => this.fb.group(subtask));
     const subtaskFormArray = this.fb.array(subtaskFGs);
     this.taskForm.setControl('subtasks', subtaskFormArray);
   }
 
-  // Método para obtener el FormArray de subtareas
   get subtasks(): FormArray {
     return this.taskForm.get('subtasks') as FormArray;
   }
 
-  // Método para añadir una nueva subtarea
   addSubtask(): void {
     this.subtasks.push(this.fb.group({
       description: ['', Validators.required],
@@ -58,16 +74,26 @@ export class EditDialogComponent implements OnInit {
     }));
   }
 
-  // Método para eliminar una subtarea
   removeSubtask(index: number): void {
     this.subtasks.removeAt(index);
-    this.taskForm.updateValueAndValidity(); // Actualizar el estado del formulario
+    this.taskForm.updateValueAndValidity();
   }
 
-  // Método para verificar si se puede habilitar el botón de borrar
   canDeleteTask(): boolean {
     const subtasks = this.subtasks.value;
     return subtasks.length === 0 || subtasks.every((subtask: Subtask) => subtask.completed);
+  }
+
+  removeCategoria(categoria: string): void {
+    const categorias = this.categorias.value as string[];
+    const updatedCategorias = categorias.filter(cat => cat !== categoria);
+    this.setCategorias(updatedCategorias);
+  }
+
+  addCategoria(categoria: string): void {
+    if (categoria && !this.categorias.value.includes(categoria)) {
+      this.categorias.push(this.fb.control(categoria));
+    }
   }
 
   onUpdate(): void {
@@ -83,11 +109,13 @@ export class EditDialogComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         const task: Task = this.taskForm.getRawValue();
+        task.categoria = this.categorias.value; // Asegúrate de que las categorías se incluyen en el objeto task
+
         this.taskService.updateTask(task).subscribe({
           next: response => {
             console.log('Tarea actualizada:', response);
             this.openSuccessDialog('Tarea editada correctamente con el ID: ' + response.id);
-            this.dialogRef.close(); // Cerrar el diálogo después de actualizar
+            this.dialogRef.close();
           },
           error: error => {
             console.error('Error al actualizar la tarea:', error);
@@ -121,7 +149,7 @@ export class EditDialogComponent implements OnInit {
           next: () => {
             console.log('Tarea eliminada');
             this.openSuccessDialog('Tarea eliminada correctamente.');
-            this.dialogRef.close(); // Cerrar el diálogo después de eliminar
+            this.dialogRef.close();
           },
           error: error => {
             console.error('Error al eliminar la tarea:', error);
@@ -145,13 +173,12 @@ export class EditDialogComponent implements OnInit {
       personaAsignada: '',
       description: '',
       dificultad: '',
-      categoria: ''
+      categorias: []
     });
 
-    // Marcar todos los controles como intocados y prístinos
     Object.keys(this.taskForm.controls).forEach(key => {
       const control = this.taskForm.get(key);
-      control?.setErrors(null); // Eliminar errores de validación
+      control?.setErrors(null);
       control?.markAsPristine();
       control?.markAsUntouched();
     });
@@ -163,6 +190,4 @@ export class EditDialogComponent implements OnInit {
       data: { message }
     });
   }
-
-
 }

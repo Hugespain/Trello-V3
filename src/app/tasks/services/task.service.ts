@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environments } from '../../../environments/environments';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, BehaviorSubject, Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, switchMap } from 'rxjs/operators';
 import { Task } from '../interfaces/task.interface';
 import { TaskList } from '../interfaces/TaskList.interface';
 
@@ -117,5 +117,22 @@ export class TasksService {
 
   deleteCategoriaById(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/categorias/${id}`);
+  }
+
+  updateCategoria(id: string, nombre: string): Observable<void> {
+    const updatedCategoria = { nombre };
+    return this.http.put<void>(`${this.baseUrl}/categorias/${id}`, updatedCategoria);
+  }
+
+  // Método para eliminar una categoría de una tarea específica
+  removeCategoriaFromTask(taskId: string, categoria: string): Observable<Task> {
+    return this.http.get<Task>(`${this.baseUrl}/tasks/${taskId}`).pipe(
+      switchMap(task => {
+        if (task.categoria) {
+          task.categoria = task.categoria.filter(cat => cat !== categoria);
+        }
+        return this.updateTask(task);
+      })
+    );
   }
 }

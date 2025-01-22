@@ -40,9 +40,26 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field class="large-field">
+    <div class="large-field">
       <mat-label>Categorías</mat-label>
-      <input matInput formControlName="categoria">
+      <mat-chip-listbox *ngIf="categorias">
+        <mat-chip *ngFor="let categoria of categorias.controls" (removed)="removeCategoria(categoria.value)">
+          {{ categoria.value }}
+          <button matChipRemove [attr.aria-label]="'remove ' + categoria.value">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+      </mat-chip-listbox>
+    </div>
+
+    <mat-form-field class="large-field">
+      <mat-label>Añadir Categoría</mat-label>
+      <mat-select #categoriaSelect>
+        <mat-option *ngFor="let categoria of availableCategorias" [value]="categoria.nombre">
+          {{ categoria.nombre }}
+        </mat-option>
+      </mat-select>
+      <button mat-button (click)="addCategoria(categoriaSelect.value)">Añadir</button>
     </mat-form-field>
 
     <h3>Subtareas</h3>

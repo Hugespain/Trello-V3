@@ -29,7 +29,12 @@
               <p><strong>ID:</strong> {{ task.id }}</p>
               <p><strong>Lista:</strong> {{ list.name }}</p>
               <p><strong>Persona Asignada:</strong> {{ task.personaAsignada }}</p>
-              <p><strong>Categoría:</strong> {{ task.categoria }}</p>
+              <p><strong>Categorías:</strong></p>
+              <mat-chip-listbox>
+                <mat-chip *ngFor="let categoria of task.categoria">
+                  {{ categoria }}
+                </mat-chip>
+              </mat-chip-listbox>
               <p><strong>Descripción:</strong> {{ task.description }}</p>
               <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
               <mat-divider></mat-divider>
