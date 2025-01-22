@@ -74,16 +74,21 @@ export class CategoriasPageComponent implements OnInit, AfterViewInit {
   public crearCategoria(): void {
     const nombre = this.taskForm.get('crearCategoria')?.value;
     if (nombre) {
-      this.taskService.addCategoria(nombre).subscribe(() => {
-        this.loadCategorias(); // Recargar las categorías después de añadir una nueva
-        this.resetForm(); // Resetear el formulario
-        this.openSuccessDialog('Categoría creada con éxito');
-      });
+      // Verificar si la categoría ya existe
+      const categoriaExistente = this.categorias.find(cat => cat.nombre.toLowerCase() === nombre.toLowerCase());
+      if (categoriaExistente) {
+        this.openSuccessDialog('La categoría ya existe');
+      } else {
+        this.taskService.addCategoria(nombre).subscribe(() => {
+          this.loadCategorias(); // Recargar las categorías después de añadir una nueva
+          this.resetForm(); // Resetear el formulario
+          this.openSuccessDialog('Categoría creada con éxito');
+        });
+      }
     } else {
       this.openSuccessDialog('El campo de crear categoría está vacío');
     }
   }
-
   private addAnimation(): void {
     const scrollers = document.querySelectorAll(".scroller");
 

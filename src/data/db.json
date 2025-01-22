@@ -120,12 +120,16 @@
       "nombre": "Urgente"
     },
     {
-      "id": "5",
+      "id": "999b",
+      "nombre": "Categoria formulario"
+    },
+    {
+      "id": "afd2",
       "nombre": "Categoria2"
     },
     {
-      "id": "999b",
-      "nombre": "Categoria formulario"
+      "id": "6df3",
+      "nombre": "Nueva categoria"
     }
   ],
   "taskLists": [
