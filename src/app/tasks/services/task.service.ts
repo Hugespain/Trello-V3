@@ -102,14 +102,12 @@ export class TasksService {
     });
   }
 
-  setCategorias(categorias: { id: number, nombre: string }[]): void {
-    this.http.put<void>(`${this.baseUrl}/categorias`, categorias).subscribe(() => {
-      this.categoriasSubject.next(categorias);
-    });
+  setCategorias(categorias: { id: string, nombre: string }[]): Observable<void> {
+    return this.http.put<void>(`${this.baseUrl}/categorias`, categorias);
   }
 
-  getCategorias(): Observable<{ id: number, nombre: string }[]> {
-    return this.categorias$;
+  getCategorias(): Observable<{ id: string, nombre: string }[]> {
+    return this.http.get<{ id: string, nombre: string }[]>(`${this.baseUrl}/categorias`);
   }
 
   addCategoria(nombre: string): Observable<void> {
@@ -122,11 +120,7 @@ export class TasksService {
     );
   }
 
-  deleteCategoria(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/categorias/${id}`).pipe(
-      tap(() => {
-        this.loadCategorias();
-      })
-    );
+  deleteCategoriaById(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/categorias/${id}`);
   }
 }

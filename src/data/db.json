@@ -103,28 +103,24 @@
   ],
   "categorias": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Trabajo"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Personal"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Urgente"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Codear"
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Categoria2"
-    },
-    {
-      "id": 6,
-      "nombre": "Categoria 20"
     }
   ],
   "taskLists": [

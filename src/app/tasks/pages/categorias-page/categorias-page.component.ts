@@ -11,7 +11,7 @@ import { SuccessDialogComponent } from '../../components/dialogs/success-dialog/
 })
 export class CategoriasPageComponent implements OnInit, AfterViewInit {
   public taskForm: FormGroup;
-  public categorias: { id: number, nombre: string }[] = [];
+  public categorias: { id: string, nombre: string }[] = [];
 
   constructor(private fb: FormBuilder, private taskService: TasksService, public dialog: MatDialog) {
     this.taskForm = this.fb.group({
@@ -56,27 +56,27 @@ export class CategoriasPageComponent implements OnInit, AfterViewInit {
     });
   }
 
-  public onSubmit(): void {
-    if (this.taskForm.valid) {
-      const nuevaCategoria = this.taskForm.value.crearCategoria;
-      if (nuevaCategoria && !this.categorias.some(cat => cat.nombre === nuevaCategoria)) {
-        this.taskService.addCategoria(nuevaCategoria).subscribe(() => {
-          this.categorias.push({ id: Math.max(...this.categorias.map(cat => cat.id)) + 1, nombre: nuevaCategoria });
+  // public onSubmit(): void {
+  //   if (this.taskForm.valid) {
+  //     const nuevaCategoria = this.taskForm.value.crearCategoria;
+  //     if (nuevaCategoria && !this.categorias.some(cat => cat.nombre === nuevaCategoria)) {
+  //       this.taskService.addCategoria(nuevaCategoria).subscribe(() => {
+  //         this.categorias.push({ id: Math.max(...this.categorias.map(cat => cat.id)) + 1, nombre: nuevaCategoria });
 
-          // Mostrar el diálogo de éxito
-          this.openSuccessDialog('Categoría guardada con éxito');
-          this.resetForm();
-        });
-      } else {
-        this.openSuccessDialog('La categoría ya existe o no es válida');
-      }
-    }
-  }
+  //         // Mostrar el diálogo de éxito
+  //         this.openSuccessDialog('Categoría guardada con éxito');
+  //         this.resetForm();
+  //       });
+  //     } else {
+  //       this.openSuccessDialog('La categoría ya existe o no es válida');
+  //     }
+  //   }
+  // }
 
-  public removeCategoria(categoriaId: number): void {
+  public removeCategoria(categoriaId: string): void {
     if (categoriaId) {
-      this.taskService.deleteCategoria(categoriaId).subscribe(() => {
-        this.categorias = this.categorias.filter(cat => cat.id !== categoriaId);
+      this.taskService.deleteCategoriaById(categoriaId).subscribe(() => {
+        this.categorias = this.categorias.filter(cat => cat.id.toString() !== categoriaId);
 
         // Mostrar el diálogo de éxito
         this.openSuccessDialog('Categoría eliminada con éxito');

@@ -20,7 +20,7 @@
       <mat-label>Categorías</mat-label>
       <div class="scroll-list__wrp">
         <mat-select formControlName="categoria">
-          <mat-option *ngFor="let categoria of categorias; let i = index" [value]="categoria">
+          <mat-option *ngFor="let categoria of categorias; let i = index" [value]="categoria.id">
             {{ categoria.nombre }}
           </mat-option>
         </mat-select>
