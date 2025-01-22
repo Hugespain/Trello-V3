@@ -15,6 +15,7 @@ export class EditDialogComponent implements OnInit {
 
   public taskForm: FormGroup;
   public availableCategorias: { id: string, nombre: string }[] = [];
+  public availableIds: number[] = []; // Añadir esta línea
 
   constructor(
     private fb: FormBuilder,
@@ -39,11 +40,18 @@ export class EditDialogComponent implements OnInit {
     this.setSubtasks(this.data.subtasks || []);
     this.setCategorias(this.data.categoria || []);
     this.loadAvailableCategorias();
+    this.loadAvailableIds(); // Añadir esta línea
   }
 
   loadAvailableCategorias(): void {
     this.taskService.getCategorias().subscribe(categorias => {
       this.availableCategorias = categorias;
+    });
+  }
+
+  loadAvailableIds(): void { // Añadir este método
+    this.taskService.getAvailableIds().subscribe(ids => {
+      this.availableIds = ids;
     });
   }
 
@@ -93,6 +101,17 @@ export class EditDialogComponent implements OnInit {
   addCategoria(categoria: string): void {
     if (categoria && !this.categorias.value.includes(categoria)) {
       this.categorias.push(this.fb.control(categoria));
+    }
+  }
+
+  onIdSelection(id: number): void { // Añadir este método
+    if (id) {
+      this.taskService.getTaskById(id).subscribe(task => {
+        if (task) {
+          this.taskForm.patchValue(task);
+          this.setCategorias(task.categoria || []);
+        }
+      });
     }
   }
 

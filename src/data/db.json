@@ -7,9 +7,7 @@
       "personaAsignada": "Diego",
       "description": "Una descripcion",
       "dificultad": "Difícil",
-      "categoria": [
-        "Codear"
-      ],
+      "categoria": [],
       "subtasks": [
         {
           "id": 2,
@@ -31,9 +29,7 @@
           "completed": false
         }
       ],
-      "categorias": [
-        "Codear"
-      ]
+      "categorias": []
     },
     {
       "id": "56da",
@@ -43,10 +39,12 @@
       "description": "sdfsfsf",
       "dificultad": "Fácil",
       "categoria": [
-        "Codear",
-        "Categoria 20"
+        "Urgente"
       ],
-      "subtasks": []
+      "subtasks": [],
+      "categorias": [
+        "Urgente"
+      ]
     },
     {
       "id": "5f9d",
@@ -56,7 +54,7 @@
       "description": "Se guarda?",
       "dificultad": "Media",
       "categoria": [
-        "Categoria 20"
+        "Urgente"
       ],
       "subtasks": [
         {
@@ -69,6 +67,9 @@
           "description": "Subtarea2",
           "completed": false
         }
+      ],
+      "categorias": [
+        "Urgente"
       ]
     },
     {
@@ -79,13 +80,16 @@
       "description": "Comprobar como se guarda la categoria",
       "dificultad": "Media",
       "categoria": [
-        "Categoria 20"
+        "Categoria2"
       ],
       "subtasks": [
         {
           "description": "Subtarea par Antonio",
           "completed": false
         }
+      ],
+      "categorias": [
+        "Categoria2"
       ]
     },
     {
@@ -96,9 +100,12 @@
       "description": "sefsef",
       "dificultad": "Fácil",
       "categoria": [
-        "Categoria 20"
+        "Urgente"
       ],
-      "subtasks": []
+      "subtasks": [],
+      "categorias": [
+        "Urgente"
+      ]
     },
     {
       "id": "c707",
@@ -108,7 +115,8 @@
       "description": "Una nueva tarea",
       "dificultad": "Media",
       "categoria": [],
-      "subtasks": []
+      "subtasks": [],
+      "categorias": []
     }
   ],
   "categorias": [
