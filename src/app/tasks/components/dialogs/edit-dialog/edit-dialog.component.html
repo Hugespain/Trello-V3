@@ -64,9 +64,26 @@
       <button mat-button (click)="addCategoria(categoriaSelect.value)">Añadir</button>
     </mat-form-field>
 
+    <h3>Subtareas</h3>
+    <mat-list formArrayName="subtasks" class="subtask-list">
+      <mat-list-item *ngFor="let subtask of subtasks.controls; let i = index" [formGroupName]="i">
+        <div class="subtask-container">
+          <mat-form-field class="subtask-field">
+            <mat-label>Descripción</mat-label>
+            <input matInput formControlName="description">
+          </mat-form-field>
+          <mat-checkbox formControlName="completed">Completada</mat-checkbox>
+          <button mat-icon-button color="warn" (click)="removeSubtask(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <button mat-stroked-button color="primary" (click)="addSubtask()">Añadir Subtarea</button>
+
     <div class="button-container">
       <button mat-flat-button color="primary" (click)="onUpdate()">Editar</button>
-      <button mat-flat-button color="warn" (click)="onDelete()">Borrar</button>
+      <button mat-flat-button color="warn" (click)="onDelete()" [disabled]="!canDeleteTask()">Borrar</button>
     </div>
 
   </div>

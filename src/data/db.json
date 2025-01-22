@@ -25,13 +25,12 @@
       "categoria": [],
       "subtasks": [
         {
-          "id": 5,
-          "description": "Esta subtarea la he creado yo",
+          "id": 6,
+          "description": "Subtarea2",
           "completed": false
         },
         {
-          "id": 6,
-          "description": "Subtarea2",
+          "description": "Subtarea 3",
           "completed": false
         }
       ],
