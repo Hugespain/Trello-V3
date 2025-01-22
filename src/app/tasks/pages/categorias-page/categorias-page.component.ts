@@ -56,22 +56,7 @@ export class CategoriasPageComponent implements OnInit, AfterViewInit {
     });
   }
 
-  // public onSubmit(): void {
-  //   if (this.taskForm.valid) {
-  //     const nuevaCategoria = this.taskForm.value.crearCategoria;
-  //     if (nuevaCategoria && !this.categorias.some(cat => cat.nombre === nuevaCategoria)) {
-  //       this.taskService.addCategoria(nuevaCategoria).subscribe(() => {
-  //         this.categorias.push({ id: Math.max(...this.categorias.map(cat => cat.id)) + 1, nombre: nuevaCategoria });
 
-  //         // Mostrar el diálogo de éxito
-  //         this.openSuccessDialog('Categoría guardada con éxito');
-  //         this.resetForm();
-  //       });
-  //     } else {
-  //       this.openSuccessDialog('La categoría ya existe o no es válida');
-  //     }
-  //   }
-  // }
 
   public removeCategoria(categoriaId: string): void {
     if (categoriaId) {
@@ -83,6 +68,17 @@ export class CategoriasPageComponent implements OnInit, AfterViewInit {
       });
     } else {
       this.openSuccessDialog('No se seleccionó ninguna categoría para eliminar');
+    }
+  }
+
+  public crearCategoria(): void {
+    const nombre = this.taskForm.get('crearCategoria')?.value;
+    if (nombre) {
+      this.taskService.addCategoria(nombre).subscribe(() => {
+        this.loadCategorias(); // Recargar las categorías después de añadir una nueva
+        this.resetForm(); // Resetear el formulario
+        this.openSuccessDialog('Categoría creada con éxito');
+      });
     }
   }
 
