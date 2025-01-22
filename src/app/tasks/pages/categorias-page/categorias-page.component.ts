@@ -79,6 +79,8 @@ export class CategoriasPageComponent implements OnInit, AfterViewInit {
         this.resetForm(); // Resetear el formulario
         this.openSuccessDialog('Categoría creada con éxito');
       });
+    } else {
+      this.openSuccessDialog('El campo de crear categoría está vacío');
     }
   }
 

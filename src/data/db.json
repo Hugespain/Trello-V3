@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "8ff5",
-      "listId": "3",
+      "listId": "iived49l3",
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
@@ -68,7 +68,7 @@
     },
     {
       "id": "2966",
-      "listId": "3",
+      "listId": "2",
       "estado": "Pendiente",
       "personaAsignada": "Antonio",
       "description": "Comprobar como se guarda la categoria",
@@ -76,7 +76,12 @@
       "categoria": [
         "Categoria 20"
       ],
-      "subtasks": []
+      "subtasks": [
+        {
+          "description": "Subtarea par Antonio",
+          "completed": false
+        }
+      ]
     },
     {
       "id": "6237",
@@ -115,16 +120,12 @@
       "nombre": "Urgente"
     },
     {
-      "id": "4",
-      "nombre": "Codear"
-    },
-    {
       "id": "5",
       "nombre": "Categoria2"
     },
     {
-      "id": "1bce",
-      "nombre": "Categoriadesdeformulario"
+      "id": "999b",
+      "nombre": "Categoria formulario"
     }
   ],
   "taskLists": [
@@ -145,6 +146,12 @@
       "name": "Terminadas",
       "tasks": [],
       "id": "630c"
+    },
+    {
+      "id": "a577",
+      "listId": "iived49l3",
+      "name": "Nueva lista",
+      "tasks": []
     }
   ]
 }
