@@ -111,13 +111,8 @@ export class TasksService {
   }
 
   addCategoria(nombre: string): Observable<void> {
-    const newId = Math.max(...this.categoriasSubject.value.map(cat => cat.id)) + 1;
-    const newCategoria = { id: newId, nombre };
-    return this.http.post<void>(`${this.baseUrl}/categorias`, newCategoria).pipe(
-      tap(() => {
-        this.loadCategorias();
-      })
-    );
+    const newCategoria = { nombre };
+    return this.http.post<void>(`${this.baseUrl}/categorias`, newCategoria);
   }
 
   deleteCategoriaById(id: string): Observable<void> {

@@ -16,6 +16,9 @@
 
 <form [formGroup]="taskForm">
   <div class="centered-form">
+    <div class="button-container">
+      <button mat-flat-button color="warn" (click)="removeCategoria(taskForm.get('categoria')?.value || '')">Borrar</button>
+    </div>
     <mat-form-field class="large-field">
       <mat-label>Categorías</mat-label>
       <div class="scroll-list__wrp">
@@ -26,9 +29,17 @@
         </mat-select>
       </div>
     </mat-form-field>
+  </div>
+</form>
 
+<form [formGroup]="taskForm">
+  <div class="centered-form">
+    <mat-form-field class="large-field">
+      <mat-label>Crear categoría</mat-label>
+      <input matInput formControlName="crearCategoria">
+    </mat-form-field>
     <div class="button-container">
-      <button mat-flat-button color="warn" (click)="removeCategoria(taskForm.get('categoria')?.value || '')">Borrar</button>
+      <button mat-flat-button color="primary">Crear</button>
     </div>
   </div>
 </form>

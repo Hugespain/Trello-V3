@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "8ff5",
-      "listId": "2",
+      "listId": "3",
       "estado": "Pendiente",
       "personaAsignada": "Diego",
       "description": "Una descripcion",
@@ -68,7 +68,7 @@
     },
     {
       "id": "2966",
-      "listId": "3",
+      "listId": "2",
       "estado": "Pendiente",
       "personaAsignada": "Antonio",
       "description": "Comprobar como se guarda la categoria",
