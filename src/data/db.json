@@ -1,49 +1,18 @@
 {
   "tasks": [
     {
-      "id": "8ff5",
-      "listId": "iived49l3",
-      "estado": "Pendiente",
-      "personaAsignada": "Diego",
-      "description": "Una descripcion",
-      "dificultad": "Difícil",
-      "categoria": [],
-      "subtasks": [
-        {
-          "id": 2,
-          "description": "Subtarea 2",
-          "completed": true
-        },
-        {
-          "id": 3,
-          "description": "Tarea añadida",
-          "completed": true
-        },
-        {
-          "id": 4,
-          "description": "Subtarea 3 ¿sin id?",
-          "completed": false
-        },
-        {
-          "description": "sgsfsfd",
-          "completed": false
-        }
-      ],
-      "categorias": []
-    },
-    {
       "id": "56da",
-      "listId": "1",
+      "listId": "3",
       "estado": "En Progreso",
       "personaAsignada": "sfefsf",
       "description": "sdfsfsf",
       "dificultad": "Fácil",
       "categoria": [
-        "Urgente"
+        "Categoria2"
       ],
       "subtasks": [],
       "categorias": [
-        "Urgente"
+        "Categoria2"
       ]
     },
     {
@@ -53,9 +22,7 @@
       "personaAsignada": "Diego",
       "description": "Se guarda?",
       "dificultad": "Media",
-      "categoria": [
-        "Urgente"
-      ],
+      "categoria": [],
       "subtasks": [
         {
           "id": 5,
@@ -68,9 +35,7 @@
           "completed": false
         }
       ],
-      "categorias": [
-        "Urgente"
-      ]
+      "categorias": []
     },
     {
       "id": "2966",
@@ -80,7 +45,8 @@
       "description": "Comprobar como se guarda la categoria",
       "dificultad": "Media",
       "categoria": [
-        "Categoria2"
+        "Categoria2",
+        "Categoría María"
       ],
       "subtasks": [
         {
@@ -89,7 +55,8 @@
         }
       ],
       "categorias": [
-        "Categoria2"
+        "Categoria2",
+        "Categoría María"
       ]
     },
     {
@@ -100,11 +67,11 @@
       "description": "sefsef",
       "dificultad": "Fácil",
       "categoria": [
-        "Urgente"
+        "Nueva categoria"
       ],
       "subtasks": [],
       "categorias": [
-        "Urgente"
+        "Nueva categoria"
       ]
     },
     {
@@ -114,9 +81,13 @@
       "personaAsignada": "María",
       "description": "Una nueva tarea",
       "dificultad": "Media",
-      "categoria": [],
+      "categoria": [
+        "Caso1"
+      ],
       "subtasks": [],
-      "categorias": []
+      "categorias": [
+        "Caso1"
+      ]
     }
   ],
   "categorias": [
@@ -127,10 +98,6 @@
     {
       "id": "2",
       "nombre": "Personal"
-    },
-    {
-      "id": "3",
-      "nombre": "Urgente"
     },
     {
       "id": "999b",
@@ -147,6 +114,14 @@
     {
       "id": "2a88",
       "nombre": "No prioritario"
+    },
+    {
+      "id": "4850",
+      "nombre": "Caso1"
+    },
+    {
+      "id": "a769",
+      "nombre": "Categoría María"
     }
   ],
   "taskLists": [
@@ -167,12 +142,6 @@
       "name": "Terminadas",
       "tasks": [],
       "id": "630c"
-    },
-    {
-      "id": "a577",
-      "listId": "iived49l3",
-      "name": "Nueva lista",
-      "tasks": []
     }
   ]
 }

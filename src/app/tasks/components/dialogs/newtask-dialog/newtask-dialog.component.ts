@@ -25,7 +25,6 @@ export class NewtaskDialogComponent {
     personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
     description: ['', [Validators.maxLength(100)]],
     dificultad: ['', Validators.required],
-    categoria: ['', Validators.required]
   });
 
   onSave(): void {

@@ -81,14 +81,30 @@ export class ListPageComponent implements OnInit {
   }
 
   removeTaskList(taskList: TaskList): void {
-    this.taskService.getTaskListById(taskList.id!).subscribe(() => {
-      this.taskService.deleteTaskList(taskList.id!).subscribe(() => {
+    // Verificar si la lista de tareas está vacía
+    if (taskList.tasks && taskList.tasks.length > 0) {
+      console.warn('No se puede eliminar una lista que contiene tareas.');
+      return;
+    }
+
+    // Verificar si el ID de la lista de tareas está definido
+    if (!taskList.id) {
+      console.error('El ID de la lista de tareas no está definido.');
+      return;
+    }
+
+    // Eliminar la lista de tareas
+    this.taskService.deleteTaskList(taskList.id).subscribe({
+      next: () => {
         const index = this.taskLists.findIndex(list => list.id === taskList.id);
         if (index !== -1) {
           this.taskLists.splice(index, 1);
           this.updateConnectedTo();
         }
-      });
+      },
+      error: (err) => {
+        console.error('Error al eliminar la lista de tareas:', err);
+      }
     });
   }
 
@@ -119,7 +135,8 @@ export class ListPageComponent implements OnInit {
       const newList: TaskList = { listId: this.generateId(), name, tasks: [] };
       this.taskService.createTaskList(newList).subscribe({
         next: () => {
-          this.taskLists.push(newList);
+          this.taskLists.push(newList); // Mantener el push
+          this.loadTaskLists(); // Llamar a loadTaskLists después de crear la nueva lista
           this.updateConnectedTo();
         },
         error: err => {
@@ -128,7 +145,6 @@ export class ListPageComponent implements OnInit {
       });
     }
   }
-
 
 
 
