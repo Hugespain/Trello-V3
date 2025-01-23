@@ -4,13 +4,12 @@
       "id": "56da",
       "listId": "3",
       "estado": "En Progreso",
-      "personaAsignada": "sfefsf",
+      "personaAsignada": ["sfefsf"],
       "description": "sdfsfsf",
       "dificultad": "Fácil",
       "categoria": [
         "Categoria2",
-        "Personal",
-        "Categoria formulario"
+        "Personal"
       ],
       "subtasks": []
     },
@@ -18,7 +17,7 @@
       "id": "5f9d",
       "listId": "1",
       "estado": "Pendiente",
-      "personaAsignada": "Diego",
+      "personaAsignada": ["Diego"],
       "description": "Se guarda?",
       "dificultad": "Media",
       "categoria": [],
@@ -38,7 +37,7 @@
       "id": "2966",
       "listId": "2",
       "estado": "Pendiente",
-      "personaAsignada": "Antonio",
+      "personaAsignada": ["Antonio"],
       "description": "Comprobar como se guarda la categoria",
       "dificultad": "Media",
       "categoria": [
@@ -56,7 +55,7 @@
       "id": "6237",
       "listId": "2",
       "estado": "Terminada",
-      "personaAsignada": "efefsef",
+      "personaAsignada": ["efefsef"],
       "description": "sefsef",
       "dificultad": "Fácil",
       "categoria": [
@@ -68,7 +67,7 @@
       "id": "c707",
       "listId": "2",
       "estado": "Terminada",
-      "personaAsignada": "María",
+      "personaAsignada": ["María"],
       "description": "Una nueva tarea",
       "dificultad": "Media",
       "categoria": [

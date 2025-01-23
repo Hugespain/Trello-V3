@@ -28,7 +28,15 @@
             <mat-card-content>
               <p><strong>ID:</strong> {{ task.id }}</p>
               <p><strong>Lista:</strong> {{ list.name }}</p>
-              <p><strong>Persona Asignada:</strong> {{ task.personaAsignada }}</p>
+              <mat-divider></mat-divider>
+              <p><strong>Personas asignadas:</strong></p>
+              <div *ngIf="task.personaAsignada">
+                <mat-chip-listbox>
+                  <mat-chip *ngFor="let persona of task.personaAsignada">
+                    {{ persona }}
+                  </mat-chip>
+                </mat-chip-listbox>
+              </div>
               <p><strong>Categorías:</strong></p>
               <mat-chip-listbox>
                 <mat-chip *ngFor="let categoria of task.categoria">
@@ -39,7 +47,7 @@
               <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
               <mat-divider></mat-divider>
               <div *ngIf="task.subtasks">
-                <p><strong>Subtareas:</strong>
+                <p><strong>Subtareas:</strong></p>
                 <div *ngFor="let subtask of task.subtasks">
                   <mat-checkbox [(ngModel)]="subtask.completed">{{ subtask.description }}</mat-checkbox>
                 </div>

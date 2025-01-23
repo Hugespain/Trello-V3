@@ -4,7 +4,7 @@ export interface Task {
   id: number;
   listId: string;
   estado: Estado;
-  personaAsignada: string;
+  personaAsignada?: string[];
   description: string;
   dificultad: Dificultad;
   categoria?: string[]; // Cambiado a string para permitir categorías dinámicas
