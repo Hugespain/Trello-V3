@@ -44,8 +44,8 @@
 
     <div class="large-field">
       <mat-label>Categorías</mat-label>
-      <mat-chip-listbox *ngIf="categorias">
-        <mat-chip *ngFor="let categoria of categorias.controls" (removed)="removeCategoria(categoria.value)">
+      <mat-chip-listbox *ngIf="categoria">
+        <mat-chip *ngFor="let categoria of categoria.controls" (removed)="removeCategoria(categoria.value)">
           {{ categoria.value }}
           <button matChipRemove [attr.aria-label]="'remove ' + categoria.value">
             <mat-icon>cancel</mat-icon>

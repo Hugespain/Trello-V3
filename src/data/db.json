@@ -8,12 +8,11 @@
       "description": "sdfsfsf",
       "dificultad": "Fácil",
       "categoria": [
-        "Categoria2"
+        "Categoria2",
+        "Personal",
+        "Categoria formulario"
       ],
-      "subtasks": [],
-      "categorias": [
-        "Categoria2"
-      ]
+      "subtasks": []
     },
     {
       "id": "5f9d",
@@ -33,8 +32,7 @@
           "description": "Subtarea 3",
           "completed": false
         }
-      ],
-      "categorias": []
+      ]
     },
     {
       "id": "2966",
@@ -52,10 +50,6 @@
           "description": "Subtarea par Antonio",
           "completed": false
         }
-      ],
-      "categorias": [
-        "Categoria2",
-        "Categoría María"
       ]
     },
     {
@@ -68,10 +62,7 @@
       "categoria": [
         "Nueva categoria"
       ],
-      "subtasks": [],
-      "categorias": [
-        "Nueva categoria"
-      ]
+      "subtasks": []
     },
     {
       "id": "c707",
@@ -83,10 +74,7 @@
       "categoria": [
         "Caso1"
       ],
-      "subtasks": [],
-      "categorias": [
-        "Caso1"
-      ]
+      "subtasks": []
     }
   ],
   "categorias": [
