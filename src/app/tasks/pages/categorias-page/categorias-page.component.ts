@@ -78,6 +78,7 @@ export class CategoriasPageComponent implements OnInit, AfterViewInit {
       const categoriaExistente = this.categorias.find(cat => cat.nombre.toLowerCase() === nombre.toLowerCase());
       if (categoriaExistente) {
         this.openSuccessDialog('La categoría ya existe');
+        return;
       } else {
         this.taskService.addCategoria(nombre).subscribe(() => {
           this.loadCategorias(); // Recargar las categorías después de añadir una nueva

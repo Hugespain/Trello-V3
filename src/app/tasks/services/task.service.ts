@@ -21,7 +21,6 @@ export class TasksService {
   public categorias$ = this.categoriasSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    this.loadCategorias();
   }
 
   // Obtener todas las tareas
@@ -96,11 +95,11 @@ export class TasksService {
   }
 
   // CATEGORÍAS
-  private loadCategorias(): void {
-    this.http.get<{ id: number, nombre: string }[]>(`${this.baseUrl}/categorias`).subscribe(categorias => {
-      this.categoriasSubject.next(categorias);
-    });
-  }
+  // private loadCategorias(): void {
+  //   this.http.get<{ id: number, nombre: string }[]>(`${this.baseUrl}/categorias`).subscribe(categorias => {
+  //     this.categoriasSubject.next(categorias);
+  //   });
+  // }
 
   setCategorias(categorias: { id: string, nombre: string }[]): Observable<void> {
     return this.http.put<void>(`${this.baseUrl}/categorias`, categorias);
@@ -135,4 +134,49 @@ export class TasksService {
       })
     );
   }
+
+
+  //PERSONAS
+
+
+// private loadPersonasAsignadas(): void {
+//   this.http.get<{ id: number, nombre: string }[]>(`${this.baseUrl}/personasAsignadas`).subscribe(personasAsignadas => {
+//     this.personasAsignadasSubject.next(personasAsignadas);
+//   });
+// }
+
+setPersonas(personas: { id: string, nombre: string }[]): Observable<void> {
+  return this.http.put<void>(`${this.baseUrl}/personas`, personas);
+}
+
+getPersonas(): Observable<{ id: string, nombre: string }[]> {
+  return this.http.get<{ id: string, nombre: string }[]>(`${this.baseUrl}/personas`);
+}
+
+addPersona(nombre: string): Observable<void> {
+  const newPersona = { nombre };
+  return this.http.post<void>(`${this.baseUrl}/personas`, newPersona);
+}
+
+deletePersonaById(id: string): Observable<void> {
+  return this.http.delete<void>(`${this.baseUrl}/personas/${id}`);
+}
+
+updatePersona(id: string, nombre: string): Observable<void> {
+  const updatedPersona = { nombre };
+  return this.http.put<void>(`${this.baseUrl}/personas/${id}`, updatedPersona);
+}
+
+// Método para eliminar una persona asignada de una tarea específica
+removePersonaFromTask(taskId: string, persona: string): Observable<Task> {
+  return this.http.get<Task>(`${this.baseUrl}/tasks/${taskId}`).pipe(
+    switchMap(task => {
+      if (task.personaAsignada) {
+        task.personaAsignada = task.personaAsignada.filter(p => p !== persona);
+      }
+      return this.updateTask(task);
+    })
+  );
+}
+
 }

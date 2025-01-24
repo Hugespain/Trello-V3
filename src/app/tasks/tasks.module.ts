@@ -16,6 +16,7 @@ import { SuccessDialogComponent } from './components/dialogs/success-dialog/succ
 import { EditDialogComponent } from './components/dialogs/edit-dialog/edit-dialog.component';
 import { NewtaskDialogComponent } from './components/dialogs/newtask-dialog/newtask-dialog.component';
 import { CategoriasPageComponent } from './pages/categorias-page/categorias-page.component';
+import { PeoplePageComponent } from './pages/people-page/people-page.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CategoriasPageComponent } from './pages/categorias-page/categorias-page
     EditDialogComponent,
     NewtaskDialogComponent,
     CategoriasPageComponent,
+    PeoplePageComponent,
   ],
   imports: [
     CommonModule,

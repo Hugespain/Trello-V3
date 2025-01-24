@@ -1,9 +1,11 @@
+<!-- Encabezado de la página -->
 <mat-card>
   <mat-card-header>
     <mat-card-title>Lista de Categorías</mat-card-title>
   </mat-card-header>
 </mat-card>
 
+<!-- Scroller infinito fuera del mat-card -->
 <div class="categorias-container scroller" data-speed="fast">
   <div class="scroller__inner">
     <mat-card *ngFor="let categoria of categorias" class="categoria-card">
@@ -14,32 +16,40 @@
   </div>
 </div>
 
-<form [formGroup]="taskForm">
-  <div class="centered-form">
-    <div class="button-container">
-      <button mat-flat-button color="warn" (click)="removeCategoria(taskForm.get('categoria')?.value || '')">Borrar</button>
-    </div>
-    <mat-form-field class="large-field">
-      <mat-label>Categorías</mat-label>
-      <div class="scroll-list__wrp">
-        <mat-select formControlName="categoria">
-          <mat-option *ngFor="let categoria of categorias; let i = index" [value]="categoria.id">
-            {{ categoria.nombre }}
-          </mat-option>
-        </mat-select>
-      </div>
-    </mat-form-field>
-  </div>
-</form>
+<!-- Mat-card para las categorías y botones centrado en la pantalla -->
+<div class="centered-container">
+  <mat-card class="form-card">
+    <mat-card-content>
+      <h2>Creación y Edición de Categorías</h2>
+      <form [formGroup]="taskForm">
+        <div class="centered-form">
+          <mat-form-field class="field">
+            <mat-label>Categorías</mat-label>
+            <div class="scroll-list__wrp">
+              <mat-select formControlName="categoria">
+                <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+                  {{ categoria.nombre }}
+                </mat-option>
+              </mat-select>
+            </div>
+          </mat-form-field>
+          <div class="button-container">
+            <button mat-flat-button color="warn" (click)="removeCategoria(taskForm.get('categoria')?.value || '')">Borrar</button>
+          </div>
+        </div>
+      </form>
 
-<form [formGroup]="taskForm">
-  <div class="centered-form">
-    <mat-form-field class="large-field">
-      <mat-label>Crear categoría</mat-label>
-      <input matInput formControlName="crearCategoria">
-    </mat-form-field>
-    <div class="button-container">
-      <button mat-flat-button color="primary" (click)="crearCategoria()">Crear</button>
-    </div>
-  </div>
-</form>
+      <form [formGroup]="taskForm">
+        <div class="centered-form">
+          <mat-form-field class="field">
+            <mat-label>Crear categoría</mat-label>
+            <input matInput formControlName="crearCategoria">
+          </mat-form-field>
+          <div class="button-container">
+            <button mat-flat-button color="primary" (click)="crearCategoria()">Crear</button>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

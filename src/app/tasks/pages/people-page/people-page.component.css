@@ -6,39 +6,13 @@
   mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
-  height: 30vh; /* Ajustar la altura para centrar mejor */
+  height: 10vh; /* Ajustar la altura para centrar mejor */
 }
 
 .scroller__inner {
   display: flex;
   gap: 2rem; /* Aumentar la separación entre las tarjetas */
   width: max-content;
-  animation: scroll 40s linear infinite;
-}
-
-.scroller[data-direction="right"] .scroller__inner {
-  animation-direction: reverse;
-}
-
-.scroller[data-direction="left"] .scroller__inner {
-  animation-direction: normal;
-}
-
-.scroller[data-speed="fast"] .scroller__inner {
-  animation-duration: 20s;
-}
-
-.scroller[data-speed="slow"] .scroller__inner {
-  animation-duration: 60s;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 .categoria-card {
@@ -51,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh; /* Ajustar la altura para centrar mejor */
+  height: 80vh; /* Ajustar la altura para centrar mejor */
 }
 
 .form-card {
@@ -68,13 +42,17 @@
 
 .field {
   width: 80%; /* Ajustar el ancho del campo */
-  margin-top: 0,5px; /* Añadir margen inferior para separación */
+  margin-top: 0.5px; /* Añadir margen superior para separación */
+}
+
+.large-field {
+  width: 70%;
 }
 
 .button-container {
   display: flex;
   justify-content: flex-end;
-  width: 80%;
+  width: 70%;
   margin-top: 0px;
-  margin-bottom: 15px; /* Añadir margen superior para separación */
+  margin-bottom: 15px; /* Añadir margen inferior para separación */
 }

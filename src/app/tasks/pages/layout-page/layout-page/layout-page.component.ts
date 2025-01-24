@@ -11,7 +11,9 @@ export class LayoutPageComponent {
     { label: 'Listado', icon: 'label', url: '' },
     { label: 'Añadir tarea', icon: 'add', url: 'new' },
     { label: 'Editar/Eliminar tarea', icon: 'edit', url: 'edit'  },
-    { label: 'Categorias', icon: 'category', url: 'categorias'  }
+    { label: 'Categorias', icon: 'category', url: 'categorias'  },
+    { label: 'Personas', icon: 'group_add', url: 'personas'  }
+
 
   ]
 }

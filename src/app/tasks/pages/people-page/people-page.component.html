@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Lista de Personas</mat-card-title>
+  </mat-card-header>
+</mat-card>
+
+
+<!-- Mat-card para las personas y botones centrado en la pantalla -->
+<div class="centered-container">
+  <mat-card class="form-card">
+    <mat-card-content>
+      <h2>Gestión de Personas</h2>
+
+      <!-- Formulario para eliminar personas -->
+      <form [formGroup]="personForm">
+        <div class="centered-form">
+          <mat-form-field class="large-field">
+            <mat-label>Personas</mat-label>
+            <div class="scroll-list__wrp">
+              <mat-select formControlName="persona">
+                <mat-option *ngFor="let persona of people" [value]="persona.id">
+                  {{ persona.nombre }}
+                </mat-option>
+              </mat-select>
+            </div>
+          </mat-form-field>
+          <div class="button-container">
+            <button mat-flat-button color="warn" (click)="removePerson(personForm.get('persona')?.value || '')">Eliminar</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Formulario para crear personas -->
+      <form [formGroup]="personForm">
+        <div class="centered-form">
+          <mat-form-field class="large-field">
+            <mat-label>Crear persona</mat-label>
+            <input matInput formControlName="crearPersona">
+          </mat-form-field>
+          <div class="button-container">
+            <button mat-flat-button color="primary" (click)="crearPersona()">Crear</button>
+          </div>
+        </div>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</div>
