@@ -1,48 +1,51 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Lista de Personas</mat-card-title>
+    <mat-card-title>Gestionar Personas</mat-card-title>
   </mat-card-header>
 </mat-card>
 
 
-<!-- Mat-card para las personas y botones centrado en la pantalla -->
-<div class="centered-container">
-  <mat-card class="form-card">
-    <mat-card-content>
-      <h2>Gestión de Personas</h2>
+<mat-card>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-      <!-- Formulario para eliminar personas -->
-      <form [formGroup]="personForm">
-        <div class="centered-form">
-          <mat-form-field class="large-field">
-            <mat-label>Personas</mat-label>
-            <div class="scroll-list__wrp">
-              <mat-select formControlName="persona">
-                <mat-option *ngFor="let persona of people" [value]="persona.id">
-                  {{ persona.nombre }}
-                </mat-option>
-              </mat-select>
-            </div>
-          </mat-form-field>
-          <div class="button-container">
-            <button mat-flat-button color="warn" (click)="removePerson(personForm.get('persona')?.value || '')">Eliminar</button>
-          </div>
-        </div>
-      </form>
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
 
-      <!-- Formulario para crear personas -->
-      <form [formGroup]="personForm">
-        <div class="centered-form">
-          <mat-form-field class="large-field">
-            <mat-label>Crear persona</mat-label>
-            <input matInput formControlName="crearPersona">
-          </mat-form-field>
-          <div class="button-container">
-            <button mat-flat-button color="primary" (click)="crearPersona()">Crear</button>
-          </div>
-        </div>
-      </form>
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
 
-    </mat-card-content>
-  </mat-card>
-</div>
+      <!-- Acciones Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" (click)="removePerson(element.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+</mat-card>
+
+<form [formGroup]="personForm">
+  <div class="centered-form">
+    <mat-form-field class="large-field">
+      <mat-label>Crear Persona</mat-label>
+      <input matInput formControlName="crearPersona">
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="crearPersona()">Crear</button>
+  </div>
+</form>
+
