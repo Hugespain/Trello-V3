@@ -24,11 +24,6 @@
     </mat-form-field>
 
     <mat-form-field class="large-field">
-      <mat-label>Persona asignada</mat-label>
-      <input matInput formControlName="personaAsignada">
-    </mat-form-field>
-
-    <mat-form-field class="large-field">
       <mat-label>Descripción</mat-label>
       <input matInput formControlName="description">
     </mat-form-field>
@@ -62,6 +57,28 @@
         </mat-option>
       </mat-select>
       <button mat-button (click)="addCategoria(categoriaSelect.value)">Añadir</button>
+    </mat-form-field>
+
+    <div class="large-field">
+      <mat-label>Personas Asignadas</mat-label>
+      <mat-chip-listbox *ngIf="personaAsignada">
+        <mat-chip *ngFor="let persona of personaAsignada.controls" (removed)="removePersona(persona.value)">
+          {{ persona.value }}
+          <button matChipRemove [attr.aria-label]="'remove ' + persona.value">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+      </mat-chip-listbox>
+    </div>
+
+    <mat-form-field class="large-field">
+      <mat-label>Añadir Persona</mat-label>
+      <mat-select #personaSelect>
+        <mat-option *ngFor="let persona of availablePersonas" [value]="persona.nombre">
+          {{ persona.nombre }}
+        </mat-option>
+      </mat-select>
+      <button mat-button (click)="addPersona(personaSelect.value)">Añadir</button>
     </mat-form-field>
 
     <h3>Subtareas</h3>

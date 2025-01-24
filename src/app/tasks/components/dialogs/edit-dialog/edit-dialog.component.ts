@@ -16,6 +16,7 @@ export class EditDialogComponent implements OnInit {
   public taskForm: FormGroup;
   public availableCategorias: { id: string, nombre: string }[] = [];
   public availableIds: number[] = [];
+  public availablePersonas: {id: string, nombre: string}[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -27,7 +28,7 @@ export class EditDialogComponent implements OnInit {
     this.taskForm = this.fb.group({
       id: [{ value: '', disabled: true }, Validators.required],
       estado: ['', Validators.required],
-      personaAsignada: ['', [Validators.required, Validators.maxLength(20)]],
+      personaAsignada: this.fb.array([]),
       description: ['', [Validators.maxLength(100)]],
       dificultad: ['', Validators.required],
       categoria: this.fb.array([]), // Campo para la categoría específica de la tarea
@@ -38,15 +39,23 @@ export class EditDialogComponent implements OnInit {
   ngOnInit(): void {
     this.taskForm.patchValue(this.data);
     this.setSubtasks(this.data.subtasks || []);
-    this.setCategoria(this.data.categoria || []); // Usar 'categoria' en lugar de 'categorias'
+    this.setCategorias(this.data.categoria || []);
     this.loadAvailableCategorias();
     this.loadAvailableIds();
+    this.setPersonas(this.data.personaAsignada|| []);
+    this.loadAvailablePersonas();
   }
 
-  loadAvailableCategorias(): void {
-    this.taskService.getCategorias().subscribe(categorias => {
-      this.availableCategorias = categorias;
-    });
+  //TASKS
+  onIdSelection(id: number): void {
+    if (id) {
+      this.taskService.getTaskById(id).subscribe(task => {
+        if (task) {
+          this.taskForm.patchValue(task);
+          this.setCategorias(task.categoria || []); // Usar 'categoria' en lugar de 'categorias'
+        }
+      });
+    }
   }
 
   loadAvailableIds(): void {
@@ -55,64 +64,9 @@ export class EditDialogComponent implements OnInit {
     });
   }
 
-  setCategoria(categorias: string[]): void {
-    const categoriaFGs = categorias.map(categoria => this.fb.control(categoria));
-    const categoriaFormArray = this.fb.array(categoriaFGs);
-    this.taskForm.setControl('categoria', categoriaFormArray);
-  }
-
-  get categoria(): FormArray {
-    return this.taskForm.get('categoria') as FormArray;
-  }
-
-  setSubtasks(subtasks: Subtask[]): void {
-    const subtaskFGs = subtasks.map(subtask => this.fb.group(subtask));
-    const subtaskFormArray = this.fb.array(subtaskFGs);
-    this.taskForm.setControl('subtasks', subtaskFormArray);
-  }
-
-  get subtasks(): FormArray {
-    return this.taskForm.get('subtasks') as FormArray;
-  }
-
-  addSubtask(): void {
-    this.subtasks.push(this.fb.group({
-      description: ['', Validators.required],
-      completed: [false]
-    }));
-  }
-
-  removeSubtask(index: number): void {
-    this.subtasks.removeAt(index);
-    this.taskForm.updateValueAndValidity();
-  }
-
   canDeleteTask(): boolean {
     const subtasks = this.subtasks.value;
     return subtasks.length === 0 || subtasks.every((subtask: Subtask) => subtask.completed);
-  }
-
-  removeCategoria(categoria: string): void {
-    const categorias = this.categoria.value as string[];
-    const updatedCategorias = categorias.filter(cat => cat !== categoria);
-    this.setCategoria(updatedCategorias);
-  }
-
-  addCategoria(categoria: string): void {
-    if (categoria && !this.categoria.value.includes(categoria)) {
-      this.categoria.push(this.fb.control(categoria));
-    }
-  }
-
-  onIdSelection(id: number): void {
-    if (id) {
-      this.taskService.getTaskById(id).subscribe(task => {
-        if (task) {
-          this.taskForm.patchValue(task);
-          this.setCategoria(task.categoria || []); // Usar 'categoria' en lugar de 'categorias'
-        }
-      });
-    }
   }
 
   onUpdate(): void {
@@ -129,6 +83,8 @@ export class EditDialogComponent implements OnInit {
       if (result) {
         const task: Task = this.taskForm.getRawValue();
         task.categoria = this.categoria.value; // Usar 'categoria' en lugar de 'categorias'
+        task.personaAsignada = this.personaAsignada.value; //Ahora también debe actualizar la persona asignada
+
 
         this.taskService.updateTask(task).subscribe({
           next: response => {
@@ -185,11 +141,103 @@ export class EditDialogComponent implements OnInit {
     });
   }
 
+  //SUBTASKS
+  setSubtasks(subtasks: Subtask[]): void {
+    const subtaskFGs = subtasks.map(subtask => this.fb.group(subtask));
+    const subtaskFormArray = this.fb.array(subtaskFGs);
+    this.taskForm.setControl('subtasks', subtaskFormArray);
+  }
+
+  get subtasks(): FormArray {
+    return this.taskForm.get('subtasks') as FormArray;
+  }
+
+  addSubtask(): void {
+    this.subtasks.push(this.fb.group({
+      description: ['', Validators.required],
+      completed: [false]
+    }));
+  }
+
+  removeSubtask(index: number): void {
+    this.subtasks.removeAt(index);
+    this.taskForm.updateValueAndValidity();
+  }
+
+  //CATEGORIAS
+  loadAvailableCategorias(): void {
+    this.taskService.getCategorias().subscribe(categorias => {
+      this.availableCategorias = categorias;
+    });
+  }
+
+  //Convierte las categorias disponibles en un FormArray de FormControl
+  //para que puedan ser gestionadas dentro del formulario reactivo.
+  setCategorias(categorias: string[]): void {
+    const categoriaFGs = categorias.map(categoria => this.fb.control(categoria));
+    const categoriaFormArray = this.fb.array(categoriaFGs);
+    this.taskForm.setControl('categoria', categoriaFormArray);
+  }
+
+  get categoria(): FormArray {
+    return this.taskForm.get('categoria') as FormArray;
+  }
+
+
+  removeCategoria(categoria: string): void {
+    const categorias = this.categoria.value as string[];
+    const updatedCategorias = categorias.filter(cat => cat !== categoria);
+    this.setCategorias(updatedCategorias);
+  }
+
+  //Añadir categoria al controlador, luego se guardará con el método onupdate que actualiza toda la tarea
+  addCategoria(categoria: string): void {
+    if (categoria && !this.categoria.value.includes(categoria)) {
+      this.categoria.push(this.fb.control(categoria));
+    }
+  }
+
+  //PERSONAS
+  loadAvailablePersonas():void{
+    this.taskService.getPersonas().subscribe(personas => {
+      this.availablePersonas = personas;
+    });
+  }
+
+  get personaAsignada(): FormArray {
+  return this.taskForm.get('personaAsignada') as FormArray;
+}
+
+  //Convierte las personas disponibles en un FormArray
+  // de FormControl para que puedan ser gestionadas dentro del formulario reactivo
+  //Primero se crea un nuevo FormControl para cada persona y luego se crea un FormArray con esos controles
+  //Finalmente, el FormArray creado se asigna al control categoria del formulario usando this.taskForm.setControl.
+  setPersonas(personas: string []):void{
+    const personaFGs = personas.map(persona => this.fb.control(persona));
+    const personaFormArray = this.fb.array(personaFGs);
+    this.taskForm.setControl('personaAsignada', personaFormArray);
+  }
+
+
+  addPersona(personaAsignada: string):void{
+    if(personaAsignada && !this.personaAsignada.value.includes(personaAsignada)){
+      this.personaAsignada.push(this.fb.control(personaAsignada));
+    }
+  }
+
+  removePersona(personaAsignada: string):void{
+    const personas = this.personaAsignada.value as string[];
+    const updatedPersonas = personas.filter(persona => persona !== personaAsignada);
+    this.setPersonas(updatedPersonas);
+  }
+
+
+  //Método para reiniciar el formulario
   private resetForm(): void {
     this.taskForm.reset({
       id: '',
       estado: '',
-      personaAsignada: '',
+      personaAsignada: [],
       description: '',
       dificultad: '',
       categoria: [] // Usar 'categoria' en lugar de 'categorias'
