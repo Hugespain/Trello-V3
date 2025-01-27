@@ -20,7 +20,6 @@ export class PeoplePageComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private taskService: TasksService, public dialog: MatDialog) {
     this.personForm = this.fb.group({
-      persona: [''],
       crearPersona: ['', [Validators.maxLength(100)]]
     });
   }
@@ -41,7 +40,6 @@ export class PeoplePageComponent implements OnInit {
 
   private resetForm(): void {
     this.personForm.reset({
-      persona: '',
       crearPersona: ''
     });
     Object.keys(this.personForm.controls).forEach(key => {

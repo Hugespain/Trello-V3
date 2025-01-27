@@ -5,13 +5,14 @@
       "listId": "3",
       "estado": "En Progreso",
       "personaAsignada": [
-        "sfefsf"
+        "sfefsf",
+        "María"
       ],
       "description": "sdfsfsf",
       "dificultad": "Fácil",
       "categoria": [
-        "Categoria2",
-        "Personal"
+        "Personal",
+        "Categoría María"
       ],
       "subtasks": []
     },
@@ -69,7 +70,12 @@
       "categoria": [
         "Nueva categoria"
       ],
-      "subtasks": []
+      "subtasks": [
+        {
+          "description": "Subtarea 1",
+          "completed": false
+        }
+      ]
     },
     {
       "id": "c707",
@@ -175,6 +181,10 @@
     {
       "id": "8c93",
       "nombre": "Diego"
+    },
+    {
+      "id": "a471",
+      "nombre": "Raquel"
     }
   ],
   "taskLists": [
