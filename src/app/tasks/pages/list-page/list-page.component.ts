@@ -18,8 +18,10 @@ export class ListPageComponent implements OnInit {
 
   public connectedTo: string[] = [];
 
+  //Propiedades para los filtros
   public searchTextDescription: string = '';
   public searchTextCategory: string = '';
+  public searchTextPerson: string = '';
 
   constructor(private taskService: TasksService, private dialog: MatDialog) {}
 
@@ -162,6 +164,11 @@ export class ListPageComponent implements OnInit {
     console.log(this.searchTextCategory);
   }
 
+  //FILTRO DE PERSONA DE TAREAS
+  filterTasksPerson(searchTextPerson: string): void {
+    this.searchTextPerson = searchTextPerson;
+    console.log(this.searchTextPerson);
+  }
 
 
 

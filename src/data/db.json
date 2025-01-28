@@ -82,12 +82,14 @@
       "listId": "2",
       "estado": "Terminada",
       "personaAsignada": [
-        "María"
+        "María",
+        "Antonio"
       ],
       "description": "Una nueva tarea",
       "dificultad": "Media",
       "categoria": [
-        "Caso1"
+        "Caso1",
+        "Personal"
       ],
       "subtasks": []
     },
@@ -185,6 +187,10 @@
     {
       "id": "a471",
       "nombre": "Raquel"
+    },
+    {
+      "id": "11e5",
+      "nombre": "Antonio"
     }
   ],
   "taskLists": [

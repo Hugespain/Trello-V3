@@ -20,6 +20,7 @@ import { PeoplePageComponent } from './pages/people-page/people-page.component';
 import { HeaderFilterBoxComponent } from './components/header-filter-box/header-filter-box.component';
 import { TaskDescriptionPipe } from './pipes/task-description-filter.pipe';
 import { TaskCategoryPipe } from './pipes/task-category-filter.pipe';
+import { TaskPersonPipe } from './pipes/task-person-filter.pipe';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TaskCategoryPipe } from './pipes/task-category-filter.pipe';
     PeoplePageComponent,
     HeaderFilterBoxComponent,
     TaskDescriptionPipe,
-    TaskCategoryPipe
+    TaskCategoryPipe,
+    TaskPersonPipe,
 
 
   ],
