@@ -19,6 +19,7 @@ import { CategoriasPageComponent } from './pages/categorias-page/categorias-page
 import { PeoplePageComponent } from './pages/people-page/people-page.component';
 import { HeaderFilterBoxComponent } from './components/header-filter-box/header-filter-box.component';
 import { TaskDescriptionPipe } from './pipes/task-description-filter.pipe';
+import { TaskCategoryPipe } from './pipes/task-category-filter.pipe';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { TaskDescriptionPipe } from './pipes/task-description-filter.pipe';
     CategoriasPageComponent,
     PeoplePageComponent,
     HeaderFilterBoxComponent,
-    TaskDescriptionPipe
+    TaskDescriptionPipe,
+    TaskCategoryPipe
 
 
   ],

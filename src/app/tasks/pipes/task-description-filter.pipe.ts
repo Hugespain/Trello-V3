@@ -12,14 +12,14 @@ export class TaskDescriptionPipe implements PipeTransform {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   }
 
-  transform(items: Task[], searchText: string): Task[] {
+  transform(items: Task[], searchDescriptionText: string): Task[] {
     if(!items) return [];
-    if(!searchText) return items;
+    if(!searchDescriptionText) return items;
 
-    searchText = this.normalizeString(searchText);
+    searchDescriptionText = this.normalizeString(searchDescriptionText);
 
     return items.filter((item: Task) => {
-    return this.normalizeString(item.description).includes(searchText);
+    return this.normalizeString(item.description).includes(searchDescriptionText);
   });
 }
 }

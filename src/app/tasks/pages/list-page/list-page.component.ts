@@ -18,7 +18,8 @@ export class ListPageComponent implements OnInit {
 
   public connectedTo: string[] = [];
 
-  public searchText: string = '';
+  public searchTextDescription: string = '';
+  public searchTextCategory: string = '';
 
   constructor(private taskService: TasksService, private dialog: MatDialog) {}
 
@@ -149,10 +150,16 @@ export class ListPageComponent implements OnInit {
     }
   }
 
-  //FILTRO DE TAREAS
-  filterTasks(searchText: string): void {
-    this.searchText = searchText;
-    console.log(this.searchText);
+  //FILTRO DE DESCRIPCIÓN DE TAREAS
+  filterTasksDescription(searchTextDescription: string): void {
+    this.searchTextDescription = searchTextDescription;
+    console.log(this.searchTextDescription);
+  }
+
+  //FILTRO DE CATEGORIA DE TAREAS
+  filterTasksCategory(searchTextCategory: string): void {
+    this.searchTextCategory = searchTextCategory;
+    console.log(this.searchTextCategory);
   }
 
 

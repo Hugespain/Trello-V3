@@ -1,7 +1,12 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>Lista de Tareas</mat-card-title>
-    <app-header-filter-box (filterText)="filterTasks($event)"></app-header-filter-box>
+    <app-header-filter-box
+    (filterDescription)="filterTasksDescription($event)"
+    (filterCategory)="filterTasksCategory($event)"
+    >
+
+    </app-header-filter-box>
   </mat-card-header>
 </mat-card>
 
@@ -17,7 +22,7 @@
 
       <mat-card-content>
         <mat-accordion>
-          <mat-expansion-panel *ngFor="let task of list.tasks | taskDescriptionFilter: searchText" cdkDrag>
+          <mat-expansion-panel *ngFor="let task of list.tasks | taskDescriptionFilter: searchTextDescription | taskCategoryFilter:searchTextCategory  " cdkDrag>
             <mat-expansion-panel-header>
               <mat-panel-title>
                 {{ task.id }}
