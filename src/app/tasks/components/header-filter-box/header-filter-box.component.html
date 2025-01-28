@@ -1,0 +1,14 @@
+
+<div class="row justify-content-end">
+  <button mat-button matTooltip="Buscar por descripción de la tarea"><mat-icon>task</mat-icon></button>
+  <button mat-button matTooltip="Buscar por categoria de la tarea"><mat-icon>category</mat-icon></button>
+  <button mat-button matTooltip="Buscar por persona asignada a la tarea"><mat-icon>person</mat-icon></button>
+
+
+<form>
+    <mat-form-field class="search-box">
+      <input matInput placeholder="Buscar..." (input)="sendSearchText($event)">
+    </mat-form-field>
+</form>
+
+</div>

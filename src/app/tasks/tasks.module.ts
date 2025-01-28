@@ -17,6 +17,8 @@ import { EditDialogComponent } from './components/dialogs/edit-dialog/edit-dialo
 import { NewtaskDialogComponent } from './components/dialogs/newtask-dialog/newtask-dialog.component';
 import { CategoriasPageComponent } from './pages/categorias-page/categorias-page.component';
 import { PeoplePageComponent } from './pages/people-page/people-page.component';
+import { HeaderFilterBoxComponent } from './components/header-filter-box/header-filter-box.component';
+import { TaskDescriptionPipe } from './pipes/task-description-filter.pipe';
 
 
 @NgModule({
@@ -31,6 +33,10 @@ import { PeoplePageComponent } from './pages/people-page/people-page.component';
     NewtaskDialogComponent,
     CategoriasPageComponent,
     PeoplePageComponent,
+    HeaderFilterBoxComponent,
+    TaskDescriptionPipe
+
+
   ],
   imports: [
     CommonModule,

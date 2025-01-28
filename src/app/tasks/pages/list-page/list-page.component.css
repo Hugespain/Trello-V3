@@ -50,7 +50,7 @@ mat-card-header {
 }
 
 mat-card-title {
-  flex-grow: 1;
+  display: inline;
 }
 
 mat-icon.rotate {

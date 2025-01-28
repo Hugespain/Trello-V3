@@ -18,11 +18,14 @@ export class ListPageComponent implements OnInit {
 
   public connectedTo: string[] = [];
 
+  public searchText: string = '';
+
   constructor(private taskService: TasksService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadTaskLists();
     this.updateConnectedTo();
+
 
     // Suscripción a los cambios en las tareas
     this.taskService.taskUpdated$.subscribe((updatedTask: Task | null) => {
@@ -144,6 +147,12 @@ export class ListPageComponent implements OnInit {
         }
       });
     }
+  }
+
+  //FILTRO DE TAREAS
+  filterTasks(searchText: string): void {
+    this.searchText = searchText;
+    console.log(this.searchText);
   }
 
 
