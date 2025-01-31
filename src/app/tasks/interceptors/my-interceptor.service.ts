@@ -1,7 +1,7 @@
 import { HttpEvent, HttpEventType, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { Observable, tap} from 'rxjs';
 import { Task } from '../interfaces/task.interface';
 
 @Injectable({
@@ -20,19 +20,14 @@ export class MyInterceptorService implements HttpInterceptor {
   //Con esto tengo que conseguir mostrar un mensaje de éxito o error usando un MatSnackBar
   intercept(req: HttpRequest<Task>, next: HttpHandler): Observable<HttpEvent<Task>> {
     // Verificar si el método es POST, PATCH o DELETE y si la URL contiene '/tasks'
-    if (['POST', 'PATCH', 'DELETE'].includes(req.method) && req.url.includes('/tasks')) {
+    if (['GET', 'PUT', 'POST', 'PATCH', 'DELETE'].includes(req.method) && req.url.includes('/tasks')) {
       return next.handle(req).pipe(
-        tap((event: HttpEvent<Task>) => {
-          // Mostrar mensaje de éxito
-          if (event.type === HttpEventType.Response) {
-            this.snackBar.open('Operación exitosa', 'Cerrar', { duration: 3000 });
-          }
-        }),
-        catchError((error) => {
-          // Manejar el error y mostrar un mensaje al usuario
-          this.snackBar.open('Ocurrió un error', 'Cerrar', { duration: 3000 });
-          return throwError(error);
-        })
+
+      tap({next: (event: HttpEvent<Task>) => {
+        if (event.type === HttpEventType.Response) {
+        this.snackBar.open('Operación exitosa', 'Cerrar', { duration: 3000 });
+      }
+    },error: () => {this.snackBar.open('Ocurrió un error', 'Cerrar', { duration: 3000 })}})
       );
     } else {
       // Si el método no es POST, PATCH o DELETE, o la URL no contiene '/tasks', pasar la solicitud sin modificarla

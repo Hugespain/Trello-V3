@@ -25,7 +25,9 @@
       ],
       "description": "Se guarda?",
       "dificultad": "Media",
-      "categoria": [],
+      "categoria": [
+        "Trabajo"
+      ],
       "subtasks": [
         {
           "id": 6,
@@ -79,7 +81,7 @@
     },
     {
       "id": "c707",
-      "listId": "2",
+      "listId": "3",
       "estado": "Terminada",
       "personaAsignada": [
         "María",
@@ -111,6 +113,19 @@
       "personaAsignada": [
         "Antonio"
       ]
+    },
+    {
+      "id": "86a4",
+      "estado": "Pendiente",
+      "description": "ssfsfs",
+      "dificultad": "Fácil",
+      "listId": "3",
+      "subtasks": [],
+      "categoria": [],
+      "personaAsignada": []
+    },
+    {
+      "id": "5887"
     }
   ],
   "categorias": [
