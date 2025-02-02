@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "number" }
+      ]
+    },
+    "listId": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "number" }
+      ]
+    },
+    "estado": { "type": "string" },
+    "personaAsignada": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "description": { "type": "string" },
+    "dificultad": { "type": "string" },
+    "categoria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "subtasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "completed": { "type": "boolean" }
+        },
+        "required": ["description", "completed"]
+      }
+    }
+  },
+  "required": ["description", "estado", "dificultad"]
+}

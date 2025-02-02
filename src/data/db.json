@@ -65,7 +65,9 @@
       "listId": "3",
       "estado": "Terminada",
       "personaAsignada": [
-        "efefsef"
+        "efefsef",
+        "María",
+        "Felix"
       ],
       "description": "sefsef",
       "dificultad": "Fácil",
@@ -84,14 +86,14 @@
       "listId": "3",
       "estado": "Terminada",
       "personaAsignada": [
-        "María",
         "Antonio"
       ],
       "description": "Una nueva tarea",
       "dificultad": "Media",
       "categoria": [
         "Caso1",
-        "Personal"
+        "Personal",
+        "Categoria2"
       ],
       "subtasks": []
     },
@@ -113,16 +115,6 @@
       "personaAsignada": [
         "Antonio"
       ]
-    },
-    {
-      "id": "86a4",
-      "estado": "Pendiente",
-      "description": "ssfsfs",
-      "dificultad": "Fácil",
-      "listId": "3",
-      "subtasks": [],
-      "categoria": [],
-      "personaAsignada": []
     },
     {
       "id": "5887"
