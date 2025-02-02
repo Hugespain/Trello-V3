@@ -1,0 +1,16 @@
+{
+  "TASK_LIST": "Task List",
+  "FILTER_DESCRIPTION": "Filter by Description",
+  "FILTER_CATEGORY": "Filter by Category",
+  "FILTER_PERSON": "Filter by Person",
+  "TASK_ID": "ID",
+  "TASK_LIST_NAME": "List",
+  "ASSIGNED_PEOPLE": "Assigned People",
+  "CATEGORIES": "Categories",
+  "DESCRIPTION": "Description",
+  "DIFFICULTY": "Difficulty",
+  "SUBTASKS": "Subtasks",
+  "DETAIL": "Detail",
+  "ADD_CARD": "Add Card",
+  "ADD_LIST": "Add List"
+}

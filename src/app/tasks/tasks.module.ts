@@ -21,6 +21,8 @@ import { HeaderFilterBoxComponent } from './components/header-filter-box/header-
 import { TaskDescriptionPipe } from './pipes/task-description-filter.pipe';
 import { TaskCategoryPipe } from './pipes/task-category-filter.pipe';
 import { TaskPersonPipe } from './pipes/task-person-filter.pipe';
+import { LanguageSelectorComponent } from './components/language/language-selector/language-selector.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { TaskPersonPipe } from './pipes/task-person-filter.pipe';
     TaskDescriptionPipe,
     TaskCategoryPipe,
     TaskPersonPipe,
+    LanguageSelectorComponent,
 
 
   ],
@@ -48,7 +51,8 @@ import { TaskPersonPipe } from './pipes/task-person-filter.pipe';
     MaterialModule,
     DragDropModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
 
 
   ]

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { LanguageService } from './tasks/services/language.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TrelloApp';
+
+  cookie = inject (CookieService);
+  languageService = inject (LanguageService);
+
+  constructor(){
+    console.log({cookie:this.cookie.get('lang')});
+    const lang = this.cookie.check('lang')? this.cookie.get('lang') : 'en';
+
+    this.languageService.changeLang(lang);
+
+
+  }
 }
+
+
+

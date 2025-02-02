@@ -1,13 +1,11 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Lista de Tareas</mat-card-title>
+    <mat-card-title>{{ 'TASK_LIST' | translate }}</mat-card-title>
     <app-header-filter-box
-    (filterDescription)="filterTasksDescription($event)"
-    (filterCategory)="filterTasksCategory($event)"
-    (filterPerson)="filterTasksPerson($event)"
-    >
-
-    </app-header-filter-box>
+      (filterDescription)="filterTasksDescription($event)"
+      (filterCategory)="filterTasksCategory($event)"
+      (filterPerson)="filterTasksPerson($event)"
+    ></app-header-filter-box>
   </mat-card-header>
 </mat-card>
 
@@ -23,20 +21,20 @@
 
       <mat-card-content>
         <mat-accordion>
-          <mat-expansion-panel *ngFor="let task of list.tasks | taskDescriptionFilter: searchTextDescription | taskCategoryFilter:searchTextCategory | taskPersonFilter: searchTextPerson" cdkDrag>
+          <mat-expansion-panel *ngFor="let task of list.tasks | taskDescriptionFilter: searchTextDescription | taskCategoryFilter: searchTextCategory | taskPersonFilter: searchTextPerson" cdkDrag>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                {{ task.id }}
+                {{ 'TASK_ID' | translate }}: {{ task.id }}
               </mat-panel-title>
               <mat-panel-description>
-                {{ task.description }}
+                {{ 'DESCRIPTION' | translate }}: {{ task.description }}
               </mat-panel-description>
             </mat-expansion-panel-header>
             <mat-card-content>
-              <p><strong>ID:</strong> {{ task.id }}</p>
-              <p><strong>Lista:</strong> {{ list.name }}</p>
+              <p><strong>{{ 'TASK_ID' | translate }}:</strong> {{ task.id }}</p>
+              <p><strong>{{ 'TASK_LIST_NAME' | translate }}:</strong> {{ list.name }}</p>
               <mat-divider></mat-divider>
-              <p><strong>Personas asignadas:</strong></p>
+              <p><strong>{{ 'ASSIGNED_PEOPLE' | translate }}:</strong></p>
               <div *ngIf="task.personaAsignada">
                 <mat-chip-listbox>
                   <mat-chip *ngFor="let persona of task.personaAsignada">
@@ -44,36 +42,36 @@
                   </mat-chip>
                 </mat-chip-listbox>
               </div>
-              <p><strong>Categorías:</strong></p>
+              <p><strong>{{ 'CATEGORIES' | translate }}:</strong></p>
               <mat-chip-listbox>
                 <mat-chip *ngFor="let categoria of task.categoria">
                   {{ categoria }}
                 </mat-chip>
               </mat-chip-listbox>
-              <p><strong>Descripción:</strong> {{ task.description }}</p>
-              <p><strong>Dificultad:</strong> {{ task.dificultad }}</p>
+              <p><strong>{{ 'DESCRIPTION' | translate }}:</strong> {{ task.description }}</p>
+              <p><strong>{{ 'DIFFICULTY' | translate }}:</strong> {{ task.dificultad }}</p>
               <mat-divider></mat-divider>
               <div *ngIf="task.subtasks">
-                <p><strong>Subtareas:</strong></p>
+                <p><strong>{{ 'SUBTASKS' | translate }}:</strong></p>
                 <div *ngFor="let subtask of task.subtasks">
                   <mat-checkbox [(ngModel)]="subtask.completed">{{ subtask.description }}</mat-checkbox>
                 </div>
               </div>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-stroked-button color="primary" (click)="Openpopup(task)">Detalle</button>
+              <button mat-stroked-button color="primary" (click)="Openpopup(task)">{{ 'DETAIL' | translate }}</button>
             </mat-card-actions>
           </mat-expansion-panel>
         </mat-accordion>
         <button mat-button color="primary" (click)="addTask(list.listId)">
-          <mat-icon>add</mat-icon> Añadir tarjeta
+          <mat-icon>add</mat-icon> {{ 'ADD_CARD' | translate }}
         </button>
       </mat-card-content>
     </mat-card>
   </div>
   <div class="task-column">
     <button mat-raised-button color="primary" (click)="addTaskList()">
-      <mat-icon>add</mat-icon> Añadir lista
+      <mat-icon>add</mat-icon> {{ 'ADD_LIST' | translate }}
     </button>
   </div>
 </div>
