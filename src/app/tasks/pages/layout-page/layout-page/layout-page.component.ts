@@ -9,12 +9,10 @@ export class LayoutPageComponent {
 
 
   public sidebarItems = [
-    { label: 'Listado', icon: 'label', url: '' },
-    { label: 'Añadir tarea', icon: 'add', url: 'new' },
-    { label: 'Editar/Eliminar tarea', icon: 'edit', url: 'edit'  },
-    { label: 'Categorias', icon: 'category', url: 'categorias'  },
-    { label: 'Personas', icon: 'group_add', url: 'personas'  }
-
-
-  ]
+    { label: 'SIDEBAR.LISTADO', icon: 'label', url: '' },
+    { label: 'SIDEBAR.ADD_TASK', icon: 'add', url: 'new' },
+    { label: 'SIDEBAR.EDIT_DELETE_TASK', icon: 'edit', url: 'edit' },
+    { label: 'SIDEBAR.CATEGORIES', icon: 'category', url: 'categorias' },
+    { label: 'SIDEBAR.PEOPLE', icon: 'group_add', url: 'personas' }
+  ];
 }

@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "56da",
-      "listId": "3",
+      "listId": "2",
       "estado": "En Progreso",
       "personaAsignada": [
         "sfefsf",
@@ -21,7 +21,8 @@
       "listId": "1",
       "estado": "Pendiente",
       "personaAsignada": [
-        "Diego"
+        "Diego",
+        "María"
       ],
       "description": "Se guarda?",
       "dificultad": "Media",
@@ -42,13 +43,13 @@
     },
     {
       "id": "2966",
-      "listId": "2",
+      "listId": "3",
       "estado": "Pendiente",
       "personaAsignada": [
         "Antonio"
       ],
       "description": "Comprobar como se guarda la categoria",
-      "dificultad": "Media",
+      "dificultad": "Fácil",
       "categoria": [
         "Categoria2",
         "Categoría María"

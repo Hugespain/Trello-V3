@@ -1,26 +1,22 @@
-
 <div class="row justify-content-end">
-  <button mat-button matTooltip="Buscar por descripción de la tarea"><mat-icon>task</mat-icon></button>
-<form>
+  <button mat-button matTooltip="{{ 'search_task_description_tooltip' | translate }}"><mat-icon>task</mat-icon></button>
+  <form>
     <mat-form-field class="search-box">
-      <input matInput placeholder="Descripción" (input)="sendSearchTaskDescription($event)">
+      <input matInput placeholder="{{ 'description_placeholder' | translate }}" (input)="sendSearchTaskDescription($event)">
     </mat-form-field>
-</form>
+  </form>
 
-<button mat-button matTooltip="Buscar por categoria de la tarea"><mat-icon>category</mat-icon></button>
-<form>
-  <mat-form-field class="search-box">
-    <input matInput placeholder="Categoria" (input)="sendSearchTaskCategory($event)">
-  </mat-form-field>
-</form>
+  <button mat-button matTooltip="{{ 'search_task_category_tooltip' | translate }}"><mat-icon>category</mat-icon></button>
+  <form>
+    <mat-form-field class="search-box">
+      <input matInput placeholder="{{ 'category_placeholder' | translate }}" (input)="sendSearchTaskCategory($event)">
+    </mat-form-field>
+  </form>
 
-<button mat-button matTooltip="Buscar por persona asignada a la tarea"><mat-icon>person</mat-icon></button>
-<form>
-  <mat-form-field class="search-box">
-    <input matInput placeholder="Persona" (input)=" sendSearchTaskPerson($event)">
-  </mat-form-field>
-</form>
-
-
-
+  <button mat-button matTooltip="{{ 'search_task_person_tooltip' | translate }}"><mat-icon>person</mat-icon></button>
+  <form>
+    <mat-form-field class="search-box">
+      <input matInput placeholder="{{ 'person_placeholder' | translate }}" (input)="sendSearchTaskPerson($event)">
+    </mat-form-field>
+  </form>
 </div>

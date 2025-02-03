@@ -1,41 +1,38 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Añadir nueva tarea</mat-card-title>
+    <mat-card-title>{{ 'add_new_task' | translate }}</mat-card-title>
   </mat-card-header>
-  </mat-card>
+</mat-card>
 
-  <form [formGroup]="taskForm" (ngSubmit)="onSave()">
-    <div class="centered-form">
+<form [formGroup]="taskForm" (ngSubmit)="onSave()">
+  <div class="centered-form">
 
-      <mat-form-field class="large-field">
-        <mat-label>Estado</mat-label>
-        <mat-select formControlName="estado">
-          <mat-option value="Pendiente">Pendiente</mat-option>
-          <mat-option value="En Progreso">En progreso</mat-option>
-          <mat-option value="Terminada">Terminada</mat-option>
-        </mat-select>
-      </mat-form-field>
+    <mat-form-field class="large-field">
+      <mat-label>{{ 'status' | translate }}</mat-label>
+      <mat-select formControlName="estado">
+        <mat-option value="Pendiente">{{ 'pending' | translate }}</mat-option>
+        <mat-option value="En Progreso">{{ 'in_progress' | translate }}</mat-option>
+        <mat-option value="Terminada">{{ 'completed' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
+    <mat-form-field class="large-field">
+      <mat-label>{{ 'description' | translate }}</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
 
+    <mat-form-field class="large-field">
+      <mat-label>{{ 'difficulty' | translate }}</mat-label>
+      <mat-select formControlName="dificultad">
+        <mat-option value="Fácil">{{ 'easy' | translate }}</mat-option>
+        <mat-option value="Media">{{ 'medium' | translate }}</mat-option>
+        <mat-option value="Difícil">{{ 'hard' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <mat-form-field class="large-field">
-        <mat-label>Descripción</mat-label>
-        <input matInput formControlName="description">
-      </mat-form-field>
-
-      <mat-form-field class="large-field">
-        <mat-label>Dificultad</mat-label>
-        <mat-select formControlName="dificultad">
-          <mat-option value="Fácil">Fácil</mat-option>
-          <mat-option value="Media">Media</mat-option>
-          <mat-option value="Difícil">Difícil</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <div class="button-container">
-        <button mat-flat-button color="primary">Guardar</button>
-      </div>
-
+    <div class="button-container">
+      <button mat-flat-button color="primary">{{ 'save' | translate }}</button>
     </div>
-  </form>
 
+  </div>
+</form>

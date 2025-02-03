@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Editar y Eliminar tareas</mat-card-title>
+    <mat-card-title>{{ 'edit_delete_tasks' | translate }}</mat-card-title>
   </mat-card-header>
 </mat-card>
 
@@ -8,37 +8,37 @@
   <div class="centered-form">
 
     <mat-form-field class="large-field">
-      <mat-label>ID</mat-label>
+      <mat-label>{{ 'task_id' | translate }}</mat-label>
       <mat-select formControlName="id" (selectionChange)="onIdSelection($event.value)">
         <mat-option *ngFor="let id of availableIds" [value]="id">{{ id }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field class="large-field">
-      <mat-label>Estado</mat-label>
+      <mat-label>{{ 'status' | translate }}</mat-label>
       <mat-select formControlName="estado">
-        <mat-option value="Pendiente">Pendiente</mat-option>
-        <mat-option value="En Progreso">En progreso</mat-option>
-        <mat-option value="Terminada">Terminada</mat-option>
+        <mat-option value="Pendiente">{{ 'pending' | translate }}</mat-option>
+        <mat-option value="En Progreso">{{ 'in_progress' | translate }}</mat-option>
+        <mat-option value="Terminada">{{ 'completed' | translate }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field class="large-field">
-      <mat-label>Descripción</mat-label>
+      <mat-label>{{ 'description' | translate }}</mat-label>
       <input matInput formControlName="description">
     </mat-form-field>
 
     <mat-form-field class="large-field">
-      <mat-label>Dificultad</mat-label>
+      <mat-label>{{ 'difficulty' | translate }}</mat-label>
       <mat-select formControlName="dificultad">
-        <mat-option value="Fácil">Fácil</mat-option>
-        <mat-option value="Media">Media</mat-option>
-        <mat-option value="Difícil">Difícil</mat-option>
+        <mat-option value="Fácil">{{ 'Fácil' | translate }}</mat-option>
+        <mat-option value="Media">{{ 'Media' | translate }}</mat-option>
+        <mat-option value="Difícil">{{ 'Difícil' | translate }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <div class="large-field">
-      <mat-label>Categorías</mat-label>
+      <mat-label>{{ 'categories' | translate }}</mat-label>
       <mat-chip-listbox *ngIf="categoria">
         <mat-chip *ngFor="let categoria of categoria.controls" (removed)="removeCategoria(categoria.value)">
           {{ categoria.value }}
@@ -50,17 +50,17 @@
     </div>
 
     <mat-form-field class="large-field">
-      <mat-label>Añadir Categoría</mat-label>
+      <mat-label>{{ 'add_category' | translate }}</mat-label>
       <mat-select #categoriaSelect>
         <mat-option *ngFor="let categoria of availableCategorias" [value]="categoria.nombre">
           {{ categoria.nombre }}
         </mat-option>
       </mat-select>
-      <button mat-button (click)="addCategoria(categoriaSelect.value)">Añadir</button>
+      <button mat-button (click)="addCategoria(categoriaSelect.value)">{{ 'add' | translate }}</button>
     </mat-form-field>
 
     <div class="large-field">
-      <mat-label>Personas Asignadas</mat-label>
+      <mat-label>{{ 'assigned_people' | translate }}</mat-label>
       <mat-chip-listbox *ngIf="personaAsignada">
         <mat-chip *ngFor="let persona of personaAsignada.controls" (removed)="removePersona(persona.value)">
           {{ persona.value }}
@@ -72,35 +72,35 @@
     </div>
 
     <mat-form-field class="large-field">
-      <mat-label>Añadir Persona</mat-label>
+      <mat-label>{{ 'add_person' | translate }}</mat-label>
       <mat-select #personaSelect>
         <mat-option *ngFor="let persona of availablePersonas" [value]="persona.nombre">
           {{ persona.nombre }}
         </mat-option>
       </mat-select>
-      <button mat-button (click)="addPersona(personaSelect.value)">Añadir</button>
+      <button mat-button (click)="addPersona(personaSelect.value)">{{ 'add' | translate }}</button>
     </mat-form-field>
 
-    <h3>Subtareas</h3>
+    <h3>{{ 'subtasks' | translate }}</h3>
     <mat-list formArrayName="subtasks" class="subtask-list">
       <mat-list-item *ngFor="let subtask of subtasks.controls; let i = index" [formGroupName]="i">
         <div class="subtask-container">
           <mat-form-field class="subtask-field">
-            <mat-label>Descripción</mat-label>
+            <mat-label>{{ 'subtask_description' | translate }}</mat-label>
             <input matInput formControlName="description">
           </mat-form-field>
-          <mat-checkbox formControlName="completed">Completada</mat-checkbox>
+          <mat-checkbox formControlName="completed">{{ 'subtask_completed' | translate }}</mat-checkbox>
           <button mat-icon-button color="warn" (click)="removeSubtask(i)">
             <mat-icon>delete</mat-icon>
           </button>
         </div>
       </mat-list-item>
     </mat-list>
-    <button mat-stroked-button color="primary" (click)="addSubtask()">Añadir Subtarea</button>
+    <button mat-stroked-button color="primary" (click)="addSubtask()">{{ 'add_subtask' | translate }}</button>
 
     <div class="button-container">
-      <button mat-flat-button color="primary" (click)="onUpdate()">Editar</button>
-      <button mat-flat-button color="warn" (click)="onDelete()" [disabled]="!canDeleteTask()">Borrar</button>
+      <button mat-flat-button color="primary" (click)="onUpdate()">{{ 'edit' | translate }}</button>
+      <button mat-flat-button color="warn" (click)="onDelete()" [disabled]="!canDeleteTask()">{{ 'delete' | translate }}</button>
     </div>
 
   </div>
