@@ -2,6 +2,7 @@
   "task_list": "Lista de Tareas",
   "filter_description": "Filtrar por Descripción",
   "filter_category": "Filtrar por Categoría",
+  "add": "Añadir",
   "filter_person": "Filtrar por Persona",
   "task_id": "ID",
   "task_list_name": "Lista",
@@ -15,7 +16,7 @@
   "add_list": "Añadir lista",
   "edit_delete_tasks": "Editar y Eliminar tareas",
   "status": "Estado",
-  "pending": "Pendiente",
+  "to-do": "Pendiente",
   "in_progress": "En Progreso",
   "completed": "Terminada",
   "add_category": "Añadir Categoría",
@@ -42,5 +43,19 @@
     "EDIT_DELETE_TASK": "Editar/Eliminar tarea",
     "CATEGORIES": "Categorías",
     "PEOPLE": "Personas"
-  }
+  },
+
+  "CATEGORY_LIST": "Lista de Categorías",
+  "CATEGORY_CREATION_EDITING": "Creación y Edición de Categorías",
+  "CATEGORIES": "Categorías",
+  "DELETE": "Borrar",
+  "CREATE_CATEGORY": "Crear categoría",
+  "CREATE": "Crear",
+  "MANAGE_PEOPLE": "Gestionar Personas",
+  "NAME": "Nombre",
+  "ACTIONS": "Acciones",
+  "CREATE_PERSON": "Crear Persona",
+  "MENU": "Menú"
+
+
 }

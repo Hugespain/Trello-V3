@@ -17,7 +17,7 @@
     <mat-form-field class="large-field">
       <mat-label>{{ 'status' | translate }}</mat-label>
       <mat-select formControlName="estado">
-        <mat-option value="Pendiente">{{ 'pending' | translate }}</mat-option>
+        <mat-option value="Pendiente">{{ 'to-do' | translate }}</mat-option>
         <mat-option value="En Progreso">{{ 'in_progress' | translate }}</mat-option>
         <mat-option value="Terminada">{{ 'completed' | translate }}</mat-option>
       </mat-select>
@@ -56,7 +56,7 @@
           {{ categoria.nombre }}
         </mat-option>
       </mat-select>
-      <button mat-button (click)="addCategoria(categoriaSelect.value)">{{ 'add' | translate }}</button>
+      <button class="añadir" (click)="addCategoria(categoriaSelect.value)">{{ 'add' | translate }}</button>
     </mat-form-field>
 
     <div class="large-field">
@@ -78,7 +78,7 @@
           {{ persona.nombre }}
         </mat-option>
       </mat-select>
-      <button mat-button (click)="addPersona(personaSelect.value)">{{ 'add' | translate }}</button>
+      <button (click)="addPersona(personaSelect.value)">{{ 'add' | translate }}</button>
     </mat-form-field>
 
     <h3>{{ 'subtasks' | translate }}</h3>

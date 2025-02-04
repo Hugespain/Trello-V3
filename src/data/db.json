@@ -14,7 +14,12 @@
         "Personal",
         "Categoría María"
       ],
-      "subtasks": []
+      "subtasks": [
+        {
+          "description": "Subtarea 1",
+          "completed": false
+        }
+      ]
     },
     {
       "id": "5f9d",

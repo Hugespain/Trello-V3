@@ -9,13 +9,18 @@
   overflow-y: auto; /* Permitir desplazamiento vertical */
 }
 
+.añadir{
+  display: flex-end;
+}
+
 .large-field {
   width: 90%;
   margin-bottom: 15px;
 }
 
 .subtask-list {
-  width: 90%; /* Ajusta este valor para hacer que el mat-list ocupe más espacio */
+  width: 90%;
+  height: 100%;
 }
 
 .subtask-container {
@@ -25,8 +30,9 @@
 }
 
 .subtask-field {
-  flex-grow: 1; /* Permitir que el campo crezca para ocupar el espacio disponible */
+  flex-grow: 1;
   margin-right: 10px;
+
 }
 
 .button-container {
@@ -40,3 +46,5 @@
   width: 90%; /* Ajustar el ancho del mat-chip-listbox */
   margin-bottom: 15px; /* Añadir margen inferior para separación */
 }
+
+

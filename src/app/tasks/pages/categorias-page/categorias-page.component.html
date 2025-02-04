@@ -1,7 +1,6 @@
-<!-- Encabezado de la página -->
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Lista de Categorías</mat-card-title>
+    <mat-card-title>{{ 'CATEGORY_LIST' | translate }}</mat-card-title>
   </mat-card-header>
 </mat-card>
 
@@ -20,11 +19,11 @@
 <div class="centered-container">
   <mat-card class="form-card">
     <mat-card-content>
-      <h2>Creación y Edición de Categorías</h2>
+      <h2>{{ 'CATEGORY_CREATION_EDITING' | translate }}</h2>
       <form [formGroup]="taskForm">
         <div class="centered-form">
           <mat-form-field class="field">
-            <mat-label>Categorías</mat-label>
+            <mat-label>{{ 'CATEGORIES' | translate }}</mat-label>
             <div class="scroll-list__wrp">
               <mat-select formControlName="categoria">
                 <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
@@ -34,7 +33,7 @@
             </div>
           </mat-form-field>
           <div class="button-container">
-            <button mat-flat-button color="warn" (click)="removeCategoria(taskForm.get('categoria')?.value || '')">Borrar</button>
+            <button mat-flat-button color="warn" (click)="removeCategoria(taskForm.get('categoria')?.value || '')">{{ 'DELETE' | translate }}</button>
           </div>
         </div>
       </form>
@@ -42,11 +41,11 @@
       <form [formGroup]="taskForm">
         <div class="centered-form">
           <mat-form-field class="field">
-            <mat-label>Crear categoría</mat-label>
+            <mat-label>{{ 'CREATE_CATEGORY' | translate }}</mat-label>
             <input matInput formControlName="crearCategoria">
           </mat-form-field>
           <div class="button-container">
-            <button mat-flat-button color="primary" (click)="crearCategoria()">Crear</button>
+            <button mat-flat-button color="primary" (click)="crearCategoria()">{{ 'CREATE' | translate }}</button>
           </div>
         </div>
       </form>

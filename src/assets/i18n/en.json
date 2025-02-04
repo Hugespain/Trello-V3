@@ -2,6 +2,7 @@
   "task_list": "Task List",
   "filter_description": "Filter by Description",
   "filter_category": "Filter by Category",
+  "add": "Add",
   "filter_person": "Filter by Person",
   "task_id": "ID",
   "task_list_name": "List",
@@ -15,7 +16,7 @@
   "add_list": "Add List",
   "edit_delete_tasks": "Edit and Delete Tasks",
   "status": "Status",
-  "pending": "Pending",
+  "to-do": "To do",
   "in_progress": "In Progress",
   "completed": "Completed",
   "add_category": "Add Category",
@@ -42,5 +43,17 @@
     "EDIT_DELETE_TASK": "Edit/Delete Task",
     "CATEGORIES": "Categories",
     "PEOPLE": "People"
-  }
+  },
+  "CATEGORY_LIST": "Category List",
+  "CATEGORY_CREATION_EDITING": "Category Creation and Editing",
+  "CATEGORIES": "Categories",
+  "DELETE": "Delete",
+  "CREATE_CATEGORY": "Create Category",
+  "MANAGE_PEOPLE": "Manage People",
+  "NAME": "Name",
+  "ACTIONS": "Actions",
+  "CREATE_PERSON": "Create Person",
+  "CREATE": "Create",
+  "MENU": "Menu"
+
 }
