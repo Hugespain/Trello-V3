@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./login.component.css">
+</head>
+<body>
+  <div class="flex flex-column">
+    <span class="text-lg mb-4">Login</span>
+    <form [formGroup]="myForm" (ngSubmit)="login()">
+
+      <mat-form-field>
+        <mat-label>Correo</mat-label>
+        <input type="email" matInput placeholder="Correo electrónico" formControlName="email">
+        <mat-error *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+          Por favor, introduce un correo válido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput placeholder="Contraseña" formControlName="password">
+        <mat-error *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched">
+          La contraseña debe tener al menos 6 caracteres.
+        </mat-error>
+
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-button mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid">
+          <mat-icon>done_all</mat-icon>
+          Login
+        </button>
+      </div>
+    </form>
+
+    <div class="flex justify-content-end mt-5">
+      <a routerLink="">¿No tienes cuenta?</a>
+    </div>
+  </div>
+</body>
+</html>

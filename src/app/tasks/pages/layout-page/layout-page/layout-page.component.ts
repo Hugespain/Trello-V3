@@ -9,9 +9,7 @@ export class LayoutPageComponent {
 
 
   public sidebarItems = [
-    { label: 'SIDEBAR.LISTADO', icon: 'label', url: '' },
-    // { label: 'SIDEBAR.ADD_TASK', icon: 'add', url: 'new' },
-    // { label: 'SIDEBAR.EDIT_DELETE_TASK', icon: 'edit', url: 'edit' },
+    { label: 'SIDEBAR.LISTADO', icon: 'label', url: 'list' },
     { label: 'SIDEBAR.CATEGORIES', icon: 'category', url: 'categorias' },
     { label: 'SIDEBAR.PEOPLE', icon: 'group_add', url: 'personas' }
   ];

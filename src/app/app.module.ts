@@ -20,7 +20,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   declarations: [
     AppComponent,
-    // Otros componentes aquí
   ],
   imports: [
     BrowserModule,

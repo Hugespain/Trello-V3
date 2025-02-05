@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "56da",
-      "listId": "2",
+      "listId": "1",
       "estado": "En Progreso",
       "personaAsignada": [
         "sfefsf",
@@ -23,7 +23,7 @@
     },
     {
       "id": "5f9d",
-      "listId": "1",
+      "listId": "3",
       "estado": "Pendiente",
       "personaAsignada": [
         "Diego",
@@ -68,7 +68,7 @@
     },
     {
       "id": "6237",
-      "listId": "3",
+      "listId": "2",
       "estado": "Terminada",
       "personaAsignada": [
         "efefsef",
@@ -89,7 +89,7 @@
     },
     {
       "id": "c707",
-      "listId": "3",
+      "listId": "2",
       "estado": "Terminada",
       "personaAsignada": [
         "Antonio"
@@ -224,6 +224,26 @@
       "name": "Terminadas",
       "tasks": [],
       "id": "630c"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "Diego@gmail.com",
+      "password": "admin123",
+      "role": "Admin"
+    },
+    {
+      "id": 2,
+      "email": "Pepe@gmail.com",
+      "password": "manager123",
+      "role": "Project Manager"
+    },
+    {
+      "id": 3,
+      "email": "Ricardo@gmail.com",
+      "password": "dev123",
+      "role": "Developer"
     }
   ]
 }
