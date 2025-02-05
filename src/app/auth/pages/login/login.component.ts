@@ -30,14 +30,18 @@ export class LoginComponent {
     const { email, password } = this.myForm.value;
 
     this.authService.login(email, password)
-      .subscribe(success => {
-        if (success) {
-          this.router.navigate(['/tasks']); // Redirige a la ruta de tareas
-        } else {
-          this.snackBar.open('Login incorrecto', 'Cerrar', {
-            duration: 3000,
-          });
-        }
-      });
-  }
+    .subscribe(() => {
+      if (this.authService.authStatus() === 'authenticated') {
+        this.router.navigate(['/tasks']); // Redirige a la ruta de tareas
+      } else if (this.authService.authStatus() === 'notAuthenticated') {
+        this.snackBar.open('Login incorrecto', 'Cerrar', {
+          duration: 3000,
+        });
+      } else {
+        this.snackBar.open('Error en la autenticación', 'Cerrar', {
+          duration: 3000,
+        });
+      }
+    });
+}
 }

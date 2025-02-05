@@ -2,10 +2,9 @@
   "tasks": [
     {
       "id": "56da",
-      "listId": "1",
+      "listId": "2",
       "estado": "En Progreso",
       "personaAsignada": [
-        "sfefsf",
         "María"
       ],
       "description": "sdfsfsf",
@@ -48,7 +47,7 @@
     },
     {
       "id": "2966",
-      "listId": "3",
+      "listId": "l63kvo8ds",
       "estado": "Pendiente",
       "personaAsignada": [
         "Antonio"
@@ -89,7 +88,7 @@
     },
     {
       "id": "c707",
-      "listId": "2",
+      "listId": "1",
       "estado": "Terminada",
       "personaAsignada": [
         "Antonio"
@@ -124,6 +123,13 @@
     },
     {
       "id": "5887"
+    },
+    {
+      "id": "ba11",
+      "estado": "En Progreso",
+      "description": "Crear login",
+      "dificultad": "Difícil",
+      "listId": "3"
     }
   ],
   "categorias": [
@@ -224,23 +230,29 @@
       "name": "Terminadas",
       "tasks": [],
       "id": "630c"
+    },
+    {
+      "id": "e760",
+      "listId": "l63kvo8ds",
+      "name": "Nueva Lista",
+      "tasks": []
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "Diego@gmail.com",
       "password": "admin123",
       "role": "Admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "Pepe@gmail.com",
       "password": "manager123",
       "role": "Project Manager"
     },
     {
-      "id": 3,
+      "id": "3",
       "email": "Ricardo@gmail.com",
       "password": "dev123",
       "role": "Developer"
