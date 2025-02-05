@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent {
   private fb: FormBuilder;
   private authService = inject(AuthService);
   private router = inject(Router);
+  private snackBar = inject(MatSnackBar);
 
   public myForm: FormGroup;
 
@@ -32,7 +34,9 @@ export class LoginComponent {
         if (success) {
           this.router.navigate(['/tasks']); // Redirige a la ruta de tareas
         } else {
-          console.log('Login failed');
+          this.snackBar.open('Login incorrecto', 'Cerrar', {
+            duration: 3000,
+          });
         }
       });
   }

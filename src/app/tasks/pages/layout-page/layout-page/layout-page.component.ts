@@ -11,6 +11,7 @@ export class LayoutPageComponent {
   public sidebarItems = [
     { label: 'SIDEBAR.LISTADO', icon: 'label', url: 'list' },
     { label: 'SIDEBAR.CATEGORIES', icon: 'category', url: 'categorias' },
-    { label: 'SIDEBAR.PEOPLE', icon: 'group_add', url: 'personas' }
+    { label: 'SIDEBAR.PEOPLE', icon: 'group_add', url: 'personas' },
+    {label: 'Exit', icon: 'logout', url: 'auth'}
   ];
 }
